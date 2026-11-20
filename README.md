@@ -18,7 +18,32 @@ pool of 20 sequences ──► score (live model, no_grad, first 256 tokens) ─
                                                    train on the middle 16 (as baseline)
 ```
 
+### Pipeline: reading, scoring and training at the same time
+
+Nothing waits for anything else:
+
+```
+CPU thread   │ read + pin m+1 … m+8      │ …   (disk, next shard, int64, pinned memory)
+side stream  │ copy + score + select m+1 │ …   (live model, no_grad, prefix)
+main stream  │ forward/backward m        │ …   (only the kept sequences)
+```
+
+The main stream waits for the side stream only before `optimizer.step()`, so scoring never sees
+half-updated weights; the first micro-batch of a step is scored with the previous step's weights.
+The hot loop has no CPU↔GPU syncs besides the per-step loss print.
+
 ## Running
+
+### Kaggle (2× T4)
+
+```bash
+pip install kaggle   # API token in ~/.kaggle/kaggle.json, Internet enabled (phone-verified account)
+# set your username in kaggle/kernel-metadata.json, then:
+kaggle kernels push -p kaggle --accelerator NvidiaTeslaT4
+```
+
+Runs the baseline on GPU 0 and Smart Filtering on GPU 1 simultaneously (`quick` preset, ~3–3.5 h),
+then writes the logs and `compare.png` to the notebook output.
 
 ### Google Colab
 

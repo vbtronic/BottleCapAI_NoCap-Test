@@ -5,6 +5,8 @@ import math
 import glob
 import time
 import contextlib
+import queue
+import threading
 from dataclasses import dataclass
 
 import numpy as np
@@ -49,23 +51,22 @@ def pick_amp_dtype(device_type):
 
 
 class Rotary(torch.nn.Module):
-    def __init__(self, dim, base=10000):
+    # The upstream version cached cos/sin for the *last* sequence length it saw. With the filter
+    # alternating between scoring (256 tokens) and training (1024 tokens) the cache flipped every
+    # micro-batch, and under torch.compile every flip is a guard failure -> recompiles until the
+    # recompile limit, then a silent fallback to eager. Precomputing the table once and slicing it
+    # gives the same numbers with no Python-side state.
+    def __init__(self, dim, max_seq_len=1024, base=10000):
         super().__init__()
         inv_freq = 1.0 / (base ** (torch.arange(0, dim, 2).float() / dim))
         self.register_buffer("inv_freq", inv_freq)
-        self.seq_len_cached = None
-        self.cos_cached = None
-        self.sin_cached = None
+        freqs = torch.outer(torch.arange(max_seq_len).float(), inv_freq)
+        self.register_buffer("cos_cached", freqs.cos(), persistent=False)
+        self.register_buffer("sin_cached", freqs.sin(), persistent=False)
 
     def forward(self, x):
         seq_len = x.shape[1]
-        if seq_len != self.seq_len_cached:
-            self.seq_len_cached = seq_len
-            t = torch.arange(seq_len, device=x.device).type_as(self.inv_freq)
-            freqs = torch.outer(t, self.inv_freq).to(x.device)
-            self.cos_cached = freqs.cos()
-            self.sin_cached = freqs.sin()
-        return self.cos_cached[None, :, None, :], self.sin_cached[None, :, None, :]
+        return self.cos_cached[None, :seq_len, None, :], self.sin_cached[None, :seq_len, None, :]
 
 
 def apply_rotary_emb(x, cos, sin):
@@ -93,7 +94,7 @@ class CausalSelfAttention(nn.Module):
         assert self.n_embd % self.n_head == 0
         self.c_attn = nn.Linear(self.n_embd, 3 * self.n_embd, bias=False)
         self.c_proj = nn.Linear(self.n_embd, self.n_embd, bias=False)
-        self.rotary = Rotary(self.head_dim)
+        self.rotary = Rotary(self.head_dim, config.block_size)
 
     def forward(self, x):
         B, T, C = x.size()
@@ -141,6 +142,7 @@ class GPTConfig:
     n_layer: int = 12
     n_head: int = 12
     n_embd: int = 768
+    block_size: int = 1024  # longest sequence the rotary table covers
 
 
 class GPT(nn.Module):
@@ -239,8 +241,8 @@ class DistributedDataLoader:
         self.current_position = 0
         self.tokens = _load_data_shard(self.files[self.current_shard])
 
-    def next_batch(self, B=None):
-        """Returns B sequences (default self.B) as CPU tensors."""
+    def next_batch(self, B=None, pin=False):
+        """Returns B sequences (default self.B) as CPU tensors (pinned if pin=True)."""
         B = B or self.B
         T = self.T
         chunk = B * T * self.num_processes
@@ -248,6 +250,8 @@ class DistributedDataLoader:
             self.advance()
         start = self.current_position + self.process_rank * B * T
         buf = torch.from_numpy(self.tokens[start : start + B * T + 1].astype(np.int64))
+        if pin:
+            buf = buf.pin_memory()  # one pinned buffer, x and y are views of it
         x = buf[:-1].view(B, T)
         y = buf[1:].view(B, T)
         self.current_position += chunk
@@ -263,6 +267,40 @@ class DistributedDataLoader:
         self.current_position = state["position"]
         self.tokens_served = state["tokens_served"]
         self.tokens = _load_data_shard(self.files[self.current_shard])
+
+
+class BatchPrefetcher:
+    """Reads micro-batches in a background thread while the GPU trains.
+
+    Disk reads (incl. loading the next 200 MB shard), int64 conversion and pinning all happen off
+    the training thread. The pool size of every micro-batch is known in advance (`plan(m)` ->
+    (rows, filtering)), so the thread can run ahead. Each item carries the loader state *after* it
+    was read; checkpoints store the state of the last micro-batch that was actually trained on, so
+    prefetched-but-unused data is read again after a resume.
+    """
+
+    def __init__(self, loader, plan, start_m, depth=8, pin=False):
+        self.loader, self.plan, self.pin = loader, plan, pin
+        self.q = queue.Queue(maxsize=depth)
+        self.m = start_m
+        threading.Thread(target=self._run, daemon=True).start()
+
+    def _run(self):
+        try:
+            m = self.m
+            while True:
+                rows, filtering = self.plan(m)
+                x, y = self.loader.next_batch(rows, pin=self.pin)
+                self.q.put((x, y, self.loader.state_dict(), filtering))
+                m += 1
+        except BaseException as e:  # surface errors in the training thread
+            self.q.put(e)
+
+    def get(self):
+        item = self.q.get()
+        if isinstance(item, BaseException):
+            raise item
+        return item
 
 
 # -----------------------------------------------------------------------------
@@ -288,31 +326,42 @@ class SmartFilter:
         self.n_easy = n_drop - self.n_hard
         self.score_len = score_len
         self.ctx = ctx
-        # running stats for logging
-        self.loss_kept = 0.0
-        self.loss_easy = 0.0
-        self.loss_hard = 0.0
+        # running mean / EMA of the scores (kept, easy, hard), kept on the GPU: the old version
+        # called .item() three times per micro-batch, i.e. a full CPU<->GPU sync that stopped the
+        # CPU from queueing work ahead of the GPU.
+        self.stats = None
         self.n_batches = 0
 
     @torch.no_grad()
     def select(self, x, y):
-        """x, y: (pool, T) on device -> (B, T) slices of the kept sequences."""
+        """x, y: (pool, T) on device -> (B, T) kept sequences. Never syncs with the CPU."""
         with self.ctx:
             _, scores = self.score_model(
                 x[:, : self.score_len], y[:, : self.score_len],
                 return_logits=False, per_sequence=True,
             )
+        scores = scores.float()
         order = torch.argsort(scores)
         keep = order[self.n_easy : self.n_easy + self.B]
+        s = scores[order]
+        zero = s.new_zeros(())
+        cur = torch.stack([
+            s[self.n_easy : self.n_easy + self.B].mean(),
+            s[: self.n_easy].mean() if self.n_easy else zero,
+            s[self.pool - self.n_hard :].mean() if self.n_hard else zero,
+        ])
         self.n_batches += 1
-        a = 1.0 / min(self.n_batches, 100)  # running mean, then EMA
-        sorted_scores = scores[order]
-        self.loss_kept += a * (sorted_scores[self.n_easy : self.n_easy + self.B].mean().item() - self.loss_kept)
-        if self.n_easy:
-            self.loss_easy += a * (sorted_scores[: self.n_easy].mean().item() - self.loss_easy)
-        if self.n_hard:
-            self.loss_hard += a * (sorted_scores[self.pool - self.n_hard :].mean().item() - self.loss_hard)
+        if self.stats is None:
+            self.stats = cur
+        else:
+            self.stats.lerp_(cur, 1.0 / min(self.n_batches, 100))  # running mean, then EMA
         return x[keep], y[keep]
+
+    def stats_str(self):
+        if self.stats is None:
+            return ""
+        kept, easy, hard = self.stats.tolist()
+        return f" | score kept:{kept:.2f} easy:{easy:.2f} hard:{hard:.2f}"
 
 
 # -----------------------------------------------------------------------------
@@ -425,6 +474,7 @@ if __name__ == "__main__":
         "d36": GPTConfig(vocab_size=num_vocab, n_layer=36, n_head=20, n_embd=1280),
         "d48": GPTConfig(vocab_size=num_vocab, n_layer=48, n_head=25, n_embd=1600),
     }[args.model]
+    model_config.block_size = max(T, model_config.block_size)
     raw_model = GPT(model_config).train().to(device)
     model = raw_model
     if device_type == "cuda" and not args.no_compile:
@@ -499,20 +549,51 @@ if __name__ == "__main__":
         os.makedirs(ckpt_path, exist_ok=True)
         torch.save(dict(
             model=raw_model.state_dict(), optimizer=optimizer.state_dict(), scaler=scaler.state_dict(),
-            train_loader=train_loader.state_dict(), step=step, training_time_ms=training_time_ms_now(),
+            train_loader=trained_state, step=step, training_time_ms=training_time_ms_now(),
             run_id=run_id, args=vars(args), code=code,
         ), os.path.join(ckpt_path, name))
         print0(f"checkpoint -> {os.path.join(ckpt_path, name)}")
 
-    def fetch_batch(step):
-        """Next micro-batch on device. With the filter on, this includes scoring (timed as training)."""
-        filtering = smart_filter is not None and step >= args.filter_warmup
-        x, y = train_loader.next_batch(smart_filter.pool if filtering else B)
-        x = x.pin_memory().to(device, non_blocking=True) if device_type == "cuda" else x.to(device)
-        y = y.pin_memory().to(device, non_blocking=True) if device_type == "cuda" else y.to(device)
-        if filtering:
-            x, y = smart_filter.select(x, y)
-        return x, y
+    # ── Input pipeline: read -> score -> train, all at the same time ─────
+    #   CPU thread   : reads + pins micro-batch m+k from disk          (BatchPrefetcher)
+    #   side stream  : copies + scores + selects micro-batch m+1       (score_stream)
+    #   main stream  : forward/backward on micro-batch m               (default stream)
+    # Scoring uses the current weights; the main stream waits for the side stream before
+    # optimizer.step(), so weights never change under a running scoring pass (the first
+    # micro-batch of a step is scored with the previous step's weights, 1 step stale).
+    accum = args.grad_accumulation_steps
+
+    def plan(m):
+        filtering = smart_filter is not None and m // accum >= args.filter_warmup
+        return (smart_filter.pool if filtering else B), filtering
+
+    prefetcher = BatchPrefetcher(train_loader, plan, start_m=start_step * accum,
+                                 depth=max(8, 2 * accum), pin=device_type == "cuda")
+    score_stream = torch.cuda.Stream() if device_type == "cuda" and smart_filter is not None else None
+    trained_state = train_loader.state_dict()  # loader position after the last trained micro-batch
+
+    def prepare():
+        """Queue the next micro-batch: H2D copy and (if on) scoring + selection, on the side stream."""
+        x, y, state, filtering = prefetcher.get()
+        with torch.cuda.stream(score_stream) if score_stream is not None else contextlib.nullcontext():
+            nb = device_type == "cuda"  # async copy only from pinned memory on CUDA (unsafe on MPS)
+            x = x.to(device, non_blocking=nb)
+            y = y.to(device, non_blocking=nb)
+            if filtering:
+                x, y = smart_filter.select(x, y)
+        return x, y, state
+
+    def take(pending):
+        """Make a prepared micro-batch usable on the main stream."""
+        x, y, state = pending
+        if score_stream is not None:
+            main = torch.cuda.current_stream()
+            main.wait_stream(score_stream)  # only this micro-batch is queued there right now
+            x.record_stream(main)  # allocated on the side stream, freed on the main one
+            y.record_stream(main)
+        return x, y, state
+
+    pending = prepare()
 
     # ── Training loop ─────────────────────────────────────────────────────
     device_synchronize(device_type)
@@ -539,7 +620,7 @@ if __name__ == "__main__":
                 if use_ddp:
                     dist.all_reduce(val_loss, op=dist.ReduceOp.AVG)
                 val_loss = (val_loss / val_steps).item()
-            tokens_seen = train_loader.tokens_served * ddp_world_size
+            tokens_seen = trained_state["tokens_served"] * ddp_world_size
             print0(f"step:{step}/{args.num_iterations} | val loss {val_loss:.6f} | "
                    f"train_time:{training_time_ms / 1000:.1f}s | tokens_read:{tokens_seen / 1e6:.1f}M")
             if master_process:
@@ -564,17 +645,19 @@ if __name__ == "__main__":
         # --------------- TRAINING SECTION BEGIN -----------------
         model.train()
         train_loss = torch.zeros((), device=device)
-        x, y = fetch_batch(step)
-        for micro_step in range(args.grad_accumulation_steps):
-            sync = micro_step == args.grad_accumulation_steps - 1
+        for micro_step in range(accum):
+            sync = micro_step == accum - 1
+            x, y, trained_state = take(pending)
+            pending = prepare()  # scored on the side stream while this one trains
             with model.no_sync() if use_ddp and not sync else contextlib.nullcontext():
                 with ctx:
                     _, loss = model(x, y, return_logits=False)
-                    loss = loss / args.grad_accumulation_steps
+                    loss = loss / accum
                 train_loss += loss.detach()
-                if not sync:
-                    x, y = fetch_batch(step)  # queue the next batch before backward
                 scaler.scale(loss).backward()
+            del x, y
+        if score_stream is not None:
+            torch.cuda.current_stream().wait_stream(score_stream)  # scoring done before weights change
 
         lr = get_lr(step)
         for param_group in optimizer.param_groups:
@@ -592,10 +675,7 @@ if __name__ == "__main__":
         if use_ddp:
             dist.all_reduce(train_loss, op=dist.ReduceOp.AVG)
         lossf = train_loss.item()
-        filter_tag = ""
-        if smart_filter is not None and step >= args.filter_warmup:
-            sf = smart_filter
-            filter_tag = f" | score kept:{sf.loss_kept:.2f} easy:{sf.loss_easy:.2f} hard:{sf.loss_hard:.2f}"
+        filter_tag = smart_filter.stats_str() if smart_filter is not None else ""
         print0(f"step:{step}/{args.num_iterations} | loss {lossf:.6f} | train_time:{approx_training_time_ms / 1000:.2f}s"
                f" | step_avg:{approx_training_time_ms / (step + 1):.2f}ms" + filter_tag)
         if master_process and logfile is not None:
