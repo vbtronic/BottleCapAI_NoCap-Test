@@ -166,6 +166,37 @@ def evaluate(paths, baseline="baseline", plot=None):
     return text
 
 
+BASELINE_STEPS = 4768  # the official baseline reaches TARGET at its last step, by definition of the target
+
+
+def evaluate_full(session_logs):
+    """Smart Filtering only, full preset, possibly over several sessions (logs in chronological order)."""
+    runs = [parse_run(p) for p in session_logs]
+    val = sorted({s: (s, v, t) for r in runs for s, v, t in r["val"]}.values())
+    first = runs[0]
+    w = first["warmup"]
+    last = max(first["steps"])
+    un = sec_per_step(first["steps"], 10, w - 2)
+    fi = sec_per_step(first["steps"], min(w + 72, last - 10), last)
+    cost = fi / un if un and fi else None
+    st = steps_to(val, TARGET)
+    s, v, _ = val[-1]
+    lines = [f"sessions: {len(runs)}, last val step {s}, val {v:.4f}, device {first['device']}",
+             f"step cost (session 1, filtered vs. unfiltered steps): "
+             + (f"{(cost - 1) * 100:+.1f}%" if cost else "–")]
+    if st:
+        ratio = st / BASELINE_STEPS
+        lines.append(f"reached {TARGET} at step ~{st:.0f} -> steps ratio {ratio:.3f} (baseline: {BASELINE_STEPS})")
+        if cost:
+            lines.append(f"time ratio = {ratio:.3f} x {cost:.3f} = **{ratio * cost:.3f}** "
+                         f"(< 1.0: faster than the baseline; estimated, baseline not re-run)")
+    else:
+        lines.append(f"target {TARGET} not reached yet")
+    text = "\n".join(lines)
+    print(text)
+    return text
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -179,8 +210,14 @@ if __name__ == "__main__":
     e.add_argument("dir", help="folder with <name>.txt stdout logs")
     e.add_argument("--baseline", default="baseline")
     e.add_argument("--plot", default="")
+    f = sub.add_parser("eval-full", help="full Kaggle run over several sessions (results/kaggle-full)")
+    f.add_argument("dir")
     a = ap.parse_args()
     if a.cmd == "cmd":
         print(train_cmd(a.preset, f"{a.out}/{a.name}", f"{a.out}/ckpt/{a.name}", pool=a.pool, score_len=a.score_len))
+    elif a.cmd == "eval-full":
+        logs = sorted(glob.glob(os.path.join(a.dir, "**", "session_*.txt"), recursive=True),
+                      key=os.path.basename)
+        evaluate_full(logs)
     else:
         evaluate(sorted(glob.glob(os.path.join(a.dir, "*.txt"))), a.baseline, a.plot or None)

@@ -41,6 +41,11 @@ Two ready-made setups, both built on [`experiments.py`](experiments.py) (presets
 kaggle kernels push -p kaggle --accelerator NvidiaTeslaT4
 kaggle kernels output <user>/nocap-smartfilter -p results/kaggle-vN
 
+# Kaggle, full benchmark (filter only, 2-3 sessions of 12 h that resume from a checkpoint)
+kaggle kernels push -p kaggle/full --accelerator NvidiaTeslaT4   # first session
+kaggle/full/next_session.sh                                      # every next session
+python experiments.py eval-full results/kaggle-full
+
 # compare runs
 python experiments.py eval results/kaggle-v3/2
 ```

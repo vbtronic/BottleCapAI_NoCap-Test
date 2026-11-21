@@ -547,14 +547,21 @@ if __name__ == "__main__":
             open(logfile, "w").close()
 
     def save_checkpoint(step, name):
+        """Atomic (tmp file + rename, safe if the process is killed mid-save) and not timed as training."""
+        global training_time_ms, t0
+        device_synchronize(device_type)
+        training_time_ms += 1000 * (time.perf_counter() - t0)
         ckpt_path = os.path.join(args.ckpt_dir, run_id)
         os.makedirs(ckpt_path, exist_ok=True)
+        final = os.path.join(ckpt_path, name)
         torch.save(dict(
             model=raw_model.state_dict(), optimizer=optimizer.state_dict(), scaler=scaler.state_dict(),
-            train_loader=trained_state, step=step, training_time_ms=training_time_ms_now(),
+            train_loader=trained_state, step=step, training_time_ms=training_time_ms,
             run_id=run_id, args=vars(args), code=code,
-        ), os.path.join(ckpt_path, name))
-        print0(f"checkpoint -> {os.path.join(ckpt_path, name)}")
+        ), final + ".tmp")
+        os.replace(final + ".tmp", final)
+        print0(f"checkpoint -> {final} (step {step}, train_time {training_time_ms / 1000:.1f}s)")
+        t0 = time.perf_counter()
 
     # ── Input pipeline: read -> score -> train, all at the same time ─────
     #   CPU thread   : reads + pins micro-batch m+k from disk          (BatchPrefetcher)

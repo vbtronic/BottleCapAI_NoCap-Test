@@ -96,5 +96,8 @@ Lessons:
 
 ## Next
 
-- Full preset (4768 steps, stop at 3.3821) with the better pool — needs a GPU platform where a ~45 h T4 run
-  (or a few hours on an A100/H100) fits.
+- **Kaggle full run** (`kaggle/full/`): Smart Filtering only, full preset (4768 steps, stop at 3.3821), with
+  the better pool from v5. Both T4s train one run together (~22 h), spread over 2–3 sessions of 12 h that
+  hand over a checkpoint. The baseline is not re-run: the official baseline reaches 3.3821 at step 4768 by
+  definition, so steps ratio = filter steps / 4768; step cost comes from session 1. Less precise than a
+  same-hardware baseline (fp16 on T4 vs. bf16 on a 4090), but fits the free quota.
