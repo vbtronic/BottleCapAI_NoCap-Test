@@ -45,8 +45,9 @@ kaggle kernels status YOUR_USERNAME/nocap-smartfilter      # QUEUED → RUNNING 
 ```
 
 - `--accelerator NvidiaTeslaT4` is required (2× T4); otherwise Kaggle assigns a different GPU or none.
-- If the job stays **QUEUED / "Starting…" for more than ~30 min**, cancel it on the website (notebook →
-  Versions → ⋯ → Cancel) and push again. Waiting in the queue does not use quota.
+- If the job stays **QUEUED / "Starting…" for a long time** (more than ~30 min), Kaggle's GPUs are full.
+  Cancel it on the website (notebook → Versions → ⋯ → Cancel) and **try again tomorrow**. Waiting in the
+  queue does not use quota.
 - When the status is **COMPLETE**, download and evaluate the results:
   ```bash
   kaggle kernels output YOUR_USERNAME/nocap-smartfilter -p results/kaggle-v5
@@ -86,6 +87,7 @@ kaggle kernels status YOUR_USERNAME/nocap-smartfilter      # QUEUED → RUNNING 
 | `Permission denied` for the script | `chmod +x kaggle/full/next_session.sh` |
 | the job failed (`ERROR`) | `kaggle kernels output … -p error` and send Viktor the contents of the `error` folder |
 | quota ran out | wait until Saturday; the next v6 session resumes from the last checkpoint |
+| stuck in QUEUED / "Starting…" | Kaggle's GPUs are full: cancel on the website and try again tomorrow |
 
 ---
 
