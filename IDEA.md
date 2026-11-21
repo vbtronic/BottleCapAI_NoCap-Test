@@ -1,6 +1,6 @@
 # Smart Filtering — Goldilocks Zone + Early Ejection
 
-*Thanks to Ondřej Plátek for the key observation: masking tokens in the loss still pays for the full
+*Thanks to [Ondřej Plátek](https://github.com/oplatek) for the key observation: masking tokens in the loss still pays for the full
 forward/backward pass, so real savings only come from data that never reaches the GPU.*
 
 ## Motivation
