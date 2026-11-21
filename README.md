@@ -33,7 +33,7 @@ Three ready-made setups, all built on [`experiments.py`](experiments.py) (preset
 
 | platform | file | GPUs | good for |
 |---|---|---|---|
-| Google Colab | [`colab.ipynb`](https://colab.research.google.com/github/vbtronic/bottlecap-nocaptest/blob/main/colab.ipynb) | free T4; Pro: L4/A100 | `quick` on a T4, `full` with Pro |
+| Google Colab | [`colab.ipynb`](https://colab.research.google.com/github/vbtronic/BottleCapAI_NoCap-Test/blob/main/colab.ipynb) | free T4; Pro: L4/A100 | `quick` on a T4, `full` with Pro |
 | Kaggle | [`kaggle/`](kaggle/) | 2× T4, 30 h/week free | `quick`, two runs at once |
 | Modal | [`modal/modal_run.py`](modal/modal_run.py), [`modal/modal_notebook.ipynb`](modal/modal_notebook.ipynb) | H100/A100, pay per second | the `full` benchmark |
 

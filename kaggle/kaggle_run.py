@@ -10,7 +10,7 @@ import subprocess
 import sys
 import time
 
-REPO = "https://github.com/vbtronic/bottlecap-nocaptest.git"
+REPO = "https://github.com/vbtronic/BottleCapAI_NoCap-Test.git"
 BRANCH = "main"
 PRESET = "quick"  # "full" needs ~45 h per run on a T4 -> does not fit Kaggle's 12 h limit; use Modal
 WORK = "/kaggle/working"

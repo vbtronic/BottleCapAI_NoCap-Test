@@ -19,7 +19,7 @@ import sys
 
 import modal
 
-REPO = "https://github.com/vbtronic/bottlecap-nocaptest.git"
+REPO = "https://github.com/vbtronic/BottleCapAI_NoCap-Test.git"
 BRANCH = "main"
 VOL = "/vol"
 
