@@ -21,7 +21,7 @@ one Kaggle session can differ by 22%. So the comparison is
 | Kaggle v3, 2026-11-21 | pool 1.25, score 64 tok | 4.1401 | **4.1186** | 0.973 | +4.3% (+2.8% raw) | 1.015 ≈ tie |
 | Kaggle v4, 2026-11-21 | pool 1.5, score 64 tok, GPUs swapped | cancelled — stuck in Kaggle's "Starting" | | | | |
 | Kaggle v5, 2026-11-21 | same as v4 (re-submitted) | queued | | | | |
-| Colab full | full preset, Smart Filtering only, pool from v5 | planned | | | | |
+| Kaggle full (v6) | full preset, filter only, pool from v5 | prepared, starts after v5 | | | | |
 
 The filter is better per step in both attempts (−0.016 and −0.022 val loss at step 1200, ~2–3% fewer
 steps), but so far scoring costs about as much as it saves.
@@ -103,8 +103,8 @@ Plan:
 
 ## Next
 
-- **Colab full run**: Smart Filtering only, full preset (4768 steps, stop at 3.3821), with the better pool
-  from v5, on a free T4 (~45 h, several sessions that resume from a checkpoint on Google Drive). The baseline
-  is not re-run: the official baseline reaches 3.3821 at step 4768 by definition, so steps ratio = filter
-  steps / 4768, step cost from the first session (`python experiments.py eval-full <log>`). Less precise than
-  a same-hardware baseline (fp16 on a T4 vs. bf16 on a 4090), but it fits a free account.
+- **Kaggle full run** (`kaggle/full/`): Smart Filtering only, full preset (4768 steps, stop at 3.3821), with
+  the better pool from v5. Both T4s train one run together (~22 h), spread over 2–3 sessions of 12 h that
+  hand over a checkpoint. The baseline is not re-run: the official baseline reaches 3.3821 at step 4768 by
+  definition, so steps ratio = filter steps / 4768; step cost comes from session 1. Less precise than a
+  same-hardware baseline (fp16 on T4 vs. bf16 on a 4090), but fits the free quota.

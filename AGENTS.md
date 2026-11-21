@@ -18,7 +18,7 @@ clicking through notebooks. Read [README.md](README.md) and [IDEA.md](IDEA.md) f
 | `train_gpt2.py` | the only training script; `--smart_filter` off = exact upstream baseline |
 | `experiments.py` | `PRESETS`, `train_cmd()`, `shards_needed()`, `evaluate()`; CLI: `cmd`, `eval` |
 | `kaggle/kaggle_run.py` + `kernel-metadata.json` | Kaggle script kernel; `RUNS` dict picks GPU + filter per run |
-| `colab.ipynb` | notebook; default: `full`, Smart Filtering only, auto-resume from Drive (`RESUME="auto"`); evaluate with `experiments.py eval-full <log>` |
+| `colab.ipynb` | interactive notebook (Smart Filtering, optional baseline, `RESUME="auto"` from Drive) |
 | `results/<platform>-vN/` | committed stdout logs (`<name>.txt`), `summary.md`, `compare.png` |
 | `EXPERIMENTS.md` | log of every attempt — append a section per run |
 
@@ -49,6 +49,16 @@ python experiments.py eval results/kaggle-vN/quick
   web UI (notebook → Versions).
 - Only `quick` fits: `full` needs ~45 h per run on a T4.
 - Poll status every ~5 min; don't busy-loop the API.
+
+## Kaggle full run (`kaggle/full/`)
+
+- `full_run.py`: Smart Filtering only, full preset, DDP on both T4s, `--save_every 50`, stops itself after
+  11.3 h and writes `full/STATUS` = `CONTINUE` / `DONE` / `FAILED`. Set `POOL` before the first session.
+- First session: `kaggle kernels push -p kaggle/full --accelerator NvidiaTeslaT4`.
+- When a session is COMPLETE: `kaggle/full/next_session.sh` downloads logs to `results/kaggle-full/`,
+  re-uploads `latest.pt` as the private dataset `<user>/nocap-ckpt` and pushes the next session.
+- Quota: each session uses ~12 h of the 30 h/week; check the user's remaining quota before pushing.
+- Evaluate: `python experiments.py eval-full results/kaggle-full` (steps to 3.3821 / 4768 × step cost).
 
 ## After a run
 
