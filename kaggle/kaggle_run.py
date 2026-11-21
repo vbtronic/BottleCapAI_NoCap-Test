@@ -1,7 +1,10 @@
 # Kaggle runner (2x T4), all measured inside one session so both GPUs are known:
 #   phase 1a  baseline on GPU0 + baseline on GPU1            -> speed difference of the two GPUs
 #   phase 1b  filter pipeline, never filtering, on GPU0 + baseline on GPU1 -> overhead of the pipeline itself
-#   phase 2   baseline on GPU0 + Smart Filtering (score_len 64) on GPU1, quick preset, full length
+#   phase 2   baseline + Smart Filtering (score_len 64), quick preset, full length, configured from phase 1:
+#             - pipeline overhead > 2%  -> filter scores sequentially (--no_score_stream)
+#             - one GPU > 2% faster     -> the filter runs on the slower one (its time is corrected anyway,
+#                                          and a "win" can't come from a faster card)
 # Push with:  kaggle kernels push -p kaggle --accelerator NvidiaTeslaT4   (GPU T4 x2, Internet on)
 # Results (logs, plot, summary.txt) land in /kaggle/working -> the notebook's Output tab.
 import os
@@ -101,8 +104,23 @@ p0, b1 = sec_per_step(l1b["pipe_gpu0"], a, b), sec_per_step(l1b["base_gpu1"], a,
 say(f"1b pipeline  GPU0 {p0:.3f} s/step (baseline GPU0 in 1a: {g0:.3f}) -> pipeline overhead "
     f"{100 * (p0 / g0 - 1):+.1f}% | GPU1 baseline {b1:.3f} s/step")
 
-# ── phase 2: baseline vs cheap-scoring filter, full quick run ───────────────
-l2 = run_pair("2", {"baseline": ("0", QUICK), "smartfilter": ("1", f"{QUICK} {FILTER}")})
+# ── phase 2: configured from phase 1 ────────────────────────────────────────
+overhead = p0 / g0 - 1
+filter_args = f"{QUICK} {FILTER}"
+if overhead > 0.02:
+    filter_args += " --no_score_stream"
+    say(f"2 decision: side stream costs {100 * overhead:+.1f}% -> filter scores sequentially (--no_score_stream)")
+else:
+    say(f"2 decision: side stream costs {100 * overhead:+.1f}% -> keep the concurrent side stream")
+# GPU speed: average both baseline measurements of GPU1
+gpu_ratio = (g1 + b1) / 2 / g0
+if gpu_ratio < 0.98:  # GPU1 faster -> baseline on GPU1, filter on GPU0
+    gpu_base, gpu_filter, filter_scale = "1", "0", 1 / gpu_ratio
+else:
+    gpu_base, gpu_filter, filter_scale = "0", "1", gpu_ratio
+say(f"2 decision: GPU1/GPU0 = {gpu_ratio:.3f} -> baseline on GPU{gpu_base}, filter on GPU{gpu_filter}, "
+    f"filter time divided by {filter_scale:.3f}")
+l2 = run_pair("2", {"baseline": (gpu_base, QUICK), "smartfilter": (gpu_filter, filter_args)})
 
 
 def val_curve(phase, name):
@@ -116,9 +134,8 @@ for n, c in curves.items():
     s, v, t = c[-1]
     say(f"2 {n:12s} step {s} val {v:.4f} time {t / 3600:.3f} h "
         f"({sec_per_step(l2[n], 200, 1199):.3f} s/step at steps 200-1199)")
-# GPU1 runs the filter: divide its time by the GPU speed ratio to compare as if on GPU0
 fs, fv, ft = curves["smartfilter"][-1]
-say(f"2 smartfilter time corrected to GPU0 speed: {ft / gpu_ratio / 3600:.3f} h")
+say(f"2 smartfilter time corrected to the baseline GPU's speed: {ft / filter_scale / 3600:.3f} h")
 
 
 def time_to(curve, target, scale=1.0):
@@ -129,9 +146,9 @@ def time_to(curve, target, scale=1.0):
 
 
 target = curves["baseline"][-1][1]
-tb, tf = time_to(curves["baseline"], target), time_to(curves["smartfilter"], target, gpu_ratio)
+tb, tf = time_to(curves["baseline"], target), time_to(curves["smartfilter"], target, filter_scale)
 if tb and tf:
-    say(f"2 time to val {target:.4f}: baseline {tb / 3600:.3f} h, smartfilter (GPU0-corrected) {tf / 3600:.3f} h "
+    say(f"2 time to val {target:.4f}: baseline {tb / 3600:.3f} h, smartfilter (GPU-corrected) {tf / 3600:.3f} h "
         f"-> {100 * (tf / tb - 1):+.1f}%")
 
 import matplotlib
@@ -140,9 +157,9 @@ import matplotlib.pyplot as plt
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 4.5))
 for n, c in curves.items():
-    scale = gpu_ratio if n == "smartfilter" else 1.0
+    scale = filter_scale if n == "smartfilter" else 1.0
     s, v, t = zip(*c)
-    ax1.plot([x / scale / 3600 for x in t], v, marker=".", label=n + (" (GPU0-corrected)" if scale != 1 else ""))
+    ax1.plot([x / scale / 3600 for x in t], v, marker=".", label=n + (" (GPU-corrected)" if scale != 1 else ""))
     ax2.plot(s, v, marker=".", label=n)
 for ax, xl in [(ax1, "training time [h]"), (ax2, "step")]:
     ax.set_xlabel(xl); ax.set_ylabel("val loss"); ax.set_ylim(top=6); ax.grid(alpha=.3); ax.legend()

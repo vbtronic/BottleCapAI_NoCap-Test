@@ -417,6 +417,8 @@ if __name__ == "__main__":
                         help="score only the first N tokens of each candidate")
     parser.add_argument("--filter_warmup", type=int, default=128,
                         help="no filtering for the first N steps (model scores are noise)")
+    parser.add_argument("--no_score_stream", action="store_true",
+                        help="score on the main CUDA stream (sequential) instead of a side stream")
     # misc
     parser.add_argument("--no_compile", action="store_true")
     parser.add_argument("--device", type=str, default="")
@@ -569,7 +571,8 @@ if __name__ == "__main__":
 
     prefetcher = BatchPrefetcher(train_loader, plan, start_m=start_step * accum,
                                  depth=max(8, 2 * accum), pin=device_type == "cuda")
-    score_stream = torch.cuda.Stream() if device_type == "cuda" and smart_filter is not None else None
+    use_side_stream = device_type == "cuda" and smart_filter is not None and not args.no_score_stream
+    score_stream = torch.cuda.Stream() if use_side_stream else None
     trained_state = train_loader.state_dict()  # loader position after the last trained micro-batch
 
     def prepare():
