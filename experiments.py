@@ -22,6 +22,9 @@ SEQ = 1024
 TOKENS_PER_SHARD = 100_000_000
 
 PRESETS = {
+    # ~10 min on a T4: checks that every cell / step works (filter included), says nothing about quality
+    "smoke": dict(tokens_per_step=131072, num_iterations=40, warmup_iters=10, warmdown_iters=10,
+                  val_loss_every=20, filter_warmup=20),
     # 157M baseline tokens, fits a free T4 (~2.5-3 h per run); does not reach 3.3821
     "quick": dict(tokens_per_step=131072, num_iterations=1200, warmup_iters=100, warmdown_iters=300,
                   val_loss_every=100),
@@ -33,9 +36,10 @@ PRESETS = {
 FILTER_DEFAULTS = dict(pool=1.25, hard_frac=0.5, score_len=64, warmup=128)
 
 
-def shards_needed(preset, pool=None, warmup=128):
+def shards_needed(preset, pool=None, warmup=None):
     """Training shards to download: the filter reads `pool` x more data after its warm-up."""
     p = PRESETS[preset]
+    warmup = warmup or p.get("filter_warmup", FILTER_DEFAULTS["warmup"])
     steps = p["num_iterations"]
     tokens = p["tokens_per_step"] * (min(warmup, steps) + (steps - min(warmup, steps)) * (pool or 1.0))
     return min(50, math.ceil(tokens / TOKENS_PER_SHARD) + 1)
@@ -54,6 +58,7 @@ def train_cmd(preset, out_dir, ckpt_dir, batch_size=16, pool=None, score_len=Non
            f"--target_val_loss {TARGET} --output_dir {out_dir} --ckpt_dir {ckpt_dir}")
     if pool is not None:
         f = dict(FILTER_DEFAULTS, pool=pool)
+        f["warmup"] = p.get("filter_warmup", f["warmup"])
         if score_len is not None:
             f["score_len"] = score_len
         if hard_frac is not None:
