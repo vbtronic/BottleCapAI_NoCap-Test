@@ -17,7 +17,6 @@ one Kaggle session can differ by 22%. So the comparison is
 
 | attempt | filter | baseline val @1200 | filter val @1200 | steps ratio | step cost | time ratio |
 |---|---|---|---|---|---|---|
-| Colab T4, 2026-11-01 | — (baseline only) | 4.1296 | — | — | — | — |
 | Kaggle v2, 2026-11-20 | pool 1.25, score 256 tok | 4.1326 | **4.1163** | 0.979 | +10.0% | 1.077 ✗ |
 | Kaggle v3, 2026-11-21 | pool 1.25, score 64 tok | 4.1401 | **4.1186** | 0.973 | +4.3% (+2.8% raw) | 1.015 ≈ tie |
 | Kaggle v4, 2026-11-21 | pool 1.5, score 64 tok, GPUs swapped | running | | | | |
@@ -34,7 +33,7 @@ the account was not phone-verified, which Kaggle requires for GPUs and Internet.
 
 ## Kaggle v2 — first attempt (2026-11-20, `results/kaggle-v2/`)
 
-Code: commit `900eabc`. What changed against the Colab version before it:
+Code: commit `900eabc`. What changed against the previous version (commit `39703b2`):
 
 - **Rotary fix**: the cos/sin cache was keyed on the last sequence length; with scoring (256) and training
   (1024) alternating, every micro-batch invalidated it, which under `torch.compile` means recompiles until
