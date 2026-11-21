@@ -72,11 +72,11 @@ def train_cmd(preset, out_dir, ckpt_dir, batch_size=16, pool=None, score_len=Non
 
 # ── evaluation ────────────────────────────────────────────────────────────────
 
-def parse_run(path):
-    """Parse the stdout log (<name>.txt) of train_gpt2.py."""
+def parse_run(path, lines=None):
+    """Parse the stdout log (<name>.txt) of train_gpt2.py (or the given lines of it)."""
     run = dict(name=os.path.splitext(os.path.basename(path))[0], val=[], steps={}, warmup=None,
                filter=False, device="")
-    for line in open(path, errors="replace"):
+    for line in (lines if lines is not None else open(path, errors="replace")):
         if line.startswith("using device"):
             run["device"] = line.split(":", 1)[1].strip()
         m = re.match(r"\[filter\] pool=(\d+) keep=(\d+).*warmup=(\d+)", line)
@@ -170,8 +170,16 @@ BASELINE_STEPS = 4768  # the official baseline reaches TARGET at its last step, 
 
 
 def evaluate_full(session_logs):
-    """Smart Filtering only, full preset, possibly over several sessions (logs in chronological order)."""
-    runs = [parse_run(p) for p in session_logs]
+    """Smart Filtering only, full preset; one log appended across resumed sessions, or several in order."""
+    runs = []
+    for p in session_logs:  # a log appended over resumed sessions is split at each "Running pytorch"
+        chunk = []
+        for line in open(p, errors="replace"):
+            if line.startswith("Running pytorch") and chunk:
+                runs.append(parse_run(p, chunk))
+                chunk = []
+            chunk.append(line)
+        runs.append(parse_run(p, chunk))
     val = sorted({s: (s, v, t) for r in runs for s, v, t in r["val"]}.values())
     first = runs[0]
     w = first["warmup"]
@@ -210,14 +218,14 @@ if __name__ == "__main__":
     e.add_argument("dir", help="folder with <name>.txt stdout logs")
     e.add_argument("--baseline", default="baseline")
     e.add_argument("--plot", default="")
-    f = sub.add_parser("eval-full", help="full Kaggle run over several sessions (results/kaggle-full)")
-    f.add_argument("dir")
+    f = sub.add_parser("eval-full", help="filter-only full run vs. the official 4768 baseline steps")
+    f.add_argument("path", help="stdout log of the run, or a folder of session logs")
     a = ap.parse_args()
     if a.cmd == "cmd":
         print(train_cmd(a.preset, f"{a.out}/{a.name}", f"{a.out}/ckpt/{a.name}", pool=a.pool, score_len=a.score_len))
     elif a.cmd == "eval-full":
-        logs = sorted(glob.glob(os.path.join(a.dir, "**", "session_*.txt"), recursive=True),
-                      key=os.path.basename)
+        logs = [a.path] if os.path.isfile(a.path) else sorted(
+            glob.glob(os.path.join(a.path, "**", "*.txt"), recursive=True), key=os.path.basename)
         evaluate_full(logs)
     else:
         evaluate(sorted(glob.glob(os.path.join(a.dir, "*.txt"))), a.baseline, a.plot or None)
