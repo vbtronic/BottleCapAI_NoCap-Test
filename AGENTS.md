@@ -18,8 +18,7 @@ clicking through notebooks. Read [README.md](README.md) and [IDEA.md](IDEA.md) f
 | `train_gpt2.py` | the only training script; `--smart_filter` off = exact upstream baseline |
 | `experiments.py` | `PRESETS`, `train_cmd()`, `shards_needed()`, `evaluate()`; CLI: `cmd`, `eval` |
 | `kaggle/kaggle_run.py` + `kernel-metadata.json` | Kaggle script kernel; `RUNS` dict picks GPU + filter per run |
-| `modal/modal_run.py` | Modal app: `download` → parallel `train` → `evaluate`, data in volume `nocap` |
-| `colab.ipynb`, `modal/modal_notebook.ipynb` | interactive notebooks (same cells), runs sequentially on one GPU; Modal notebook also has `PRESET = "smoke"` (~10 min check) |
+| `colab.ipynb` | interactive notebook, runs baseline and filter one after the other on one GPU |
 | `results/<platform>-vN/` | committed stdout logs (`<name>.txt`), `summary.md`, `compare.png` |
 | `EXPERIMENTS.md` | log of every attempt — append a section per run |
 
@@ -50,20 +49,6 @@ python experiments.py eval results/kaggle-vN/quick
   web UI (notebook → Versions).
 - Only `quick` fits: `full` needs ~45 h per run on a T4.
 - Poll status every ~5 min; don't busy-loop the API.
-
-## Modal (paid per second, H100/A100; $30/month free credit)
-
-```bash
-pip install modal && modal setup
-modal run --detach modal/modal_run.py --preset full --gpu H100 --pool 1.25 --score_len 64
-modal app logs nocap-smartfilter                        # follow progress
-modal volume ls nocap runs/full
-modal volume get nocap runs/full results/modal-full
-python experiments.py eval results/modal-full
-```
-
-- `--runs baseline,smartfilter` (default) starts one container per run, in parallel, same GPU type.
-- A full baseline + filter pair on H100 costs roughly $20; ask the user before launching paid runs.
 
 ## After a run
 

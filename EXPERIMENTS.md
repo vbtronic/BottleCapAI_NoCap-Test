@@ -96,4 +96,5 @@ Lessons:
 
 ## Next
 
-- Full preset (4768 steps, stop at 3.3821) on Modal H100s: `modal run modal/modal_run.py --pool <best>`.
+- Full preset (4768 steps, stop at 3.3821) with the better pool — needs a GPU platform where a ~45 h T4 run
+  (or a few hours on an A100/H100) fits.

@@ -29,22 +29,17 @@ Better per step, not yet faster in time. Full log: [EXPERIMENTS.md](EXPERIMENTS.
 
 ## Running
 
-Three ready-made setups, all built on [`experiments.py`](experiments.py) (presets, commands, evaluation):
+Two ready-made setups, both built on [`experiments.py`](experiments.py) (presets, commands, evaluation):
 
 | platform | file | GPUs | good for |
 |---|---|---|---|
 | Google Colab | [`colab.ipynb`](https://colab.research.google.com/github/vbtronic/BottleCapAI_NoCap-Test/blob/main/colab.ipynb) | free T4; Pro: L4/A100 | `quick` on a T4, `full` with Pro |
 | Kaggle | [`kaggle/`](kaggle/) | 2× T4, 30 h/week free | `quick`, two runs at once |
-| Modal | [`modal/modal_run.py`](modal/modal_run.py), [`modal/modal_notebook.ipynb`](modal/modal_notebook.ipynb) | H100/A100, pay per second | the `full` benchmark |
 
 ```bash
 # Kaggle (API token in ~/.kaggle/access_token, phone-verified account)
 kaggle kernels push -p kaggle --accelerator NvidiaTeslaT4
 kaggle kernels output <user>/nocap-smartfilter -p results/kaggle-vN
-
-# Modal (pip install modal && modal setup)
-modal run --detach modal/modal_run.py --preset full --gpu H100
-modal volume get nocap runs/full results/modal-full
 
 # compare runs
 python experiments.py eval results/kaggle-v3/2
@@ -96,7 +91,7 @@ Other additions over upstream: `--target_val_loss`, `--grad_clip` (off), `--save
 | `train_gpt2.py` | training script (upstream model, Smart Filtering, pipeline) |
 | `experiments.py` | presets, training commands, GPU-independent evaluation |
 | `run.sh`, `run_baseline.sh` | full benchmark on a local GPU |
-| `colab.ipynb`, `kaggle/`, `modal/` | cloud setups |
+| `colab.ipynb`, `kaggle/` | cloud setups |
 | `results/` | logs of past runs |
 | `IDEA.md`, `EXPERIMENTS.md`, `AGENTS.md` | method, experiment log, instructions for agents |
 

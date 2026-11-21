@@ -75,4 +75,4 @@ Full log with tables: [EXPERIMENTS.md](EXPERIMENTS.md). Short version (`quick` p
 | Kaggle v3 | pool 1.25, 64-token scoring | 0.973 | +2.8…4.3% | 1.00–1.015 — tie |
 
 The selection works (≈2–3% fewer steps to the same val loss, reproduced twice), but scoring still costs
-about as much as it saves. Next: a wider pool (1.5) and the full 4768-step benchmark on Modal.
+about as much as it saves. Next: a wider pool (1.5) and the full 4768-step benchmark.

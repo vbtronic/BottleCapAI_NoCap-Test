@@ -12,7 +12,7 @@ import time
 
 REPO = "https://github.com/vbtronic/BottleCapAI_NoCap-Test.git"
 BRANCH = "main"
-PRESET = "quick"  # "full" needs ~45 h per run on a T4 -> does not fit Kaggle's 12 h limit; use Modal
+PRESET = "quick"  # "full" needs ~45 h per run on a T4 -> does not fit Kaggle's 12 h limit
 WORK = "/kaggle/working"
 SRC = "/tmp/nocap"  # outside /kaggle/working: data and checkpoints stay out of the output
 

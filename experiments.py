@@ -1,4 +1,4 @@
-"""Shared experiment helpers for Colab, Kaggle and Modal: presets, training commands, evaluation.
+"""Shared experiment helpers for Colab and Kaggle: presets, training commands, evaluation.
 
     python experiments.py cmd  --preset quick --name smartfilter --pool 1.5   # print a training command
     python experiments.py eval results/kaggle-v3/2                             # compare runs in a folder
