@@ -20,8 +20,8 @@ one Kaggle session can differ by 22%. So the comparison is
 | Kaggle v2, 2026-11-20 | pool 1.25, score 256 tok | 4.1326 | **4.1163** | 0.979 | +10.0% | 1.077 ✗ |
 | Kaggle v3, 2026-11-21 | pool 1.25, score 64 tok | 4.1401 | **4.1186** | 0.973 | +4.3% (+2.8% raw) | 1.015 ≈ tie |
 | Kaggle v4, 2026-11-21 | pool 1.5, score 64 tok, GPUs swapped | cancelled — stuck in Kaggle's "Starting" | | | | |
-| Kaggle v5, 2026-11-21 | same as v4 (re-submitted) | queued | | | | |
-| Kaggle full (v6) | full preset, filter only, pool from v5 | prepared, starts after v5 | | | | |
+| Kaggle v5 | same as v4 (re-submitted) | cancelled on 11-21 after ~2 h in the queue; to be run from a friend's account | | | | |
+| Kaggle full (v6) | full preset, filter only, pool from v5 | prepared; a second friend's account runs it after v5 | | | | |
 
 The filter is better per step in both attempts (−0.016 and −0.022 val loss at step 1200, ~2–3% fewer
 steps), but so far scoring costs about as much as it saves.
@@ -91,7 +91,8 @@ Lessons:
 ## Kaggle v4 / v5 — swapped GPUs, stronger filter (2026-11-21)
 
 **v4 was cancelled because of a Kaggle-side problem:** it sat in "Starting…" for ~2.5 h without ever getting a
-GPU (quota was fine: 3 h 41 min of 30 h used). Re-submitted unchanged as **v5**, which is queued.
+GPU (quota was fine: 3 h 41 min of 30 h used). Re-submitted unchanged as **v5**, which then waited in the queue
+for ~2 h and was cancelled too. v5 and v6 will be run from friends' Kaggle accounts ([kaggle/GUIDE.md](kaggle/GUIDE.md)).
 
 Plan:
 
