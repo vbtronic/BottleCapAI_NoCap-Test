@@ -19,7 +19,7 @@ clicking through notebooks. Read [README.md](README.md) and [IDEA.md](IDEA.md) f
 | `experiments.py` | `PRESETS`, `train_cmd()`, `shards_needed()`, `evaluate()`; CLI: `cmd`, `eval` |
 | `kaggle/kaggle_run.py` + `kernel-metadata.json` | Kaggle script kernel; `RUNS` dict picks GPU + filter per run |
 | `modal/modal_run.py` | Modal app: `download` → parallel `train` → `evaluate`, data in volume `nocap` |
-| `colab.ipynb`, `modal/modal_notebook.ipynb` | interactive notebooks (same cells), runs sequentially on one GPU; `PRESET = "smoke"` checks a notebook in ~10 min |
+| `colab.ipynb`, `modal/modal_notebook.ipynb` | interactive notebooks (same cells), runs sequentially on one GPU; Modal notebook also has `PRESET = "smoke"` (~10 min check) |
 | `results/<platform>-vN/` | committed stdout logs (`<name>.txt`), `summary.md`, `compare.png` |
 | `EXPERIMENTS.md` | log of every attempt — append a section per run |
 
