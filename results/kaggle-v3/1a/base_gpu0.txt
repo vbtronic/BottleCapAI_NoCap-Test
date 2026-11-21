@@ -1,0 +1,71 @@
+Running pytorch 2.11.0+cu130
+using device: cuda (Tesla T4)
+tokens per iteration: 131,072
+autocast dtype: torch.float16
+DataLoader: total number of tokens: 300,000,000 across 3 files
+DataLoader: total number of tokens: 100,000,000 across 1 files
+compiling the model...
+[filter] off — baseline
+W1121 09:09:11.712000 103 torch/_inductor/utils.py:1731] [0/0] Not enough SMs to use max_autotune_gemm mode
+step:0/60 | loss 10.989997 | train_time:82.69s | step_avg:82686.55ms
+step:1/60 | loss 9.923929 | train_time:90.33s | step_avg:45167.49ms
+step:2/60 | loss 9.623766 | train_time:98.06s | step_avg:32688.11ms
+step:3/60 | loss 9.354347 | train_time:105.93s | step_avg:26481.46ms
+step:4/60 | loss 8.879864 | train_time:113.98s | step_avg:22796.86ms
+step:5/60 | loss 8.417574 | train_time:122.26s | step_avg:20376.87ms
+step:6/60 | loss 8.017343 | train_time:130.83s | step_avg:18689.73ms
+step:7/60 | loss 7.852790 | train_time:139.68s | step_avg:17460.51ms
+step:8/60 | loss 7.757710 | train_time:148.80s | step_avg:16533.58ms
+step:9/60 | loss 7.715327 | train_time:157.92s | step_avg:15791.76ms
+step:10/60 | loss 11.530488 | train_time:167.01s | step_avg:15182.99ms
+step:11/60 | loss 8.201488 | train_time:175.48s | step_avg:14623.14ms
+step:12/60 | loss 8.059928 | train_time:183.81s | step_avg:14139.58ms
+step:13/60 | loss 8.071065 | train_time:192.11s | step_avg:13722.45ms
+step:14/60 | loss 7.798409 | train_time:200.44s | step_avg:13362.56ms
+step:15/60 | loss 7.954392 | train_time:208.86s | step_avg:13054.01ms
+step:16/60 | loss 7.908873 | train_time:217.38s | step_avg:12786.89ms
+step:17/60 | loss 7.824586 | train_time:225.97s | step_avg:12553.82ms
+step:18/60 | loss 7.757763 | train_time:234.57s | step_avg:12345.78ms
+step:19/60 | loss 7.780723 | train_time:243.23s | step_avg:12161.26ms
+step:20/60 | loss 7.654303 | train_time:251.84s | step_avg:11992.54ms
+step:21/60 | loss 7.667915 | train_time:260.48s | step_avg:11839.84ms
+step:22/60 | loss 7.664899 | train_time:269.09s | step_avg:11699.52ms
+step:23/60 | loss 7.721938 | train_time:277.70s | step_avg:11570.74ms
+step:24/60 | loss 7.791452 | train_time:286.22s | step_avg:11448.86ms
+step:25/60 | loss 7.780735 | train_time:294.70s | step_avg:11334.45ms
+step:26/60 | loss 7.680905 | train_time:303.17s | step_avg:11228.38ms
+step:27/60 | loss 7.667986 | train_time:311.64s | step_avg:11129.90ms
+step:28/60 | loss 7.707076 | train_time:320.11s | step_avg:11038.33ms
+step:29/60 | loss 7.586830 | train_time:328.57s | step_avg:10952.29ms
+step:30/60 | loss 7.541600 | train_time:337.03s | step_avg:10871.91ms
+step:31/60 | loss 7.583690 | train_time:345.49s | step_avg:10796.61ms
+step:32/60 | loss 7.630239 | train_time:353.95s | step_avg:10725.81ms
+step:33/60 | loss 7.653788 | train_time:362.42s | step_avg:10659.31ms
+step:34/60 | loss 7.634756 | train_time:370.88s | step_avg:10596.63ms
+step:35/60 | loss 7.691967 | train_time:379.34s | step_avg:10537.31ms
+step:36/60 | loss 7.595439 | train_time:387.80s | step_avg:10481.11ms
+step:37/60 | loss 7.574492 | train_time:396.26s | step_avg:10428.00ms
+step:38/60 | loss 7.617591 | train_time:404.72s | step_avg:10377.55ms
+step:39/60 | loss 7.561152 | train_time:413.19s | step_avg:10329.77ms
+step:40/60 | loss 7.586340 | train_time:421.66s | step_avg:10284.27ms
+step:41/60 | loss 7.563949 | train_time:430.12s | step_avg:10240.94ms
+step:42/60 | loss 7.629371 | train_time:438.59s | step_avg:10199.87ms
+step:43/60 | loss 7.554726 | train_time:447.07s | step_avg:10160.59ms
+step:44/60 | loss 7.543830 | train_time:455.55s | step_avg:10123.42ms
+step:45/60 | loss 7.560908 | train_time:464.04s | step_avg:10087.79ms
+step:46/60 | loss 7.677883 | train_time:472.50s | step_avg:10053.27ms
+step:47/60 | loss 7.574328 | train_time:480.98s | step_avg:10020.43ms
+step:48/60 | loss 7.526890 | train_time:489.44s | step_avg:9988.67ms
+step:49/60 | loss 7.600289 | train_time:497.91s | step_avg:9958.23ms
+step:50/60 | loss 7.464621 | train_time:506.40s | step_avg:9929.40ms
+step:51/60 | loss 7.541915 | train_time:514.91s | step_avg:9902.13ms
+step:52/60 | loss 7.520337 | train_time:523.40s | step_avg:9875.40ms
+step:53/60 | loss 7.443878 | train_time:531.92s | step_avg:9850.42ms
+step:54/60 | loss 7.394544 | train_time:540.48s | step_avg:9826.83ms
+step:55/60 | loss 7.469920 | train_time:548.98s | step_avg:9803.14ms
+step:56/60 | loss 7.476375 | train_time:557.45s | step_avg:9779.88ms
+step:57/60 | loss 7.468626 | train_time:565.96s | step_avg:9757.96ms
+step:58/60 | loss 7.422170 | train_time:574.50s | step_avg:9737.34ms
+step:59/60 | loss 7.479797 | train_time:583.02s | step_avg:9717.02ms
+peak memory consumption: 9619 MiB
+checkpoint -> /tmp/ckpt/1a/base_gpu0/98780414-2f8e-4153-acd3-ae47881c4325/final.pt

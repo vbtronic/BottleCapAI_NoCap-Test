@@ -413,7 +413,7 @@ if __name__ == "__main__":
                         help="candidates scored per kept sequence (1.25 = eject 20%%)")
     parser.add_argument("--filter_hard_frac", type=float, default=0.5,
                         help="fraction of ejected sequences taken from the hard end")
-    parser.add_argument("--filter_score_len", type=int, default=256,
+    parser.add_argument("--filter_score_len", type=int, default=64,
                         help="score only the first N tokens of each candidate")
     parser.add_argument("--filter_warmup", type=int, default=128,
                         help="no filtering for the first N steps (model scores are noise)")

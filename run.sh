@@ -20,6 +20,6 @@ torchrun --standalone --nproc_per_node=1 train_gpt2.py \
   --smart_filter \
   --filter_pool 1.25 \
   --filter_hard_frac 0.5 \
-  --filter_score_len 256 \
+  --filter_score_len 64 \
   --filter_warmup 128 \
   "$@"

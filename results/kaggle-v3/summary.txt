@@ -1,0 +1,7 @@
+1a baseline  GPU0 8.490 s/step | GPU1 6.598 s/step | GPU1/GPU0 = 0.777
+1b pipeline  GPU0 8.563 s/step (baseline GPU0 in 1a: 8.490) -> pipeline overhead +0.9% | GPU1 baseline 6.836 s/step
+2 baseline     step 1200 val 4.1401 time 2.868 h (8.573 s/step at steps 200-1199)
+2 smartfilter  step 1200 val 4.1186 time 2.441 h (7.311 s/step at steps 200-1199)
+2 smartfilter time corrected to GPU0 speed: 3.141 h
+2 time to val 4.1401: baseline 2.868 h, smartfilter (GPU0-corrected) 3.056 h -> +6.6%
+plot -> /kaggle/working/compare.png
