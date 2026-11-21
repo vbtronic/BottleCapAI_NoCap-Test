@@ -19,7 +19,9 @@ one Kaggle session can differ by 22%. So the comparison is
 |---|---|---|---|---|---|---|
 | Kaggle v2, 2026-11-20 | pool 1.25, score 256 tok | 4.1326 | **4.1163** | 0.979 | +10.0% | 1.077 ✗ |
 | Kaggle v3, 2026-11-21 | pool 1.25, score 64 tok | 4.1401 | **4.1186** | 0.973 | +4.3% (+2.8% raw) | 1.015 ≈ tie |
-| Kaggle v4, 2026-11-21 | pool 1.5, score 64 tok, GPUs swapped | running | | | | |
+| Kaggle v4, 2026-11-21 | pool 1.5, score 64 tok, GPUs swapped | cancelled — stuck in Kaggle's "Starting" | | | | |
+| Kaggle v5, 2026-11-21 | same as v4 (re-submitted) | queued | | | | |
+| Kaggle full (v6) | full preset, filter only, pool from v5 | prepared, starts after v5 | | | | |
 
 The filter is better per step in both attempts (−0.016 and −0.022 val loss at step 1200, ~2–3% fewer
 steps), but so far scoring costs about as much as it saves.
@@ -86,7 +88,12 @@ Lessons:
 - An early hand calculation that called v3 a 2–3% win included step 127 (compiling the scoring graph,
   35 s instead of 7 s) in the unfiltered average. Corrected: a tie.
 
-## Kaggle v4 — swapped GPUs, stronger filter (2026-11-21, running)
+## Kaggle v4 / v5 — swapped GPUs, stronger filter (2026-11-21)
+
+**v4 was cancelled because of a Kaggle-side problem:** it sat in "Starting…" for ~2.5 h without ever getting a
+GPU (quota was fine: 3 h 41 min of 30 h used). Re-submitted unchanged as **v5**, which is queued.
+
+Plan:
 
 - Smart Filtering on **GPU 0**, baseline on **GPU 1** (swapped against v2/v3), so a per-step gain can't
   come from one particular card.
