@@ -51,6 +51,7 @@ python experiments.py eval results/kaggle-v3/2
 ```
 
 How to run it through an AI agent / API: [AGENTS.md](AGENTS.md).
+Step-by-step guide (in Czech) for running v5 and the full run from another Kaggle account: [kaggle/NAVOD.md](kaggle/NAVOD.md).
 
 ### Local CUDA GPU
 
