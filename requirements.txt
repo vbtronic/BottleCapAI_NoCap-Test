@@ -2,4 +2,6 @@ torch>=2.5
 numpy
 huggingface_hub
 matplotlib
-wandb  # optional, only for --log_wandb
+wandb   # optional, only for --log_wandb
+kaggle  # optional, Kaggle runner
+modal   # optional, Modal runner

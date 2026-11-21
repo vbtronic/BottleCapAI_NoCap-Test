@@ -19,19 +19,35 @@ For every micro-batch of `B` sequences:
 
 1. Read a candidate pool of `ceil(B * filter_pool)` sequences (default 1.25 → 20 candidates for B = 16).
 2. Score each candidate with the **live** training model under `no_grad`: mean cross-entropy over the first
-   `filter_score_len` tokens (default 256 of 1024).
+   `filter_score_len` tokens (default 64 of 1024).
 3. Sort by score and eject the easiest `(1 - hard_frac)` and hardest `hard_frac` share of the surplus
    (default 2 + 2 sequences).
 4. Train on the remaining `B` sequences exactly as the baseline does.
 
-Scoring cost: a forward pass is ~1/3 of forward+backward, and scoring touches 1.25 × 1/4 of the tokens,
-so the overhead is roughly 1.25 × 1/4 × 1/3 ≈ **10% per step**. Scoring time is counted as training time.
+Scoring cost: a forward pass is ~1/3 of forward+backward. With a 256-token prefix scoring touches
+1.25 × 1/4 of the tokens → ≈ 10% per step (measured: +10%). With the default 64-token prefix it is
+1.25 × 1/16 × 1/3 ≈ 2.6% (measured: +3–4%). Scoring time is counted as training time.
 The filter is off for the first `filter_warmup` steps (default 128), while the model's scores are still noise.
 Validation always uses the unfiltered validation set.
 
 Data use with the defaults: 128 × 0.52M + 4640 × 0.66M ≈ 3.1B tokens read, within the 5B budget.
 
-For the method to win, the step-for-step improvement from better data has to beat the ~10% slowdown per step.
+For the method to win, the step-for-step improvement from better data has to beat the slowdown per step.
+
+## Pipeline
+
+Reading, scoring and training overlap instead of running one after another:
+
+```
+CPU thread   │ read + pin micro-batch m+1 … m+8   (disk, next shard, int64, pinned memory)
+side stream  │ copy + score + select m+1          (live model, no_grad, prefix only)
+main stream  │ forward/backward m                 (only the kept sequences)
+```
+
+The main stream waits for the side stream only before `optimizer.step()`, so a scoring pass never sees
+half-updated weights; the first micro-batch of a step is scored with the previous step's weights.
+Measured overhead of the pipeline itself: +0.9%. On one GPU the two streams mostly take turns, so the
+scoring cost is hidden only partly — the cheap 64-token prefix matters more than the overlap.
 
 ## History — what the first version did wrong
 
@@ -51,9 +67,12 @@ The first version (April 2026, commits `0882d9a`..`8870eb5`) had the same goal b
 
 ## Results
 
-Pending — run `colab.ipynb` (baseline and Smart Filtering on the same GPU).
+Full log with tables: [EXPERIMENTS.md](EXPERIMENTS.md). Short version (`quick` preset, T4):
 
-| Run | GPU | Steps | Time to val ≤ 3.3821 | Tokens read |
+| attempt | filter | steps ratio | step cost | time ratio |
 |---|---|---|---|---|
-| baseline | | | | |
-| Smart Filtering | | | | |
+| Kaggle v2 | pool 1.25, 256-token scoring | 0.979 | +10.0% | 1.077 — loses |
+| Kaggle v3 | pool 1.25, 64-token scoring | 0.973 | +2.8…4.3% | 1.00–1.015 — tie |
+
+The selection works (≈2–3% fewer steps to the same val loss, reproduced twice), but scoring still costs
+about as much as it saves. Next: a wider pool (1.5) and the full 4768-step benchmark on Modal.
