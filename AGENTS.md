@@ -25,7 +25,7 @@ clicking through notebooks. Read [README.md](README.md) and [IDEA.md](IDEA.md) f
 
 ## Before launching anything
 
-1. Smoke test locally (CPU/MPS, ~1 min):
+1. Smoke test locally (~1 min; on a Mac it runs on the Apple GPU via MPS, otherwise CPU):
    `python train_gpt2.py --batch_size 4 --sequence_length 256 --num_iterations 10 --grad_accumulation_steps 2 --learning_rate 0.0018 --warmup_iters 5 --smart_filter --filter_warmup 3 --filter_score_len 64`
    With `--smart_filter` off, train losses must match the previous commit bit for bit.
 2. Cloud runners `git clone` the **`main` branch from GitHub** — commit and push first, otherwise the

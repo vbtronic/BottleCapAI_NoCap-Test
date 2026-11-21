@@ -64,7 +64,11 @@ python data/cached_fineweb10B.py 33   # 33 × 100M tokens (Smart Filtering reads
 Both stop at val loss ≤ 3.3821. Extra flags are passed through, e.g. `./run.sh --log_wandb`.
 GPUs without bf16 (T4, V100) train in fp16 with a gradient scaler.
 
-### Smoke test (CPU / Apple Silicon)
+### Smoke test (Mac GPU via MPS, or CPU)
+
+The device is picked automatically: NVIDIA GPU (CUDA) → Apple Silicon GPU (MPS, shares memory with the CPU) → CPU.
+On a Mac this runs on the GPU part of the chip. It only checks that the code works (~1 min); for real runs
+use a cloud GPU — `torch.compile` and mixed precision are enabled on CUDA only.
 
 ```bash
 python train_gpt2.py --batch_size 4 --sequence_length 256 --num_iterations 20 --grad_accumulation_steps 2 \
