@@ -28,8 +28,8 @@ https://www.kaggle.com/settings → **Quotas**.
 3. **Tools** (Python 3.10+, git; on Windows use WSL or Git Bash):
    ```bash
    pip install kaggle
-   git clone https://github.com/vbtronic/BottleCapAI_NoCap-Test.git
-   cd BottleCapAI_NoCap-Test
+   git clone https://github.com/vbtronic/NoCap-Test.git
+   cd NoCap-Test
    kaggle config view          # must show your username
    ```
 4. **Set your username** in both kernel configs (replace `YOUR_USERNAME` with your Kaggle username):

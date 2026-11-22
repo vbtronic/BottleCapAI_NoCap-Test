@@ -17,7 +17,7 @@ import sys
 import time
 
 START = time.time()
-REPO = "https://github.com/vbtronic/BottleCapAI_NoCap-Test.git"
+REPO = "https://github.com/vbtronic/NoCap-Test.git"
 BRANCH = "main"
 POOL = 1.5         # chosen from Kaggle v5 (time ratio 0.984 vs. 1.015 for pool 1.25 in v3)
 SCORE_LEN = 64

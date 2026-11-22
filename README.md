@@ -35,7 +35,7 @@ Two ready-made setups, both built on [`experiments.py`](experiments.py) (presets
 
 | platform | file | GPUs | good for |
 |---|---|---|---|
-| Google Colab | [`colab.ipynb`](https://colab.research.google.com/github/vbtronic/BottleCapAI_NoCap-Test/blob/main/colab.ipynb) | free T4 | interactive notebook, auto-resume from Google Drive |
+| Google Colab | [`colab.ipynb`](https://colab.research.google.com/github/vbtronic/NoCap-Test/blob/main/colab.ipynb) | free T4 | interactive notebook, auto-resume from Google Drive |
 | Kaggle | [`kaggle/`](kaggle/) | 2× T4, 30 h/week free | `quick`, two runs at once |
 
 ```bash
