@@ -19,7 +19,7 @@ import time
 START = time.time()
 REPO = "https://github.com/vbtronic/BottleCapAI_NoCap-Test.git"
 BRANCH = "main"
-POOL = 1.25        # set from the quick-preset comparison before the first session
+POOL = 1.5         # chosen from Kaggle v5 (time ratio 0.984 vs. 1.015 for pool 1.25 in v3)
 SCORE_LEN = 64
 SAVE_EVERY = 50    # ~15 min of training on 2x T4; at most that much is lost per session
 STOP_AFTER_H = 11.3  # stop training before Kaggle's 12 h limit kills the session (outputs would be lost)

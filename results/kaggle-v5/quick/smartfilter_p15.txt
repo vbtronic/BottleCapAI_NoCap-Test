@@ -1,0 +1,1224 @@
+Running pytorch 2.11.0+cu130
+using device: cuda (Tesla T4)
+tokens per iteration: 131,072
+autocast dtype: torch.float16
+DataLoader: total number of tokens: 400,000,000 across 4 files
+DataLoader: total number of tokens: 100,000,000 across 1 files
+compiling the model...
+[filter] pool=24 keep=16 eject easy=4 hard=4 score_len=64 warmup=128
+W1122 10:22:06.240000 125 torch/_inductor/utils.py:1731] [0/0] Not enough SMs to use max_autotune_gemm mode
+step:0/1200 | val loss 10.987275 | train_time:0.0s | tokens_read:0.0M
+step:0/1200 | loss 10.989996 | train_time:86.83s | step_avg:86834.77ms
+step:1/1200 | loss 10.611435 | train_time:94.10s | step_avg:47048.48ms
+step:2/1200 | loss 10.188361 | train_time:101.47s | step_avg:33823.97ms
+step:3/1200 | loss 9.892557 | train_time:108.78s | step_avg:27195.14ms
+step:4/1200 | loss 9.674480 | train_time:115.90s | step_avg:23180.01ms
+step:5/1200 | loss 9.555980 | train_time:122.88s | step_avg:20479.37ms
+step:6/1200 | loss 9.410490 | train_time:129.75s | step_avg:18536.37ms
+step:7/1200 | loss 9.341271 | train_time:136.58s | step_avg:17072.19ms
+step:8/1200 | loss 9.236336 | train_time:143.38s | step_avg:15931.32ms
+step:9/1200 | loss 9.129746 | train_time:150.17s | step_avg:15017.36ms
+step:10/1200 | loss 9.005265 | train_time:157.01s | step_avg:14274.08ms
+step:11/1200 | loss 8.901124 | train_time:163.90s | step_avg:13658.52ms
+step:12/1200 | loss 8.647305 | train_time:170.84s | step_avg:13141.71ms
+step:13/1200 | loss 8.548794 | train_time:177.83s | step_avg:12701.93ms
+step:14/1200 | loss 8.326156 | train_time:184.83s | step_avg:12322.23ms
+step:15/1200 | loss 8.370105 | train_time:191.81s | step_avg:11988.29ms
+step:16/1200 | loss 8.157630 | train_time:198.76s | step_avg:11691.93ms
+step:17/1200 | loss 8.057385 | train_time:205.68s | step_avg:11426.48ms
+step:18/1200 | loss 7.842840 | train_time:212.58s | step_avg:11188.54ms
+step:19/1200 | loss 7.798191 | train_time:219.46s | step_avg:10972.96ms
+step:20/1200 | loss 7.646230 | train_time:226.33s | step_avg:10777.54ms
+step:21/1200 | loss 7.567186 | train_time:233.18s | step_avg:10599.27ms
+step:22/1200 | loss 7.497753 | train_time:240.05s | step_avg:10436.85ms
+step:23/1200 | loss 7.542994 | train_time:246.92s | step_avg:10288.17ms
+step:24/1200 | loss 7.590687 | train_time:253.82s | step_avg:10152.88ms
+step:25/1200 | loss 7.511310 | train_time:260.73s | step_avg:10028.10ms
+step:26/1200 | loss 7.450453 | train_time:267.63s | step_avg:9912.08ms
+step:27/1200 | loss 7.389033 | train_time:274.56s | step_avg:9805.65ms
+step:28/1200 | loss 7.434582 | train_time:281.48s | step_avg:9706.09ms
+step:29/1200 | loss 7.280685 | train_time:288.42s | step_avg:9614.15ms
+step:30/1200 | loss 7.251972 | train_time:295.34s | step_avg:9527.11ms
+step:31/1200 | loss 7.359131 | train_time:302.26s | step_avg:9445.52ms
+step:32/1200 | loss 7.321486 | train_time:309.22s | step_avg:9370.33ms
+step:33/1200 | loss 7.344233 | train_time:316.19s | step_avg:9299.81ms
+step:34/1200 | loss 7.313160 | train_time:323.17s | step_avg:9233.46ms
+step:35/1200 | loss 7.341852 | train_time:330.14s | step_avg:9170.60ms
+step:36/1200 | loss 7.127478 | train_time:337.11s | step_avg:9111.21ms
+step:37/1200 | loss 7.106544 | train_time:344.09s | step_avg:9055.02ms
+step:38/1200 | loss 7.132208 | train_time:351.09s | step_avg:9002.21ms
+step:39/1200 | loss 7.085114 | train_time:358.07s | step_avg:8951.66ms
+step:40/1200 | loss 7.099253 | train_time:365.06s | step_avg:8903.99ms
+step:41/1200 | loss 7.063509 | train_time:372.06s | step_avg:8858.51ms
+step:42/1200 | loss 7.069031 | train_time:379.04s | step_avg:8814.98ms
+step:43/1200 | loss 7.012417 | train_time:386.04s | step_avg:8773.67ms
+step:44/1200 | loss 6.975143 | train_time:393.02s | step_avg:8733.86ms
+step:45/1200 | loss 6.956105 | train_time:400.01s | step_avg:8695.94ms
+step:46/1200 | loss 7.045725 | train_time:407.00s | step_avg:8659.52ms
+step:47/1200 | loss 6.921953 | train_time:414.00s | step_avg:8624.94ms
+step:48/1200 | loss 6.882547 | train_time:421.00s | step_avg:8591.89ms
+step:49/1200 | loss 6.994862 | train_time:428.00s | step_avg:8560.06ms
+step:50/1200 | loss 6.806699 | train_time:435.01s | step_avg:8529.60ms
+step:51/1200 | loss 6.865646 | train_time:442.01s | step_avg:8500.12ms
+step:52/1200 | loss 6.831532 | train_time:449.01s | step_avg:8471.83ms
+step:53/1200 | loss 6.744676 | train_time:456.00s | step_avg:8444.48ms
+step:54/1200 | loss 6.652863 | train_time:463.00s | step_avg:8418.22ms
+step:55/1200 | loss 6.756611 | train_time:470.01s | step_avg:8393.08ms
+step:56/1200 | loss 6.752937 | train_time:477.03s | step_avg:8368.95ms
+step:57/1200 | loss 6.795472 | train_time:484.04s | step_avg:8345.51ms
+step:58/1200 | loss 6.772003 | train_time:491.05s | step_avg:8322.82ms
+step:59/1200 | loss 6.790310 | train_time:498.04s | step_avg:8300.71ms
+step:60/1200 | loss 6.791843 | train_time:505.04s | step_avg:8279.42ms
+step:61/1200 | loss 6.629293 | train_time:512.06s | step_avg:8258.96ms
+step:62/1200 | loss 6.699731 | train_time:519.05s | step_avg:8238.96ms
+step:63/1200 | loss 6.768791 | train_time:526.05s | step_avg:8219.60ms
+step:64/1200 | loss 6.705647 | train_time:533.05s | step_avg:8200.75ms
+step:65/1200 | loss 6.620068 | train_time:540.05s | step_avg:8182.52ms
+step:66/1200 | loss 6.784956 | train_time:547.04s | step_avg:8164.73ms
+step:67/1200 | loss 6.697577 | train_time:554.05s | step_avg:8147.73ms
+step:68/1200 | loss 6.597073 | train_time:561.04s | step_avg:8130.98ms
+step:69/1200 | loss 6.745297 | train_time:568.03s | step_avg:8114.69ms
+step:70/1200 | loss 6.795804 | train_time:575.03s | step_avg:8099.03ms
+step:71/1200 | loss 6.692081 | train_time:582.02s | step_avg:8083.60ms
+step:72/1200 | loss 6.634616 | train_time:589.01s | step_avg:8068.59ms
+step:73/1200 | loss 6.888532 | train_time:596.00s | step_avg:8054.10ms
+step:74/1200 | loss 6.682801 | train_time:603.00s | step_avg:8039.97ms
+step:75/1200 | loss 6.627961 | train_time:609.98s | step_avg:8026.07ms
+step:76/1200 | loss 6.360663 | train_time:616.98s | step_avg:8012.70ms
+step:77/1200 | loss 6.587850 | train_time:623.96s | step_avg:7999.47ms
+step:78/1200 | loss 6.633134 | train_time:630.96s | step_avg:7986.79ms
+step:79/1200 | loss 6.569151 | train_time:637.95s | step_avg:7974.33ms
+step:80/1200 | loss 6.624968 | train_time:644.92s | step_avg:7961.96ms
+step:81/1200 | loss 6.448472 | train_time:651.91s | step_avg:7950.17ms
+step:82/1200 | loss 6.521584 | train_time:658.90s | step_avg:7938.50ms
+step:83/1200 | loss 6.615573 | train_time:665.88s | step_avg:7927.12ms
+step:84/1200 | loss 6.809263 | train_time:672.86s | step_avg:7915.95ms
+step:85/1200 | loss 6.673692 | train_time:679.83s | step_avg:7905.05ms
+step:86/1200 | loss 6.436094 | train_time:686.82s | step_avg:7894.51ms
+step:87/1200 | loss 6.478780 | train_time:693.81s | step_avg:7884.17ms
+step:88/1200 | loss 6.544851 | train_time:700.79s | step_avg:7874.07ms
+step:89/1200 | loss 6.434937 | train_time:707.79s | step_avg:7864.30ms
+step:90/1200 | loss 6.472986 | train_time:714.77s | step_avg:7854.60ms
+step:91/1200 | loss 6.297367 | train_time:721.75s | step_avg:7845.12ms
+step:92/1200 | loss 6.579877 | train_time:728.73s | step_avg:7835.82ms
+step:93/1200 | loss 6.433932 | train_time:735.70s | step_avg:7826.62ms
+step:94/1200 | loss 6.477676 | train_time:742.66s | step_avg:7817.51ms
+step:95/1200 | loss 6.399755 | train_time:749.62s | step_avg:7808.55ms
+step:96/1200 | loss 6.411066 | train_time:756.60s | step_avg:7799.98ms
+step:97/1200 | loss 6.279371 | train_time:763.58s | step_avg:7791.67ms
+step:98/1200 | loss 6.263205 | train_time:770.54s | step_avg:7783.27ms
+step:99/1200 | loss 6.461542 | train_time:777.51s | step_avg:7775.06ms
+step:100/1200 | val loss 6.426883 | train_time:777.5s | tokens_read:13.1M
+step:100/1200 | loss 6.406890 | train_time:784.48s | step_avg:7767.17ms
+step:101/1200 | loss 6.386880 | train_time:791.44s | step_avg:7759.22ms
+step:102/1200 | loss 6.324334 | train_time:798.40s | step_avg:7751.41ms
+step:103/1200 | loss 6.366102 | train_time:805.35s | step_avg:7743.79ms
+step:104/1200 | loss 6.318605 | train_time:812.30s | step_avg:7736.18ms
+step:105/1200 | loss 6.407509 | train_time:819.24s | step_avg:7728.72ms
+step:106/1200 | loss 6.260261 | train_time:826.20s | step_avg:7721.47ms
+step:107/1200 | loss 6.365981 | train_time:833.15s | step_avg:7714.36ms
+step:108/1200 | loss 6.187434 | train_time:840.10s | step_avg:7707.36ms
+step:109/1200 | loss 6.168179 | train_time:847.04s | step_avg:7700.33ms
+step:110/1200 | loss 6.302805 | train_time:853.99s | step_avg:7693.56ms
+step:111/1200 | loss 6.258871 | train_time:860.96s | step_avg:7687.18ms
+step:112/1200 | loss 6.280408 | train_time:867.94s | step_avg:7680.92ms
+step:113/1200 | loss 6.284592 | train_time:874.94s | step_avg:7674.90ms
+step:114/1200 | loss 6.360447 | train_time:881.93s | step_avg:7669.00ms
+step:115/1200 | loss 6.186426 | train_time:888.92s | step_avg:7663.15ms
+step:116/1200 | loss 6.113989 | train_time:895.93s | step_avg:7657.49ms
+step:117/1200 | loss 6.158730 | train_time:902.95s | step_avg:7652.10ms
+step:118/1200 | loss 6.282721 | train_time:909.97s | step_avg:7646.77ms
+step:119/1200 | loss 6.214886 | train_time:916.98s | step_avg:7641.49ms
+step:120/1200 | loss 6.147270 | train_time:924.00s | step_avg:7636.33ms
+step:121/1200 | loss 6.103176 | train_time:931.01s | step_avg:7631.25ms
+step:122/1200 | loss 6.501817 | train_time:938.04s | step_avg:7626.37ms
+step:123/1200 | loss 6.113990 | train_time:945.07s | step_avg:7621.52ms
+step:124/1200 | loss 5.929521 | train_time:952.09s | step_avg:7616.74ms
+step:125/1200 | loss 6.101321 | train_time:959.13s | step_avg:7612.18ms
+step:126/1200 | loss 6.098268 | train_time:966.18s | step_avg:7607.69ms
+step:127/1200 | loss 6.203812 | train_time:998.01s | step_avg:7796.92ms | score kept:6.32 easy:5.41 hard:7.31
+step:128/1200 | loss 6.095872 | train_time:1004.78s | step_avg:7789.00ms | score kept:6.20 easy:5.38 hard:7.00
+step:129/1200 | loss 6.048750 | train_time:1011.62s | step_avg:7781.72ms | score kept:6.15 easy:5.26 hard:7.02
+step:130/1200 | loss 6.117465 | train_time:1018.52s | step_avg:7774.97ms | score kept:6.17 easy:5.27 hard:7.14
+step:131/1200 | loss 5.971078 | train_time:1025.44s | step_avg:7768.51ms | score kept:6.14 easy:5.22 hard:7.21
+step:132/1200 | loss 6.011638 | train_time:1032.40s | step_avg:7762.40ms | score kept:6.13 easy:5.20 hard:7.18
+step:133/1200 | loss 6.198115 | train_time:1039.40s | step_avg:7756.69ms | score kept:6.14 easy:5.20 hard:7.16
+step:134/1200 | loss 6.098572 | train_time:1046.42s | step_avg:7751.23ms | score kept:6.14 easy:5.19 hard:7.19
+step:135/1200 | loss 6.012457 | train_time:1053.46s | step_avg:7746.04ms | score kept:6.13 easy:5.17 hard:7.19
+step:136/1200 | loss 5.983241 | train_time:1060.54s | step_avg:7741.15ms | score kept:6.12 easy:5.15 hard:7.19
+step:137/1200 | loss 6.032410 | train_time:1067.61s | step_avg:7736.30ms | score kept:6.12 easy:5.15 hard:7.19
+step:138/1200 | loss 6.037668 | train_time:1074.70s | step_avg:7731.68ms | score kept:6.13 easy:5.16 hard:7.18
+step:139/1200 | loss 6.121176 | train_time:1081.81s | step_avg:7727.23ms | score kept:6.13 easy:5.17 hard:7.19
+step:140/1200 | loss 5.936142 | train_time:1088.94s | step_avg:7722.95ms | score kept:6.12 easy:5.16 hard:7.19
+step:141/1200 | loss 5.982965 | train_time:1096.07s | step_avg:7718.79ms | score kept:6.11 easy:5.15 hard:7.17
+step:142/1200 | loss 5.899039 | train_time:1103.21s | step_avg:7714.78ms | score kept:6.11 easy:5.13 hard:7.15
+step:143/1200 | loss 6.039258 | train_time:1110.36s | step_avg:7710.82ms | score kept:6.11 easy:5.13 hard:7.15
+step:144/1200 | loss 5.966828 | train_time:1117.52s | step_avg:7707.05ms | score kept:6.10 easy:5.12 hard:7.14
+step:145/1200 | loss 6.011103 | train_time:1124.68s | step_avg:7703.32ms | score kept:6.11 easy:5.13 hard:7.14
+step:146/1200 | loss 6.126048 | train_time:1131.86s | step_avg:7699.76ms | score kept:6.11 easy:5.13 hard:7.15
+step:147/1200 | loss 5.966086 | train_time:1139.06s | step_avg:7696.35ms | score kept:6.10 easy:5.12 hard:7.14
+step:148/1200 | loss 5.968560 | train_time:1146.25s | step_avg:7692.96ms | score kept:6.10 easy:5.12 hard:7.13
+step:149/1200 | loss 5.954215 | train_time:1153.44s | step_avg:7689.59ms | score kept:6.10 easy:5.12 hard:7.12
+step:150/1200 | loss 5.966154 | train_time:1160.64s | step_avg:7686.33ms | score kept:6.10 easy:5.12 hard:7.13
+step:151/1200 | loss 5.940714 | train_time:1167.86s | step_avg:7683.26ms | score kept:6.09 easy:5.11 hard:7.13
+step:152/1200 | loss 5.799449 | train_time:1175.06s | step_avg:7680.14ms | score kept:6.07 easy:5.10 hard:7.12
+step:153/1200 | loss 5.974894 | train_time:1182.28s | step_avg:7677.17ms | score kept:6.07 easy:5.09 hard:7.11
+step:154/1200 | loss 5.982818 | train_time:1189.49s | step_avg:7674.16ms | score kept:6.07 easy:5.09 hard:7.12
+step:155/1200 | loss 6.109653 | train_time:1196.70s | step_avg:7671.18ms | score kept:6.07 easy:5.10 hard:7.15
+step:156/1200 | loss 5.937525 | train_time:1203.92s | step_avg:7668.31ms | score kept:6.06 easy:5.08 hard:7.13
+step:157/1200 | loss 5.915823 | train_time:1211.15s | step_avg:7665.52ms | score kept:6.06 easy:5.09 hard:7.12
+step:158/1200 | loss 5.864045 | train_time:1218.38s | step_avg:7662.78ms | score kept:6.05 easy:5.09 hard:7.09
+step:159/1200 | loss 5.859522 | train_time:1225.61s | step_avg:7660.07ms | score kept:6.05 easy:5.08 hard:7.09
+step:160/1200 | loss 5.901691 | train_time:1232.85s | step_avg:7657.45ms | score kept:6.05 easy:5.07 hard:7.13
+step:161/1200 | loss 5.796405 | train_time:1240.10s | step_avg:7654.95ms | score kept:6.03 easy:5.05 hard:7.12
+step:162/1200 | loss 5.802519 | train_time:1247.34s | step_avg:7652.42ms | score kept:6.02 easy:5.05 hard:7.09
+step:163/1200 | loss 5.901597 | train_time:1254.60s | step_avg:7650.00ms | score kept:6.02 easy:5.04 hard:7.08
+step:164/1200 | loss 5.867061 | train_time:1261.86s | step_avg:7647.62ms | score kept:6.02 easy:5.05 hard:7.07
+step:165/1200 | loss 5.765126 | train_time:1269.12s | step_avg:7645.32ms | score kept:6.01 easy:5.03 hard:7.07
+step:166/1200 | loss 5.795546 | train_time:1276.38s | step_avg:7643.00ms | score kept:6.00 easy:5.02 hard:7.08
+step:167/1200 | loss 5.913332 | train_time:1283.64s | step_avg:7640.74ms | score kept:6.00 easy:5.02 hard:7.08
+step:168/1200 | loss 5.838055 | train_time:1290.92s | step_avg:7638.56ms | score kept:6.00 easy:5.02 hard:7.07
+step:169/1200 | loss 5.872683 | train_time:1298.18s | step_avg:7636.35ms | score kept:6.00 easy:5.03 hard:7.07
+step:170/1200 | loss 5.733530 | train_time:1305.44s | step_avg:7634.15ms | score kept:5.99 easy:5.00 hard:7.06
+step:171/1200 | loss 5.791265 | train_time:1312.70s | step_avg:7631.97ms | score kept:5.98 easy:4.99 hard:7.06
+step:172/1200 | loss 5.816713 | train_time:1319.97s | step_avg:7629.88ms | score kept:5.98 easy:4.98 hard:7.05
+step:173/1200 | loss 5.823667 | train_time:1327.22s | step_avg:7627.71ms | score kept:5.98 easy:4.99 hard:7.07
+step:174/1200 | loss 5.809158 | train_time:1334.50s | step_avg:7625.70ms | score kept:5.98 easy:4.99 hard:7.05
+step:175/1200 | loss 5.758364 | train_time:1341.76s | step_avg:7623.63ms | score kept:5.97 easy:4.98 hard:7.03
+step:176/1200 | loss 5.719975 | train_time:1349.03s | step_avg:7621.61ms | score kept:5.95 easy:4.96 hard:7.02
+step:177/1200 | loss 5.718521 | train_time:1356.31s | step_avg:7619.72ms | score kept:5.94 easy:4.96 hard:7.00
+step:178/1200 | loss 5.682403 | train_time:1363.57s | step_avg:7617.73ms | score kept:5.93 easy:4.95 hard:6.99
+step:179/1200 | loss 5.796057 | train_time:1370.85s | step_avg:7615.82ms | score kept:5.93 easy:4.96 hard:6.97
+step:180/1200 | loss 5.896093 | train_time:1378.12s | step_avg:7613.90ms | score kept:5.93 easy:4.95 hard:6.98
+step:181/1200 | loss 5.734827 | train_time:1385.40s | step_avg:7612.07ms | score kept:5.92 easy:4.96 hard:6.98
+step:182/1200 | loss 5.743361 | train_time:1392.70s | step_avg:7610.36ms | score kept:5.92 easy:4.95 hard:6.98
+step:183/1200 | loss 5.758165 | train_time:1399.98s | step_avg:7608.58ms | score kept:5.91 easy:4.94 hard:6.97
+step:184/1200 | loss 5.770663 | train_time:1407.25s | step_avg:7606.76ms | score kept:5.91 easy:4.94 hard:6.96
+step:185/1200 | loss 5.800314 | train_time:1414.53s | step_avg:7604.99ms | score kept:5.90 easy:4.93 hard:6.94
+step:186/1200 | loss 5.765222 | train_time:1421.81s | step_avg:7603.28ms | score kept:5.90 easy:4.94 hard:6.96
+step:187/1200 | loss 5.640649 | train_time:1429.07s | step_avg:7601.41ms | score kept:5.89 easy:4.93 hard:6.93
+step:188/1200 | loss 5.709238 | train_time:1436.32s | step_avg:7599.57ms | score kept:5.87 easy:4.91 hard:6.92
+step:189/1200 | loss 5.676281 | train_time:1443.58s | step_avg:7597.81ms | score kept:5.86 easy:4.91 hard:6.90
+step:190/1200 | loss 5.634128 | train_time:1450.85s | step_avg:7596.07ms | score kept:5.85 easy:4.91 hard:6.89
+step:191/1200 | loss 5.692559 | train_time:1458.11s | step_avg:7594.30ms | score kept:5.84 easy:4.90 hard:6.88
+step:192/1200 | loss 5.677261 | train_time:1465.34s | step_avg:7592.44ms | score kept:5.85 easy:4.90 hard:6.88
+step:193/1200 | loss 5.597744 | train_time:1472.59s | step_avg:7590.66ms | score kept:5.84 easy:4.89 hard:6.87
+step:194/1200 | loss 5.763642 | train_time:1479.85s | step_avg:7588.95ms | score kept:5.84 easy:4.89 hard:6.86
+step:195/1200 | loss 5.764753 | train_time:1487.09s | step_avg:7587.21ms | score kept:5.84 easy:4.89 hard:6.85
+step:196/1200 | loss 5.682794 | train_time:1494.33s | step_avg:7585.45ms | score kept:5.83 easy:4.87 hard:6.86
+step:197/1200 | loss 5.606578 | train_time:1501.57s | step_avg:7583.70ms | score kept:5.82 easy:4.87 hard:6.85
+step:198/1200 | loss 5.658986 | train_time:1508.81s | step_avg:7581.97ms | score kept:5.82 easy:4.86 hard:6.85
+step:199/1200 | loss 5.584620 | train_time:1516.03s | step_avg:7580.16ms | score kept:5.80 easy:4.85 hard:6.83
+step:200/1200 | val loss 5.709156 | train_time:1516.0s | tokens_read:30.9M
+step:200/1200 | loss 5.700901 | train_time:1523.29s | step_avg:7578.55ms | score kept:5.81 easy:4.85 hard:6.82
+step:201/1200 | loss 5.613958 | train_time:1530.52s | step_avg:7576.82ms | score kept:5.80 easy:4.86 hard:6.82
+step:202/1200 | loss 5.532258 | train_time:1537.74s | step_avg:7575.07ms | score kept:5.80 easy:4.85 hard:6.81
+step:203/1200 | loss 5.607862 | train_time:1544.97s | step_avg:7573.37ms | score kept:5.79 easy:4.84 hard:6.81
+step:204/1200 | loss 5.711692 | train_time:1552.20s | step_avg:7571.71ms | score kept:5.80 easy:4.85 hard:6.80
+step:205/1200 | loss 5.627327 | train_time:1559.42s | step_avg:7570.01ms | score kept:5.79 easy:4.84 hard:6.79
+step:206/1200 | loss 5.583995 | train_time:1566.66s | step_avg:7568.39ms | score kept:5.79 easy:4.84 hard:6.81
+step:207/1200 | loss 5.630299 | train_time:1573.89s | step_avg:7566.76ms | score kept:5.78 easy:4.83 hard:6.82
+step:208/1200 | loss 5.517442 | train_time:1581.10s | step_avg:7565.09ms | score kept:5.77 easy:4.82 hard:6.80
+step:209/1200 | loss 5.621161 | train_time:1588.34s | step_avg:7563.54ms | score kept:5.77 easy:4.81 hard:6.78
+step:210/1200 | loss 5.652092 | train_time:1595.56s | step_avg:7561.90ms | score kept:5.76 easy:4.83 hard:6.77
+step:211/1200 | loss 5.488768 | train_time:1602.78s | step_avg:7560.29ms | score kept:5.75 easy:4.81 hard:6.75
+step:212/1200 | loss 5.655091 | train_time:1610.00s | step_avg:7558.69ms | score kept:5.77 easy:4.83 hard:6.79
+step:213/1200 | loss 5.511572 | train_time:1617.23s | step_avg:7557.16ms | score kept:5.76 easy:4.82 hard:6.78
+step:214/1200 | loss 5.552542 | train_time:1624.46s | step_avg:7555.62ms | score kept:5.75 easy:4.81 hard:6.77
+step:215/1200 | loss 5.625650 | train_time:1631.68s | step_avg:7554.07ms | score kept:5.76 easy:4.80 hard:6.77
+step:216/1200 | loss 5.600892 | train_time:1638.91s | step_avg:7552.56ms | score kept:5.75 easy:4.81 hard:6.76
+step:217/1200 | loss 5.519935 | train_time:1646.15s | step_avg:7551.12ms | score kept:5.74 easy:4.80 hard:6.76
+step:218/1200 | loss 5.643561 | train_time:1653.38s | step_avg:7549.69ms | score kept:5.74 easy:4.80 hard:6.76
+step:219/1200 | loss 5.582862 | train_time:1660.62s | step_avg:7548.29ms | score kept:5.73 easy:4.79 hard:6.75
+step:220/1200 | loss 5.616600 | train_time:1667.89s | step_avg:7547.02ms | score kept:5.73 easy:4.78 hard:6.75
+step:221/1200 | loss 5.755860 | train_time:1675.16s | step_avg:7545.76ms | score kept:5.75 easy:4.79 hard:6.77
+step:222/1200 | loss 5.603943 | train_time:1682.41s | step_avg:7544.46ms | score kept:5.75 easy:4.79 hard:6.77
+step:223/1200 | loss 5.673655 | train_time:1689.68s | step_avg:7543.21ms | score kept:5.75 easy:4.79 hard:6.79
+step:224/1200 | loss 5.494918 | train_time:1696.93s | step_avg:7541.92ms | score kept:5.74 easy:4.78 hard:6.79
+step:225/1200 | loss 5.665616 | train_time:1704.20s | step_avg:7540.69ms | score kept:5.74 easy:4.79 hard:6.78
+step:226/1200 | loss 5.542856 | train_time:1711.47s | step_avg:7539.53ms | score kept:5.73 easy:4.78 hard:6.77
+step:227/1200 | loss 5.570235 | train_time:1718.74s | step_avg:7538.34ms | score kept:5.73 easy:4.78 hard:6.76
+step:228/1200 | loss 5.622777 | train_time:1725.98s | step_avg:7537.03ms | score kept:5.73 easy:4.78 hard:6.75
+step:229/1200 | loss 5.532184 | train_time:1733.23s | step_avg:7535.78ms | score kept:5.72 easy:4.77 hard:6.76
+step:230/1200 | loss 5.525170 | train_time:1740.47s | step_avg:7534.49ms | score kept:5.71 easy:4.76 hard:6.75
+step:231/1200 | loss 5.585351 | train_time:1747.71s | step_avg:7533.23ms | score kept:5.71 easy:4.77 hard:6.75
+step:232/1200 | loss 5.541830 | train_time:1754.97s | step_avg:7532.05ms | score kept:5.71 easy:4.76 hard:6.74
+step:233/1200 | loss 5.560674 | train_time:1762.21s | step_avg:7530.83ms | score kept:5.70 easy:4.75 hard:6.73
+step:234/1200 | loss 5.437339 | train_time:1769.46s | step_avg:7529.60ms | score kept:5.69 easy:4.75 hard:6.72
+step:235/1200 | loss 5.550838 | train_time:1776.70s | step_avg:7528.40ms | score kept:5.68 easy:4.74 hard:6.73
+step:236/1200 | loss 5.516896 | train_time:1783.95s | step_avg:7527.22ms | score kept:5.68 easy:4.74 hard:6.73
+step:237/1200 | loss 5.537269 | train_time:1791.19s | step_avg:7526.03ms | score kept:5.68 easy:4.74 hard:6.74
+step:238/1200 | loss 5.394280 | train_time:1798.45s | step_avg:7524.88ms | score kept:5.66 easy:4.73 hard:6.71
+step:239/1200 | loss 5.563843 | train_time:1805.68s | step_avg:7523.65ms | score kept:5.66 easy:4.73 hard:6.74
+step:240/1200 | loss 5.496258 | train_time:1812.90s | step_avg:7522.42ms | score kept:5.66 easy:4.74 hard:6.73
+step:241/1200 | loss 5.447560 | train_time:1820.14s | step_avg:7521.23ms | score kept:5.65 easy:4.73 hard:6.72
+step:242/1200 | loss 5.505746 | train_time:1827.36s | step_avg:7520.01ms | score kept:5.65 easy:4.73 hard:6.70
+step:243/1200 | loss 5.442252 | train_time:1834.59s | step_avg:7518.80ms | score kept:5.64 easy:4.72 hard:6.68
+step:244/1200 | loss 5.385834 | train_time:1841.81s | step_avg:7517.60ms | score kept:5.63 easy:4.71 hard:6.67
+step:245/1200 | loss 5.659182 | train_time:1849.05s | step_avg:7516.47ms | score kept:5.64 easy:4.70 hard:6.67
+step:246/1200 | loss 5.474344 | train_time:1856.27s | step_avg:7515.27ms | score kept:5.65 easy:4.70 hard:6.68
+step:247/1200 | loss 5.494736 | train_time:1863.50s | step_avg:7514.12ms | score kept:5.64 easy:4.71 hard:6.66
+step:248/1200 | loss 5.552640 | train_time:1870.75s | step_avg:7513.04ms | score kept:5.65 easy:4.71 hard:6.67
+step:249/1200 | loss 5.442433 | train_time:1877.97s | step_avg:7511.89ms | score kept:5.65 easy:4.71 hard:6.66
+step:250/1200 | loss 5.562419 | train_time:1885.22s | step_avg:7510.82ms | score kept:5.64 easy:4.69 hard:6.70
+step:251/1200 | loss 5.408258 | train_time:1892.45s | step_avg:7509.74ms | score kept:5.64 easy:4.68 hard:6.69
+step:252/1200 | loss 5.130481 | train_time:1899.67s | step_avg:7508.59ms | score kept:5.61 easy:4.65 hard:6.67
+step:253/1200 | loss 5.483232 | train_time:1906.90s | step_avg:7507.47ms | score kept:5.60 easy:4.65 hard:6.66
+step:254/1200 | loss 5.416498 | train_time:1914.10s | step_avg:7506.26ms | score kept:5.60 easy:4.65 hard:6.65
+step:255/1200 | loss 5.409999 | train_time:1921.30s | step_avg:7505.07ms | score kept:5.59 easy:4.64 hard:6.65
+step:256/1200 | loss 5.399089 | train_time:1928.53s | step_avg:7504.01ms | score kept:5.58 easy:4.63 hard:6.65
+step:257/1200 | loss 5.441122 | train_time:1935.77s | step_avg:7502.98ms | score kept:5.59 easy:4.63 hard:6.67
+step:258/1200 | loss 5.413819 | train_time:1942.97s | step_avg:7501.82ms | score kept:5.58 easy:4.63 hard:6.65
+step:259/1200 | loss 5.491250 | train_time:1950.19s | step_avg:7500.72ms | score kept:5.59 easy:4.64 hard:6.65
+step:260/1200 | loss 5.721379 | train_time:1957.43s | step_avg:7499.72ms | score kept:5.61 easy:4.65 hard:6.67
+step:261/1200 | loss 5.450849 | train_time:1964.64s | step_avg:7498.61ms | score kept:5.61 easy:4.64 hard:6.66
+step:262/1200 | loss 5.448362 | train_time:1971.85s | step_avg:7497.52ms | score kept:5.60 easy:4.63 hard:6.67
+step:263/1200 | loss 5.433296 | train_time:1979.06s | step_avg:7496.43ms | score kept:5.59 easy:4.63 hard:6.66
+step:264/1200 | loss 5.374578 | train_time:1986.26s | step_avg:7495.33ms | score kept:5.59 easy:4.64 hard:6.66
+step:265/1200 | loss 5.468089 | train_time:1993.45s | step_avg:7494.19ms | score kept:5.60 easy:4.64 hard:6.68
+step:266/1200 | loss 5.387100 | train_time:2000.65s | step_avg:7493.07ms | score kept:5.59 easy:4.63 hard:6.67
+step:267/1200 | loss 5.355476 | train_time:2007.87s | step_avg:7492.07ms | score kept:5.59 easy:4.62 hard:6.67
+step:268/1200 | loss 5.399813 | train_time:2015.08s | step_avg:7491.02ms | score kept:5.58 easy:4.63 hard:6.65
+step:269/1200 | loss 5.390196 | train_time:2022.30s | step_avg:7490.00ms | score kept:5.58 easy:4.63 hard:6.64
+step:270/1200 | loss 5.350940 | train_time:2029.53s | step_avg:7489.03ms | score kept:5.57 easy:4.62 hard:6.64
+step:271/1200 | loss 5.348580 | train_time:2036.76s | step_avg:7488.10ms | score kept:5.56 easy:4.62 hard:6.65
+step:272/1200 | loss 5.360869 | train_time:2044.00s | step_avg:7487.16ms | score kept:5.55 easy:4.62 hard:6.64
+step:273/1200 | loss 5.379444 | train_time:2051.21s | step_avg:7486.18ms | score kept:5.55 easy:4.62 hard:6.65
+step:274/1200 | loss 5.415022 | train_time:2058.41s | step_avg:7485.14ms | score kept:5.55 easy:4.61 hard:6.64
+step:275/1200 | loss 5.333781 | train_time:2065.62s | step_avg:7484.13ms | score kept:5.54 easy:4.61 hard:6.62
+step:276/1200 | loss 5.269115 | train_time:2072.85s | step_avg:7483.20ms | score kept:5.52 easy:4.59 hard:6.61
+step:277/1200 | loss 5.501437 | train_time:2080.07s | step_avg:7482.25ms | score kept:5.53 easy:4.59 hard:6.61
+step:278/1200 | loss 5.333434 | train_time:2087.27s | step_avg:7481.26ms | score kept:5.53 easy:4.59 hard:6.62
+step:279/1200 | loss 5.387636 | train_time:2094.47s | step_avg:7480.24ms | score kept:5.53 easy:4.59 hard:6.60
+step:280/1200 | loss 5.331312 | train_time:2101.68s | step_avg:7479.30ms | score kept:5.52 easy:4.59 hard:6.59
+step:281/1200 | loss 5.261531 | train_time:2108.89s | step_avg:7478.32ms | score kept:5.51 easy:4.59 hard:6.58
+step:282/1200 | loss 5.318264 | train_time:2116.10s | step_avg:7477.39ms | score kept:5.51 easy:4.58 hard:6.58
+step:283/1200 | loss 5.289473 | train_time:2123.31s | step_avg:7476.44ms | score kept:5.50 easy:4.58 hard:6.56
+step:284/1200 | loss 5.320192 | train_time:2130.51s | step_avg:7475.47ms | score kept:5.49 easy:4.57 hard:6.54
+step:285/1200 | loss 5.400876 | train_time:2137.72s | step_avg:7474.56ms | score kept:5.50 easy:4.57 hard:6.56
+step:286/1200 | loss 5.320936 | train_time:2144.95s | step_avg:7473.70ms | score kept:5.49 easy:4.56 hard:6.55
+step:287/1200 | loss 5.342426 | train_time:2152.18s | step_avg:7472.86ms | score kept:5.49 easy:4.55 hard:6.54
+step:288/1200 | loss 5.268841 | train_time:2159.41s | step_avg:7472.01ms | score kept:5.48 easy:4.55 hard:6.53
+step:289/1200 | loss 5.372667 | train_time:2166.64s | step_avg:7471.17ms | score kept:5.49 easy:4.57 hard:6.53
+step:290/1200 | loss 5.304861 | train_time:2173.87s | step_avg:7470.34ms | score kept:5.49 easy:4.56 hard:6.52
+step:291/1200 | loss 5.262888 | train_time:2181.12s | step_avg:7469.60ms | score kept:5.47 easy:4.56 hard:6.51
+step:292/1200 | loss 5.362369 | train_time:2188.35s | step_avg:7468.77ms | score kept:5.47 easy:4.55 hard:6.52
+step:293/1200 | loss 5.348913 | train_time:2195.60s | step_avg:7468.03ms | score kept:5.47 easy:4.55 hard:6.51
+step:294/1200 | loss 5.312357 | train_time:2202.84s | step_avg:7467.24ms | score kept:5.48 easy:4.56 hard:6.51
+step:295/1200 | loss 5.297340 | train_time:2210.10s | step_avg:7466.54ms | score kept:5.47 easy:4.55 hard:6.52
+step:296/1200 | loss 5.209377 | train_time:2217.32s | step_avg:7465.73ms | score kept:5.46 easy:4.53 hard:6.50
+step:297/1200 | loss 5.216111 | train_time:2224.55s | step_avg:7464.95ms | score kept:5.45 easy:4.53 hard:6.49
+step:298/1200 | loss 5.251305 | train_time:2231.80s | step_avg:7464.22ms | score kept:5.45 easy:4.52 hard:6.48
+step:299/1200 | loss 5.252820 | train_time:2239.05s | step_avg:7463.50ms | score kept:5.45 easy:4.53 hard:6.47
+step:300/1200 | val loss 5.318165 | train_time:2239.0s | tokens_read:50.6M
+step:300/1200 | loss 5.352077 | train_time:2246.31s | step_avg:7462.84ms | score kept:5.45 easy:4.53 hard:6.48
+step:301/1200 | loss 5.353286 | train_time:2253.57s | step_avg:7462.16ms | score kept:5.45 easy:4.52 hard:6.51
+step:302/1200 | loss 5.279879 | train_time:2260.83s | step_avg:7461.48ms | score kept:5.44 easy:4.52 hard:6.51
+step:303/1200 | loss 5.222536 | train_time:2268.08s | step_avg:7460.79ms | score kept:5.44 easy:4.51 hard:6.50
+step:304/1200 | loss 5.227783 | train_time:2275.31s | step_avg:7460.02ms | score kept:5.44 easy:4.51 hard:6.50
+step:305/1200 | loss 5.257579 | train_time:2282.55s | step_avg:7459.31ms | score kept:5.43 easy:4.50 hard:6.49
+step:306/1200 | loss 5.236815 | train_time:2289.78s | step_avg:7458.58ms | score kept:5.43 easy:4.50 hard:6.49
+step:307/1200 | loss 5.222383 | train_time:2296.99s | step_avg:7457.78ms | score kept:5.43 easy:4.50 hard:6.50
+step:308/1200 | loss 5.129136 | train_time:2304.21s | step_avg:7456.99ms | score kept:5.42 easy:4.50 hard:6.47
+step:309/1200 | loss 5.260081 | train_time:2311.45s | step_avg:7456.29ms | score kept:5.42 easy:4.51 hard:6.47
+step:310/1200 | loss 5.080990 | train_time:2318.66s | step_avg:7455.50ms | score kept:5.40 easy:4.49 hard:6.44
+step:311/1200 | loss 5.287344 | train_time:2325.89s | step_avg:7454.78ms | score kept:5.41 easy:4.50 hard:6.46
+step:312/1200 | loss 5.237834 | train_time:2333.09s | step_avg:7453.97ms | score kept:5.40 easy:4.48 hard:6.45
+step:313/1200 | loss 5.168875 | train_time:2340.31s | step_avg:7453.21ms | score kept:5.39 easy:4.48 hard:6.45
+step:314/1200 | loss 5.278014 | train_time:2347.52s | step_avg:7452.45ms | score kept:5.40 easy:4.48 hard:6.45
+step:315/1200 | loss 5.224155 | train_time:2354.74s | step_avg:7451.71ms | score kept:5.40 easy:4.49 hard:6.44
+step:316/1200 | loss 5.207279 | train_time:2361.94s | step_avg:7450.92ms | score kept:5.40 easy:4.49 hard:6.44
+step:317/1200 | loss 5.189425 | train_time:2369.16s | step_avg:7450.18ms | score kept:5.39 easy:4.49 hard:6.44
+step:318/1200 | loss 5.499842 | train_time:2376.39s | step_avg:7449.51ms | score kept:5.41 easy:4.50 hard:6.47
+step:319/1200 | loss 5.157210 | train_time:2383.62s | step_avg:7448.81ms | score kept:5.40 easy:4.50 hard:6.46
+step:320/1200 | loss 5.264048 | train_time:2390.86s | step_avg:7448.17ms | score kept:5.40 easy:4.50 hard:6.45
+step:321/1200 | loss 5.360306 | train_time:2398.10s | step_avg:7447.52ms | score kept:5.41 easy:4.50 hard:6.44
+step:322/1200 | loss 5.305596 | train_time:2405.34s | step_avg:7446.86ms | score kept:5.41 easy:4.50 hard:6.44
+step:323/1200 | loss 5.217993 | train_time:2412.56s | step_avg:7446.17ms | score kept:5.41 easy:4.49 hard:6.47
+step:324/1200 | loss 5.280802 | train_time:2419.80s | step_avg:7445.54ms | score kept:5.41 easy:4.49 hard:6.46
+step:325/1200 | loss 5.176805 | train_time:2427.06s | step_avg:7444.96ms | score kept:5.40 easy:4.48 hard:6.45
+step:326/1200 | loss 5.337259 | train_time:2434.31s | step_avg:7444.39ms | score kept:5.41 easy:4.49 hard:6.45
+step:327/1200 | loss 5.224119 | train_time:2441.57s | step_avg:7443.80ms | score kept:5.40 easy:4.48 hard:6.46
+step:328/1200 | loss 5.121427 | train_time:2448.83s | step_avg:7443.26ms | score kept:5.40 easy:4.47 hard:6.46
+step:329/1200 | loss 5.187105 | train_time:2456.08s | step_avg:7442.67ms | score kept:5.38 easy:4.46 hard:6.44
+step:330/1200 | loss 5.215707 | train_time:2463.35s | step_avg:7442.13ms | score kept:5.39 easy:4.47 hard:6.44
+step:331/1200 | loss 5.189011 | train_time:2470.60s | step_avg:7441.55ms | score kept:5.38 easy:4.47 hard:6.44
+step:332/1200 | loss 5.223738 | train_time:2477.86s | step_avg:7441.03ms | score kept:5.37 easy:4.47 hard:6.43
+step:333/1200 | loss 5.271979 | train_time:2485.11s | step_avg:7440.45ms | score kept:5.37 easy:4.46 hard:6.44
+step:334/1200 | loss 5.208482 | train_time:2492.38s | step_avg:7439.94ms | score kept:5.36 easy:4.45 hard:6.42
+step:335/1200 | loss 5.272396 | train_time:2499.63s | step_avg:7439.38ms | score kept:5.37 easy:4.46 hard:6.44
+step:336/1200 | loss 5.144527 | train_time:2506.90s | step_avg:7438.87ms | score kept:5.36 easy:4.46 hard:6.42
+step:337/1200 | loss 5.162716 | train_time:2514.16s | step_avg:7438.34ms | score kept:5.36 easy:4.45 hard:6.42
+step:338/1200 | loss 5.171394 | train_time:2521.42s | step_avg:7437.83ms | score kept:5.36 easy:4.45 hard:6.41
+step:339/1200 | loss 5.158240 | train_time:2528.70s | step_avg:7437.36ms | score kept:5.36 easy:4.45 hard:6.40
+step:340/1200 | loss 5.199876 | train_time:2535.98s | step_avg:7436.89ms | score kept:5.36 easy:4.45 hard:6.40
+step:341/1200 | loss 5.154095 | train_time:2543.24s | step_avg:7436.37ms | score kept:5.36 easy:4.45 hard:6.41
+step:342/1200 | loss 5.166868 | train_time:2550.50s | step_avg:7435.87ms | score kept:5.35 easy:4.45 hard:6.44
+step:343/1200 | loss 5.216999 | train_time:2557.77s | step_avg:7435.39ms | score kept:5.36 easy:4.44 hard:6.45
+step:344/1200 | loss 5.136821 | train_time:2565.05s | step_avg:7434.93ms | score kept:5.36 easy:4.44 hard:6.45
+step:345/1200 | loss 5.178439 | train_time:2572.33s | step_avg:7434.48ms | score kept:5.35 easy:4.43 hard:6.45
+step:346/1200 | loss 5.145292 | train_time:2579.60s | step_avg:7434.01ms | score kept:5.34 easy:4.43 hard:6.43
+step:347/1200 | loss 5.174605 | train_time:2586.88s | step_avg:7433.56ms | score kept:5.34 easy:4.42 hard:6.43
+step:348/1200 | loss 5.073687 | train_time:2594.15s | step_avg:7433.09ms | score kept:5.33 easy:4.41 hard:6.43
+step:349/1200 | loss 5.302794 | train_time:2601.43s | step_avg:7432.67ms | score kept:5.34 easy:4.40 hard:6.43
+step:350/1200 | loss 5.267510 | train_time:2608.68s | step_avg:7432.14ms | score kept:5.35 easy:4.42 hard:6.43
+step:351/1200 | loss 5.175325 | train_time:2615.96s | step_avg:7431.70ms | score kept:5.34 easy:4.42 hard:6.44
+step:352/1200 | loss 5.115903 | train_time:2623.23s | step_avg:7431.23ms | score kept:5.34 easy:4.40 hard:6.43
+step:353/1200 | loss 5.100863 | train_time:2630.49s | step_avg:7430.76ms | score kept:5.34 easy:4.39 hard:6.44
+step:354/1200 | loss 5.184538 | train_time:2637.75s | step_avg:7430.27ms | score kept:5.34 easy:4.39 hard:6.44
+step:355/1200 | loss 5.164852 | train_time:2645.00s | step_avg:7429.77ms | score kept:5.34 easy:4.39 hard:6.43
+step:356/1200 | loss 5.098308 | train_time:2652.25s | step_avg:7429.27ms | score kept:5.33 easy:4.38 hard:6.41
+step:357/1200 | loss 5.074512 | train_time:2659.48s | step_avg:7428.73ms | score kept:5.32 easy:4.38 hard:6.40
+step:358/1200 | loss 5.116848 | train_time:2666.73s | step_avg:7428.23ms | score kept:5.32 easy:4.38 hard:6.38
+step:359/1200 | loss 5.140283 | train_time:2673.98s | step_avg:7427.73ms | score kept:5.31 easy:4.38 hard:6.38
+step:360/1200 | loss 5.075819 | train_time:2681.21s | step_avg:7427.17ms | score kept:5.30 easy:4.37 hard:6.36
+step:361/1200 | loss 5.062907 | train_time:2688.45s | step_avg:7426.64ms | score kept:5.29 easy:4.37 hard:6.36
+step:362/1200 | loss 5.032997 | train_time:2695.67s | step_avg:7426.09ms | score kept:5.29 easy:4.36 hard:6.37
+step:363/1200 | loss 5.079863 | train_time:2702.90s | step_avg:7425.55ms | score kept:5.29 easy:4.36 hard:6.37
+step:364/1200 | loss 5.184342 | train_time:2710.13s | step_avg:7425.02ms | score kept:5.30 easy:4.38 hard:6.36
+step:365/1200 | loss 5.140070 | train_time:2717.36s | step_avg:7424.49ms | score kept:5.30 easy:4.37 hard:6.36
+step:366/1200 | loss 5.098374 | train_time:2724.59s | step_avg:7423.94ms | score kept:5.28 easy:4.35 hard:6.35
+step:367/1200 | loss 4.943754 | train_time:2731.82s | step_avg:7423.43ms | score kept:5.27 easy:4.34 hard:6.33
+step:368/1200 | loss 5.049792 | train_time:2739.05s | step_avg:7422.90ms | score kept:5.27 easy:4.33 hard:6.32
+step:369/1200 | loss 5.137164 | train_time:2746.27s | step_avg:7422.35ms | score kept:5.28 easy:4.34 hard:6.32
+step:370/1200 | loss 5.139503 | train_time:2753.50s | step_avg:7421.83ms | score kept:5.29 easy:4.35 hard:6.34
+step:371/1200 | loss 5.038470 | train_time:2760.72s | step_avg:7421.30ms | score kept:5.28 easy:4.35 hard:6.35
+step:372/1200 | loss 4.994925 | train_time:2767.96s | step_avg:7420.81ms | score kept:5.27 easy:4.34 hard:6.34
+step:373/1200 | loss 5.059916 | train_time:2775.19s | step_avg:7420.31ms | score kept:5.27 easy:4.33 hard:6.33
+step:374/1200 | loss 5.021555 | train_time:2782.43s | step_avg:7419.82ms | score kept:5.26 easy:4.32 hard:6.32
+step:375/1200 | loss 5.052659 | train_time:2789.66s | step_avg:7419.32ms | score kept:5.26 easy:4.32 hard:6.31
+step:376/1200 | loss 5.015462 | train_time:2796.88s | step_avg:7418.78ms | score kept:5.26 easy:4.32 hard:6.32
+step:377/1200 | loss 5.071010 | train_time:2804.11s | step_avg:7418.29ms | score kept:5.25 easy:4.32 hard:6.33
+step:378/1200 | loss 5.063541 | train_time:2811.34s | step_avg:7417.78ms | score kept:5.25 easy:4.32 hard:6.32
+step:379/1200 | loss 5.082981 | train_time:2818.56s | step_avg:7417.28ms | score kept:5.26 easy:4.33 hard:6.32
+step:380/1200 | loss 5.204005 | train_time:2825.79s | step_avg:7416.77ms | score kept:5.26 easy:4.32 hard:6.35
+step:381/1200 | loss 5.019648 | train_time:2833.01s | step_avg:7416.25ms | score kept:5.26 easy:4.32 hard:6.35
+step:382/1200 | loss 5.005504 | train_time:2840.23s | step_avg:7415.75ms | score kept:5.26 easy:4.32 hard:6.34
+step:383/1200 | loss 5.146872 | train_time:2847.46s | step_avg:7415.26ms | score kept:5.26 easy:4.33 hard:6.34
+step:384/1200 | loss 5.170505 | train_time:2854.70s | step_avg:7414.80ms | score kept:5.27 easy:4.34 hard:6.36
+step:385/1200 | loss 5.076505 | train_time:2861.93s | step_avg:7414.32ms | score kept:5.27 easy:4.34 hard:6.35
+step:386/1200 | loss 5.045883 | train_time:2869.13s | step_avg:7413.77ms | score kept:5.26 easy:4.33 hard:6.36
+step:387/1200 | loss 4.973420 | train_time:2876.35s | step_avg:7413.28ms | score kept:5.26 easy:4.33 hard:6.34
+step:388/1200 | loss 5.047045 | train_time:2883.59s | step_avg:7412.83ms | score kept:5.25 easy:4.33 hard:6.32
+step:389/1200 | loss 5.087339 | train_time:2890.81s | step_avg:7412.33ms | score kept:5.25 easy:4.33 hard:6.32
+step:390/1200 | loss 5.056110 | train_time:2898.05s | step_avg:7411.89ms | score kept:5.25 easy:4.33 hard:6.34
+step:391/1200 | loss 5.132428 | train_time:2905.27s | step_avg:7411.40ms | score kept:5.25 easy:4.32 hard:6.34
+step:392/1200 | loss 5.042085 | train_time:2912.49s | step_avg:7410.92ms | score kept:5.25 easy:4.32 hard:6.34
+step:393/1200 | loss 5.046015 | train_time:2919.73s | step_avg:7410.47ms | score kept:5.25 easy:4.33 hard:6.33
+step:394/1200 | loss 5.098845 | train_time:2926.96s | step_avg:7410.03ms | score kept:5.26 easy:4.33 hard:6.33
+step:395/1200 | loss 5.020432 | train_time:2934.17s | step_avg:7409.52ms | score kept:5.25 easy:4.33 hard:6.32
+step:396/1200 | loss 4.989287 | train_time:2941.40s | step_avg:7409.06ms | score kept:5.25 easy:4.33 hard:6.32
+step:397/1200 | loss 5.014393 | train_time:2948.62s | step_avg:7408.59ms | score kept:5.24 easy:4.33 hard:6.32
+step:398/1200 | loss 5.038251 | train_time:2955.84s | step_avg:7408.11ms | score kept:5.24 easy:4.33 hard:6.31
+step:399/1200 | loss 5.012137 | train_time:2963.06s | step_avg:7407.65ms | score kept:5.24 easy:4.33 hard:6.30
+step:400/1200 | val loss 5.079516 | train_time:2963.1s | tokens_read:70.3M
+step:400/1200 | loss 5.209675 | train_time:2970.29s | step_avg:7407.21ms | score kept:5.25 easy:4.33 hard:6.32
+step:401/1200 | loss 4.981338 | train_time:2977.51s | step_avg:7406.75ms | score kept:5.24 easy:4.31 hard:6.31
+step:402/1200 | loss 4.959349 | train_time:2984.70s | step_avg:7406.20ms | score kept:5.22 easy:4.30 hard:6.30
+step:403/1200 | loss 5.095591 | train_time:2991.88s | step_avg:7405.65ms | score kept:5.23 easy:4.31 hard:6.29
+step:404/1200 | loss 4.963361 | train_time:2999.06s | step_avg:7405.09ms | score kept:5.22 easy:4.31 hard:6.27
+step:405/1200 | loss 5.025785 | train_time:3006.26s | step_avg:7404.57ms | score kept:5.22 easy:4.31 hard:6.28
+step:406/1200 | loss 4.956999 | train_time:3013.43s | step_avg:7404.00ms | score kept:5.21 easy:4.31 hard:6.29
+step:407/1200 | loss 4.993188 | train_time:3020.61s | step_avg:7403.45ms | score kept:5.20 easy:4.29 hard:6.29
+step:408/1200 | loss 4.992591 | train_time:3027.78s | step_avg:7402.88ms | score kept:5.20 easy:4.29 hard:6.29
+step:409/1200 | loss 4.979240 | train_time:3034.93s | step_avg:7402.28ms | score kept:5.20 easy:4.30 hard:6.27
+step:410/1200 | loss 5.030322 | train_time:3042.09s | step_avg:7401.69ms | score kept:5.20 easy:4.29 hard:6.28
+step:411/1200 | loss 4.898674 | train_time:3049.27s | step_avg:7401.14ms | score kept:5.19 easy:4.29 hard:6.27
+step:412/1200 | loss 4.997898 | train_time:3056.46s | step_avg:7400.62ms | score kept:5.19 easy:4.28 hard:6.26
+step:413/1200 | loss 5.019262 | train_time:3063.62s | step_avg:7400.06ms | score kept:5.19 easy:4.27 hard:6.26
+step:414/1200 | loss 4.912735 | train_time:3070.81s | step_avg:7399.55ms | score kept:5.18 easy:4.27 hard:6.24
+step:415/1200 | loss 5.100060 | train_time:3078.01s | step_avg:7399.05ms | score kept:5.19 easy:4.27 hard:6.26
+step:416/1200 | loss 4.888942 | train_time:3085.19s | step_avg:7398.55ms | score kept:5.17 easy:4.27 hard:6.24
+step:417/1200 | loss 4.878907 | train_time:3092.39s | step_avg:7398.06ms | score kept:5.17 easy:4.26 hard:6.24
+step:418/1200 | loss 5.040772 | train_time:3099.60s | step_avg:7397.61ms | score kept:5.17 easy:4.27 hard:6.22
+step:419/1200 | loss 5.032759 | train_time:3106.81s | step_avg:7397.17ms | score kept:5.17 easy:4.27 hard:6.24
+step:420/1200 | loss 5.105958 | train_time:3114.06s | step_avg:7396.81ms | score kept:5.18 easy:4.26 hard:6.27
+step:421/1200 | loss 4.987833 | train_time:3121.29s | step_avg:7396.43ms | score kept:5.18 easy:4.27 hard:6.26
+step:422/1200 | loss 4.936447 | train_time:3128.56s | step_avg:7396.12ms | score kept:5.17 easy:4.26 hard:6.28
+step:423/1200 | loss 4.988539 | train_time:3135.82s | step_avg:7395.80ms | score kept:5.18 easy:4.27 hard:6.28
+step:424/1200 | loss 4.942693 | train_time:3143.07s | step_avg:7395.45ms | score kept:5.17 easy:4.27 hard:6.27
+step:425/1200 | loss 5.145724 | train_time:3150.31s | step_avg:7395.10ms | score kept:5.19 easy:4.27 hard:6.28
+step:426/1200 | loss 4.932867 | train_time:3157.56s | step_avg:7394.75ms | score kept:5.18 easy:4.26 hard:6.27
+step:427/1200 | loss 4.963155 | train_time:3164.79s | step_avg:7394.38ms | score kept:5.18 easy:4.26 hard:6.26
+step:428/1200 | loss 4.979784 | train_time:3172.03s | step_avg:7394.01ms | score kept:5.18 easy:4.25 hard:6.24
+step:429/1200 | loss 5.005890 | train_time:3179.26s | step_avg:7393.63ms | score kept:5.17 easy:4.25 hard:6.24
+step:430/1200 | loss 4.925556 | train_time:3186.50s | step_avg:7393.27ms | score kept:5.17 easy:4.25 hard:6.23
+step:431/1200 | loss 4.884526 | train_time:3193.73s | step_avg:7392.89ms | score kept:5.16 easy:4.24 hard:6.21
+step:432/1200 | loss 4.887867 | train_time:3200.96s | step_avg:7392.51ms | score kept:5.16 easy:4.25 hard:6.21
+step:433/1200 | loss 4.983696 | train_time:3208.19s | step_avg:7392.14ms | score kept:5.16 easy:4.26 hard:6.20
+step:434/1200 | loss 4.919345 | train_time:3215.41s | step_avg:7391.75ms | score kept:5.16 easy:4.25 hard:6.20
+step:435/1200 | loss 4.960456 | train_time:3222.64s | step_avg:7391.38ms | score kept:5.15 easy:4.24 hard:6.21
+step:436/1200 | loss 4.833906 | train_time:3229.87s | step_avg:7391.01ms | score kept:5.15 easy:4.24 hard:6.20
+step:437/1200 | loss 5.120545 | train_time:3237.12s | step_avg:7390.68ms | score kept:5.16 easy:4.26 hard:6.20
+step:438/1200 | loss 4.961841 | train_time:3244.35s | step_avg:7390.31ms | score kept:5.17 easy:4.27 hard:6.19
+step:439/1200 | loss 5.021311 | train_time:3251.58s | step_avg:7389.95ms | score kept:5.18 easy:4.28 hard:6.21
+step:440/1200 | loss 5.036465 | train_time:3258.80s | step_avg:7389.58ms | score kept:5.18 easy:4.28 hard:6.22
+step:441/1200 | loss 4.882502 | train_time:3266.02s | step_avg:7389.19ms | score kept:5.17 easy:4.26 hard:6.21
+step:442/1200 | loss 4.942794 | train_time:3273.25s | step_avg:7388.84ms | score kept:5.17 easy:4.25 hard:6.21
+step:443/1200 | loss 4.959688 | train_time:3280.49s | step_avg:7388.48ms | score kept:5.17 easy:4.26 hard:6.20
+step:444/1200 | loss 4.858288 | train_time:3287.70s | step_avg:7388.10ms | score kept:5.16 easy:4.25 hard:6.18
+step:445/1200 | loss 4.918587 | train_time:3294.92s | step_avg:7387.72ms | score kept:5.16 easy:4.24 hard:6.17
+step:446/1200 | loss 4.877891 | train_time:3302.14s | step_avg:7387.33ms | score kept:5.15 easy:4.24 hard:6.17
+step:447/1200 | loss 4.837054 | train_time:3309.36s | step_avg:7386.96ms | score kept:5.14 easy:4.23 hard:6.16
+step:448/1200 | loss 4.954508 | train_time:3316.58s | step_avg:7386.60ms | score kept:5.15 easy:4.23 hard:6.16
+step:449/1200 | loss 4.930457 | train_time:3323.82s | step_avg:7386.27ms | score kept:5.13 easy:4.23 hard:6.15
+step:450/1200 | loss 4.857989 | train_time:3331.05s | step_avg:7385.91ms | score kept:5.13 easy:4.23 hard:6.16
+step:451/1200 | loss 4.895557 | train_time:3338.27s | step_avg:7385.54ms | score kept:5.12 easy:4.24 hard:6.16
+step:452/1200 | loss 4.885170 | train_time:3345.49s | step_avg:7385.19ms | score kept:5.13 easy:4.23 hard:6.15
+step:453/1200 | loss 4.912254 | train_time:3352.71s | step_avg:7384.82ms | score kept:5.12 easy:4.22 hard:6.14
+step:454/1200 | loss 4.945498 | train_time:3359.93s | step_avg:7384.46ms | score kept:5.12 easy:4.23 hard:6.14
+step:455/1200 | loss 4.997007 | train_time:3367.16s | step_avg:7384.13ms | score kept:5.13 easy:4.23 hard:6.15
+step:456/1200 | loss 4.947164 | train_time:3374.36s | step_avg:7383.72ms | score kept:5.13 easy:4.22 hard:6.15
+step:457/1200 | loss 4.943935 | train_time:3381.58s | step_avg:7383.35ms | score kept:5.13 easy:4.23 hard:6.16
+step:458/1200 | loss 4.971342 | train_time:3388.80s | step_avg:7383.01ms | score kept:5.14 easy:4.23 hard:6.17
+step:459/1200 | loss 4.981947 | train_time:3396.02s | step_avg:7382.65ms | score kept:5.15 easy:4.25 hard:6.18
+step:460/1200 | loss 4.949177 | train_time:3403.22s | step_avg:7382.26ms | score kept:5.15 easy:4.24 hard:6.18
+step:461/1200 | loss 4.823274 | train_time:3410.42s | step_avg:7381.87ms | score kept:5.14 easy:4.23 hard:6.16
+step:462/1200 | loss 4.893202 | train_time:3417.62s | step_avg:7381.47ms | score kept:5.13 easy:4.23 hard:6.16
+step:463/1200 | loss 4.890862 | train_time:3424.83s | step_avg:7381.09ms | score kept:5.13 easy:4.23 hard:6.16
+step:464/1200 | loss 4.922237 | train_time:3432.03s | step_avg:7380.72ms | score kept:5.13 easy:4.22 hard:6.17
+step:465/1200 | loss 4.885743 | train_time:3439.24s | step_avg:7380.35ms | score kept:5.12 easy:4.22 hard:6.16
+step:466/1200 | loss 4.784825 | train_time:3446.45s | step_avg:7379.98ms | score kept:5.11 easy:4.21 hard:6.14
+step:467/1200 | loss 4.961985 | train_time:3453.65s | step_avg:7379.60ms | score kept:5.13 easy:4.22 hard:6.15
+step:468/1200 | loss 4.860278 | train_time:3460.86s | step_avg:7379.23ms | score kept:5.13 easy:4.22 hard:6.15
+step:469/1200 | loss 4.929724 | train_time:3468.08s | step_avg:7378.89ms | score kept:5.12 easy:4.20 hard:6.15
+step:470/1200 | loss 4.870565 | train_time:3475.28s | step_avg:7378.51ms | score kept:5.12 easy:4.21 hard:6.14
+step:471/1200 | loss 4.826368 | train_time:3482.49s | step_avg:7378.16ms | score kept:5.12 easy:4.21 hard:6.14
+step:472/1200 | loss 4.928765 | train_time:3489.71s | step_avg:7377.83ms | score kept:5.12 easy:4.21 hard:6.14
+step:473/1200 | loss 4.885667 | train_time:3496.94s | step_avg:7377.50ms | score kept:5.13 easy:4.22 hard:6.15
+step:474/1200 | loss 4.880652 | train_time:3504.14s | step_avg:7377.13ms | score kept:5.12 easy:4.21 hard:6.15
+step:475/1200 | loss 4.838632 | train_time:3511.35s | step_avg:7376.79ms | score kept:5.11 easy:4.20 hard:6.15
+step:476/1200 | loss 4.772822 | train_time:3518.57s | step_avg:7376.45ms | score kept:5.10 easy:4.20 hard:6.13
+step:477/1200 | loss 4.847939 | train_time:3525.79s | step_avg:7376.12ms | score kept:5.10 easy:4.20 hard:6.13
+step:478/1200 | loss 4.881612 | train_time:3533.01s | step_avg:7375.81ms | score kept:5.09 easy:4.20 hard:6.12
+step:479/1200 | loss 4.879251 | train_time:3540.22s | step_avg:7375.46ms | score kept:5.09 easy:4.19 hard:6.13
+step:480/1200 | loss 4.893657 | train_time:3547.44s | step_avg:7375.14ms | score kept:5.08 easy:4.18 hard:6.13
+step:481/1200 | loss 4.817680 | train_time:3554.65s | step_avg:7374.79ms | score kept:5.07 easy:4.16 hard:6.12
+step:482/1200 | loss 4.915432 | train_time:3561.84s | step_avg:7374.42ms | score kept:5.08 easy:4.16 hard:6.12
+step:483/1200 | loss 4.817894 | train_time:3569.03s | step_avg:7374.04ms | score kept:5.07 easy:4.17 hard:6.12
+step:484/1200 | loss 4.904069 | train_time:3576.24s | step_avg:7373.68ms | score kept:5.07 easy:4.17 hard:6.14
+step:485/1200 | loss 4.806836 | train_time:3583.44s | step_avg:7373.34ms | score kept:5.07 easy:4.17 hard:6.15
+step:486/1200 | loss 4.800851 | train_time:3590.66s | step_avg:7373.02ms | score kept:5.07 easy:4.18 hard:6.13
+step:487/1200 | loss 4.805268 | train_time:3597.88s | step_avg:7372.70ms | score kept:5.07 easy:4.18 hard:6.13
+step:488/1200 | loss 4.869888 | train_time:3605.08s | step_avg:7372.35ms | score kept:5.06 easy:4.17 hard:6.13
+step:489/1200 | loss 4.793904 | train_time:3612.31s | step_avg:7372.05ms | score kept:5.05 easy:4.17 hard:6.12
+step:490/1200 | loss 4.777401 | train_time:3619.50s | step_avg:7371.70ms | score kept:5.05 easy:4.16 hard:6.11
+step:491/1200 | loss 4.760034 | train_time:3626.71s | step_avg:7371.36ms | score kept:5.05 easy:4.16 hard:6.11
+step:492/1200 | loss 4.855171 | train_time:3633.93s | step_avg:7371.06ms | score kept:5.05 easy:4.17 hard:6.11
+step:493/1200 | loss 4.778022 | train_time:3641.13s | step_avg:7370.71ms | score kept:5.04 easy:4.17 hard:6.10
+step:494/1200 | loss 4.793496 | train_time:3648.33s | step_avg:7370.36ms | score kept:5.04 easy:4.16 hard:6.10
+step:495/1200 | loss 4.669533 | train_time:3655.55s | step_avg:7370.06ms | score kept:5.03 easy:4.15 hard:6.11
+step:496/1200 | loss 4.870406 | train_time:3662.76s | step_avg:7369.75ms | score kept:5.03 easy:4.16 hard:6.10
+step:497/1200 | loss 4.586429 | train_time:3669.99s | step_avg:7369.46ms | score kept:5.02 easy:4.15 hard:6.07
+step:498/1200 | loss 4.908627 | train_time:3677.21s | step_avg:7369.15ms | score kept:5.03 easy:4.15 hard:6.09
+step:499/1200 | loss 4.865873 | train_time:3684.43s | step_avg:7368.87ms | score kept:5.04 easy:4.16 hard:6.10
+step:500/1200 | val loss 4.903754 | train_time:3684.4s | tokens_read:89.9M
+step:500/1200 | loss 4.909124 | train_time:3691.65s | step_avg:7368.57ms | score kept:5.05 easy:4.16 hard:6.10
+step:501/1200 | loss 4.893780 | train_time:3698.86s | step_avg:7368.24ms | score kept:5.05 easy:4.17 hard:6.10
+step:502/1200 | loss 4.840726 | train_time:3706.05s | step_avg:7367.88ms | score kept:5.05 easy:4.18 hard:6.10
+step:503/1200 | loss 4.714287 | train_time:3713.23s | step_avg:7367.52ms | score kept:5.05 easy:4.17 hard:6.08
+step:504/1200 | loss 4.824316 | train_time:3720.40s | step_avg:7367.13ms | score kept:5.04 easy:4.17 hard:6.08
+step:505/1200 | loss 4.875621 | train_time:3727.57s | step_avg:7366.74ms | score kept:5.05 easy:4.17 hard:6.09
+step:506/1200 | loss 4.826665 | train_time:3734.75s | step_avg:7366.37ms | score kept:5.05 easy:4.17 hard:6.10
+step:507/1200 | loss 4.777935 | train_time:3741.91s | step_avg:7365.96ms | score kept:5.05 easy:4.17 hard:6.09
+step:508/1200 | loss 4.907500 | train_time:3749.08s | step_avg:7365.58ms | score kept:5.05 easy:4.18 hard:6.10
+step:509/1200 | loss 4.699513 | train_time:3756.24s | step_avg:7365.17ms | score kept:5.05 easy:4.18 hard:6.08
+step:510/1200 | loss 4.812620 | train_time:3763.38s | step_avg:7364.74ms | score kept:5.05 easy:4.17 hard:6.08
+step:511/1200 | loss 4.825715 | train_time:3770.54s | step_avg:7364.34ms | score kept:5.05 easy:4.17 hard:6.07
+step:512/1200 | loss 4.706409 | train_time:3777.72s | step_avg:7363.97ms | score kept:5.04 easy:4.17 hard:6.06
+step:513/1200 | loss 4.829973 | train_time:3784.91s | step_avg:7363.64ms | score kept:5.05 easy:4.16 hard:6.07
+step:514/1200 | loss 4.731758 | train_time:3792.11s | step_avg:7363.32ms | score kept:5.03 easy:4.16 hard:6.06
+step:515/1200 | loss 4.723454 | train_time:3799.30s | step_avg:7362.98ms | score kept:5.03 easy:4.15 hard:6.05
+step:516/1200 | loss 4.888005 | train_time:3806.51s | step_avg:7362.70ms | score kept:5.04 easy:4.15 hard:6.06
+step:517/1200 | loss 4.809969 | train_time:3813.74s | step_avg:7362.44ms | score kept:5.04 easy:4.13 hard:6.08
+step:518/1200 | loss 4.822392 | train_time:3820.96s | step_avg:7362.16ms | score kept:5.05 easy:4.14 hard:6.10
+step:519/1200 | loss 4.785274 | train_time:3828.20s | step_avg:7361.93ms | score kept:5.04 easy:4.15 hard:6.08
+step:520/1200 | loss 4.773179 | train_time:3835.44s | step_avg:7361.68ms | score kept:5.05 easy:4.15 hard:6.08
+step:521/1200 | loss 4.771842 | train_time:3842.67s | step_avg:7361.43ms | score kept:5.05 easy:4.15 hard:6.07
+step:522/1200 | loss 4.808317 | train_time:3849.90s | step_avg:7361.18ms | score kept:5.05 easy:4.14 hard:6.08
+step:523/1200 | loss 4.680139 | train_time:3857.12s | step_avg:7360.92ms | score kept:5.04 easy:4.12 hard:6.07
+step:524/1200 | loss 4.652203 | train_time:3864.34s | step_avg:7360.64ms | score kept:5.03 easy:4.11 hard:6.07
+step:525/1200 | loss 4.771744 | train_time:3871.55s | step_avg:7360.36ms | score kept:5.03 easy:4.11 hard:6.06
+step:526/1200 | loss 4.691284 | train_time:3878.77s | step_avg:7360.09ms | score kept:5.02 easy:4.11 hard:6.06
+step:527/1200 | loss 4.804303 | train_time:3885.97s | step_avg:7359.80ms | score kept:5.03 easy:4.11 hard:6.07
+step:528/1200 | loss 4.660494 | train_time:3893.17s | step_avg:7359.48ms | score kept:5.02 easy:4.11 hard:6.06
+step:529/1200 | loss 4.717900 | train_time:3900.37s | step_avg:7359.19ms | score kept:5.02 easy:4.12 hard:6.05
+step:530/1200 | loss 4.681856 | train_time:3907.56s | step_avg:7358.87ms | score kept:5.01 easy:4.12 hard:6.04
+step:531/1200 | loss 4.778075 | train_time:3914.76s | step_avg:7358.57ms | score kept:5.02 easy:4.12 hard:6.04
+step:532/1200 | loss 4.850638 | train_time:3921.95s | step_avg:7358.25ms | score kept:5.02 easy:4.12 hard:6.04
+step:533/1200 | loss 4.683791 | train_time:3929.13s | step_avg:7357.92ms | score kept:5.01 easy:4.12 hard:6.06
+step:534/1200 | loss 4.691714 | train_time:3936.33s | step_avg:7357.62ms | score kept:5.00 easy:4.10 hard:6.05
+step:535/1200 | loss 4.775096 | train_time:3943.53s | step_avg:7357.34ms | score kept:5.00 easy:4.10 hard:6.05
+step:536/1200 | loss 4.669478 | train_time:3950.73s | step_avg:7357.04ms | score kept:5.00 easy:4.10 hard:6.04
+step:537/1200 | loss 4.736433 | train_time:3957.93s | step_avg:7356.75ms | score kept:4.99 easy:4.10 hard:6.04
+step:538/1200 | loss 4.752121 | train_time:3965.12s | step_avg:7356.44ms | score kept:4.99 easy:4.10 hard:6.06
+step:539/1200 | loss 4.759014 | train_time:3972.31s | step_avg:7356.14ms | score kept:4.99 easy:4.10 hard:6.05
+step:540/1200 | loss 4.764374 | train_time:3979.52s | step_avg:7355.86ms | score kept:5.00 easy:4.12 hard:6.06
+step:541/1200 | loss 4.797960 | train_time:3986.71s | step_avg:7355.55ms | score kept:5.00 easy:4.12 hard:6.08
+step:542/1200 | loss 4.692582 | train_time:3993.90s | step_avg:7355.25ms | score kept:5.00 easy:4.11 hard:6.09
+step:543/1200 | loss 4.718747 | train_time:4001.09s | step_avg:7354.95ms | score kept:5.00 easy:4.11 hard:6.08
+step:544/1200 | loss 4.723006 | train_time:4008.29s | step_avg:7354.66ms | score kept:5.00 easy:4.12 hard:6.07
+step:545/1200 | loss 4.630371 | train_time:4015.50s | step_avg:7354.40ms | score kept:5.00 easy:4.11 hard:6.06
+step:546/1200 | loss 4.608593 | train_time:4022.71s | step_avg:7354.13ms | score kept:4.98 easy:4.09 hard:6.03
+step:547/1200 | loss 4.754901 | train_time:4029.90s | step_avg:7353.83ms | score kept:4.98 easy:4.08 hard:6.04
+step:548/1200 | loss 4.600785 | train_time:4037.11s | step_avg:7353.57ms | score kept:4.97 easy:4.08 hard:6.04
+step:549/1200 | loss 4.998934 | train_time:4044.30s | step_avg:7353.27ms | score kept:5.00 easy:4.11 hard:6.06
+step:550/1200 | loss 4.642668 | train_time:4051.52s | step_avg:7353.02ms | score kept:5.00 easy:4.11 hard:6.04
+step:551/1200 | loss 4.659325 | train_time:4058.69s | step_avg:7352.70ms | score kept:4.99 easy:4.10 hard:6.05
+step:552/1200 | loss 4.628250 | train_time:4065.89s | step_avg:7352.42ms | score kept:4.99 easy:4.08 hard:6.04
+step:553/1200 | loss 4.588372 | train_time:4073.07s | step_avg:7352.12ms | score kept:4.98 easy:4.07 hard:6.04
+step:554/1200 | loss 4.711118 | train_time:4080.26s | step_avg:7351.83ms | score kept:4.98 easy:4.07 hard:6.03
+step:555/1200 | loss 4.746816 | train_time:4087.45s | step_avg:7351.54ms | score kept:4.98 easy:4.09 hard:6.02
+step:556/1200 | loss 4.719328 | train_time:4094.66s | step_avg:7351.27ms | score kept:4.98 easy:4.09 hard:6.02
+step:557/1200 | loss 4.541710 | train_time:4101.84s | step_avg:7350.97ms | score kept:4.97 easy:4.08 hard:6.01
+step:558/1200 | loss 4.657280 | train_time:4109.02s | step_avg:7350.67ms | score kept:4.97 easy:4.08 hard:6.01
+step:559/1200 | loss 4.765965 | train_time:4116.23s | step_avg:7350.41ms | score kept:4.98 easy:4.09 hard:6.02
+step:560/1200 | loss 4.791905 | train_time:4123.41s | step_avg:7350.11ms | score kept:4.98 easy:4.09 hard:6.03
+step:561/1200 | loss 4.819325 | train_time:4130.60s | step_avg:7349.83ms | score kept:4.99 easy:4.09 hard:6.06
+step:562/1200 | loss 4.695660 | train_time:4137.79s | step_avg:7349.54ms | score kept:4.99 easy:4.09 hard:6.05
+step:563/1200 | loss 4.656588 | train_time:4145.00s | step_avg:7349.29ms | score kept:4.99 easy:4.08 hard:6.04
+step:564/1200 | loss 4.788153 | train_time:4152.19s | step_avg:7349.01ms | score kept:4.99 easy:4.09 hard:6.05
+step:565/1200 | loss 4.676523 | train_time:4159.39s | step_avg:7348.74ms | score kept:4.99 easy:4.08 hard:6.05
+step:566/1200 | loss 4.802062 | train_time:4166.58s | step_avg:7348.47ms | score kept:5.00 easy:4.10 hard:6.05
+step:567/1200 | loss 4.650650 | train_time:4173.78s | step_avg:7348.20ms | score kept:4.99 easy:4.09 hard:6.04
+step:568/1200 | loss 4.650046 | train_time:4180.98s | step_avg:7347.94ms | score kept:4.99 easy:4.08 hard:6.05
+step:569/1200 | loss 4.726692 | train_time:4188.16s | step_avg:7347.66ms | score kept:4.99 easy:4.09 hard:6.04
+step:570/1200 | loss 4.725935 | train_time:4195.35s | step_avg:7347.38ms | score kept:4.99 easy:4.08 hard:6.03
+step:571/1200 | loss 4.685831 | train_time:4202.53s | step_avg:7347.09ms | score kept:4.99 easy:4.08 hard:6.05
+step:572/1200 | loss 4.653250 | train_time:4209.73s | step_avg:7346.83ms | score kept:4.99 easy:4.08 hard:6.05
+step:573/1200 | loss 4.656033 | train_time:4216.92s | step_avg:7346.55ms | score kept:4.98 easy:4.07 hard:6.05
+step:574/1200 | loss 4.674766 | train_time:4224.12s | step_avg:7346.30ms | score kept:4.98 easy:4.08 hard:6.03
+step:575/1200 | loss 4.689424 | train_time:4231.31s | step_avg:7346.03ms | score kept:4.98 easy:4.07 hard:6.03
+step:576/1200 | loss 5.095211 | train_time:4238.51s | step_avg:7345.78ms | score kept:5.01 easy:4.09 hard:6.07
+step:577/1200 | loss 4.620749 | train_time:4245.71s | step_avg:7345.52ms | score kept:5.01 easy:4.08 hard:6.08
+step:578/1200 | loss 4.698046 | train_time:4252.91s | step_avg:7345.26ms | score kept:5.01 easy:4.08 hard:6.09
+step:579/1200 | loss 4.740826 | train_time:4260.12s | step_avg:7345.03ms | score kept:5.01 easy:4.07 hard:6.09
+step:580/1200 | loss 4.679696 | train_time:4267.31s | step_avg:7344.76ms | score kept:5.00 easy:4.07 hard:6.09
+step:581/1200 | loss 4.639212 | train_time:4274.50s | step_avg:7344.50ms | score kept:5.00 easy:4.07 hard:6.09
+step:582/1200 | loss 4.634346 | train_time:4281.69s | step_avg:7344.24ms | score kept:5.00 easy:4.06 hard:6.07
+step:583/1200 | loss 4.763990 | train_time:4288.89s | step_avg:7343.98ms | score kept:5.01 easy:4.08 hard:6.08
+step:584/1200 | loss 4.654280 | train_time:4296.06s | step_avg:7343.70ms | score kept:5.00 easy:4.07 hard:6.08
+step:585/1200 | loss 4.767840 | train_time:4303.24s | step_avg:7343.41ms | score kept:4.99 easy:4.07 hard:6.10
+step:586/1200 | loss 4.664692 | train_time:4310.42s | step_avg:7343.14ms | score kept:4.99 easy:4.06 hard:6.10
+step:587/1200 | loss 4.636630 | train_time:4317.61s | step_avg:7342.87ms | score kept:4.98 easy:4.05 hard:6.10
+step:588/1200 | loss 4.759976 | train_time:4324.80s | step_avg:7342.62ms | score kept:4.98 easy:4.05 hard:6.10
+step:589/1200 | loss 4.560092 | train_time:4331.99s | step_avg:7342.36ms | score kept:4.97 easy:4.04 hard:6.08
+step:590/1200 | loss 4.592820 | train_time:4339.17s | step_avg:7342.09ms | score kept:4.97 easy:4.04 hard:6.09
+step:591/1200 | loss 4.492248 | train_time:4346.36s | step_avg:7341.82ms | score kept:4.96 easy:4.04 hard:6.06
+step:592/1200 | loss 4.655430 | train_time:4353.55s | step_avg:7341.58ms | score kept:4.95 easy:4.04 hard:6.05
+step:593/1200 | loss 4.715401 | train_time:4360.73s | step_avg:7341.30ms | score kept:4.96 easy:4.06 hard:6.05
+step:594/1200 | loss 4.638971 | train_time:4367.93s | step_avg:7341.05ms | score kept:4.96 easy:4.05 hard:6.04
+step:595/1200 | loss 4.636285 | train_time:4375.12s | step_avg:7340.81ms | score kept:4.96 easy:4.05 hard:6.05
+step:596/1200 | loss 4.717287 | train_time:4382.32s | step_avg:7340.56ms | score kept:4.96 easy:4.05 hard:6.07
+step:597/1200 | loss 4.578373 | train_time:4389.51s | step_avg:7340.32ms | score kept:4.96 easy:4.05 hard:6.07
+step:598/1200 | loss 4.615020 | train_time:4396.70s | step_avg:7340.06ms | score kept:4.95 easy:4.04 hard:6.04
+step:599/1200 | loss 4.694977 | train_time:4403.89s | step_avg:7339.82ms | score kept:4.95 easy:4.05 hard:6.05
+step:600/1200 | val loss 4.662800 | train_time:4403.9s | tokens_read:109.6M
+step:600/1200 | loss 4.517993 | train_time:4411.10s | step_avg:7339.61ms | score kept:4.94 easy:4.04 hard:6.03
+step:601/1200 | loss 4.548115 | train_time:4418.31s | step_avg:7339.39ms | score kept:4.94 easy:4.04 hard:6.02
+step:602/1200 | loss 4.688590 | train_time:4425.51s | step_avg:7339.15ms | score kept:4.95 easy:4.05 hard:6.00
+step:603/1200 | loss 4.631583 | train_time:4432.69s | step_avg:7338.89ms | score kept:4.94 easy:4.05 hard:5.99
+step:604/1200 | loss 4.593488 | train_time:4439.87s | step_avg:7338.63ms | score kept:4.94 easy:4.04 hard:5.99
+step:605/1200 | loss 4.653048 | train_time:4447.03s | step_avg:7338.34ms | score kept:4.93 easy:4.04 hard:5.99
+step:606/1200 | loss 4.602137 | train_time:4454.20s | step_avg:7338.06ms | score kept:4.93 easy:4.04 hard:5.98
+step:607/1200 | loss 4.680701 | train_time:4461.36s | step_avg:7337.77ms | score kept:4.94 easy:4.04 hard:5.98
+step:608/1200 | loss 4.627445 | train_time:4468.54s | step_avg:7337.50ms | score kept:4.94 easy:4.04 hard:5.98
+step:609/1200 | loss 4.640453 | train_time:4475.71s | step_avg:7337.23ms | score kept:4.94 easy:4.04 hard:5.99
+step:610/1200 | loss 4.621852 | train_time:4482.87s | step_avg:7336.93ms | score kept:4.94 easy:4.03 hard:6.00
+step:611/1200 | loss 4.586726 | train_time:4490.03s | step_avg:7336.65ms | score kept:4.94 easy:4.03 hard:5.99
+step:612/1200 | loss 4.670458 | train_time:4497.17s | step_avg:7336.33ms | score kept:4.94 easy:4.03 hard:5.99
+step:613/1200 | loss 4.618968 | train_time:4504.32s | step_avg:7336.03ms | score kept:4.94 easy:4.03 hard:5.98
+step:614/1200 | loss 4.619869 | train_time:4511.47s | step_avg:7335.72ms | score kept:4.94 easy:4.03 hard:6.00
+step:615/1200 | loss 4.571728 | train_time:4518.62s | step_avg:7335.43ms | score kept:4.93 easy:4.01 hard:5.99
+step:616/1200 | loss 4.607010 | train_time:4525.77s | step_avg:7335.13ms | score kept:4.93 easy:4.01 hard:5.99
+step:617/1200 | loss 4.651466 | train_time:4532.94s | step_avg:7334.86ms | score kept:4.94 easy:4.02 hard:5.98
+step:618/1200 | loss 4.548572 | train_time:4540.10s | step_avg:7334.58ms | score kept:4.94 easy:4.02 hard:5.97
+step:619/1200 | loss 4.619659 | train_time:4547.28s | step_avg:7334.32ms | score kept:4.93 easy:4.02 hard:5.97
+step:620/1200 | loss 4.526623 | train_time:4554.47s | step_avg:7334.08ms | score kept:4.93 easy:4.01 hard:5.96
+step:621/1200 | loss 4.635004 | train_time:4561.65s | step_avg:7333.84ms | score kept:4.92 easy:4.01 hard:5.94
+step:622/1200 | loss 4.717251 | train_time:4568.84s | step_avg:7333.62ms | score kept:4.93 easy:4.02 hard:5.96
+step:623/1200 | loss 4.567528 | train_time:4576.03s | step_avg:7333.38ms | score kept:4.92 easy:4.02 hard:5.95
+step:624/1200 | loss 4.559723 | train_time:4583.21s | step_avg:7333.14ms | score kept:4.92 easy:4.03 hard:5.93
+step:625/1200 | loss 4.545175 | train_time:4590.41s | step_avg:7332.92ms | score kept:4.92 easy:4.02 hard:5.93
+step:626/1200 | loss 4.625720 | train_time:4597.60s | step_avg:7332.70ms | score kept:4.92 easy:4.02 hard:5.93
+step:627/1200 | loss 4.587442 | train_time:4604.79s | step_avg:7332.47ms | score kept:4.91 easy:4.02 hard:5.93
+step:628/1200 | loss 4.530448 | train_time:4611.98s | step_avg:7332.25ms | score kept:4.91 easy:4.02 hard:5.91
+step:629/1200 | loss 4.484757 | train_time:4619.18s | step_avg:7332.04ms | score kept:4.91 easy:4.03 hard:5.92
+step:630/1200 | loss 4.507733 | train_time:4626.38s | step_avg:7331.82ms | score kept:4.90 easy:4.04 hard:5.91
+step:631/1200 | loss 4.646703 | train_time:4633.57s | step_avg:7331.60ms | score kept:4.90 easy:4.04 hard:5.92
+step:632/1200 | loss 4.565639 | train_time:4640.78s | step_avg:7331.41ms | score kept:4.89 easy:4.04 hard:5.93
+step:633/1200 | loss 4.459740 | train_time:4648.00s | step_avg:7331.22ms | score kept:4.88 easy:4.02 hard:5.94
+step:634/1200 | loss 4.570787 | train_time:4655.21s | step_avg:7331.04ms | score kept:4.89 easy:4.02 hard:5.94
+step:635/1200 | loss 4.505530 | train_time:4662.41s | step_avg:7330.84ms | score kept:4.89 easy:4.01 hard:5.94
+step:636/1200 | loss 4.542978 | train_time:4669.63s | step_avg:7330.66ms | score kept:4.89 easy:4.01 hard:5.96
+step:637/1200 | loss 4.619396 | train_time:4676.84s | step_avg:7330.47ms | score kept:4.89 easy:4.01 hard:5.97
+step:638/1200 | loss 4.629133 | train_time:4684.04s | step_avg:7330.26ms | score kept:4.90 easy:4.01 hard:5.97
+step:639/1200 | loss 4.614734 | train_time:4691.26s | step_avg:7330.09ms | score kept:4.90 easy:4.01 hard:5.98
+step:640/1200 | loss 4.559641 | train_time:4698.46s | step_avg:7329.89ms | score kept:4.89 easy:4.01 hard:5.97
+step:641/1200 | loss 4.590904 | train_time:4705.67s | step_avg:7329.71ms | score kept:4.89 easy:4.02 hard:5.97
+step:642/1200 | loss 4.526074 | train_time:4712.87s | step_avg:7329.51ms | score kept:4.89 easy:4.01 hard:5.95
+step:643/1200 | loss 4.506952 | train_time:4720.10s | step_avg:7329.35ms | score kept:4.89 easy:4.01 hard:5.94
+step:644/1200 | loss 4.481429 | train_time:4727.32s | step_avg:7329.19ms | score kept:4.88 easy:4.01 hard:5.93
+step:645/1200 | loss 4.553691 | train_time:4734.54s | step_avg:7329.01ms | score kept:4.88 easy:4.00 hard:5.92
+step:646/1200 | loss 4.522512 | train_time:4741.75s | step_avg:7328.82ms | score kept:4.87 easy:4.00 hard:5.90
+step:647/1200 | loss 4.476830 | train_time:4748.94s | step_avg:7328.62ms | score kept:4.87 easy:3.99 hard:5.91
+step:648/1200 | loss 4.488672 | train_time:4756.14s | step_avg:7328.42ms | score kept:4.87 easy:4.00 hard:5.92
+step:649/1200 | loss 4.630316 | train_time:4763.35s | step_avg:7328.22ms | score kept:4.87 easy:4.00 hard:5.92
+step:650/1200 | loss 4.608018 | train_time:4770.55s | step_avg:7328.04ms | score kept:4.88 easy:4.01 hard:5.91
+step:651/1200 | loss 4.540958 | train_time:4777.77s | step_avg:7327.86ms | score kept:4.87 easy:4.02 hard:5.91
+step:652/1200 | loss 4.521645 | train_time:4784.99s | step_avg:7327.70ms | score kept:4.87 easy:4.01 hard:5.92
+step:653/1200 | loss 4.566125 | train_time:4792.18s | step_avg:7327.49ms | score kept:4.88 easy:4.02 hard:5.92
+step:654/1200 | loss 4.635022 | train_time:4799.39s | step_avg:7327.32ms | score kept:4.88 easy:4.02 hard:5.94
+step:655/1200 | loss 4.527559 | train_time:4806.57s | step_avg:7327.09ms | score kept:4.88 easy:4.01 hard:5.94
+step:656/1200 | loss 4.531251 | train_time:4813.78s | step_avg:7326.91ms | score kept:4.88 easy:4.02 hard:5.94
+step:657/1200 | loss 4.437160 | train_time:4820.97s | step_avg:7326.70ms | score kept:4.87 easy:4.01 hard:5.95
+step:658/1200 | loss 4.508922 | train_time:4828.15s | step_avg:7326.48ms | score kept:4.87 easy:4.00 hard:5.95
+step:659/1200 | loss 4.618710 | train_time:4835.37s | step_avg:7326.31ms | score kept:4.87 easy:4.01 hard:5.94
+step:660/1200 | loss 4.500853 | train_time:4842.58s | step_avg:7326.15ms | score kept:4.87 easy:4.00 hard:5.93
+step:661/1200 | loss 4.539585 | train_time:4849.78s | step_avg:7325.95ms | score kept:4.86 easy:4.00 hard:5.94
+step:662/1200 | loss 4.498898 | train_time:4856.96s | step_avg:7325.74ms | score kept:4.85 easy:4.00 hard:5.94
+step:663/1200 | loss 4.536615 | train_time:4864.16s | step_avg:7325.54ms | score kept:4.86 easy:4.01 hard:5.93
+step:664/1200 | loss 4.551086 | train_time:4871.35s | step_avg:7325.34ms | score kept:4.87 easy:4.01 hard:5.93
+step:665/1200 | loss 4.509014 | train_time:4878.54s | step_avg:7325.14ms | score kept:4.86 easy:4.01 hard:5.93
+step:666/1200 | loss 4.557702 | train_time:4885.73s | step_avg:7324.93ms | score kept:4.86 easy:4.02 hard:5.93
+step:667/1200 | loss 4.588804 | train_time:4892.94s | step_avg:7324.76ms | score kept:4.86 easy:4.02 hard:5.94
+step:668/1200 | loss 4.491967 | train_time:4900.12s | step_avg:7324.55ms | score kept:4.86 easy:4.01 hard:5.92
+step:669/1200 | loss 4.569515 | train_time:4907.32s | step_avg:7324.36ms | score kept:4.87 easy:4.01 hard:5.92
+step:670/1200 | loss 4.569355 | train_time:4914.50s | step_avg:7324.15ms | score kept:4.87 easy:4.01 hard:5.93
+step:671/1200 | loss 4.597732 | train_time:4921.69s | step_avg:7323.94ms | score kept:4.87 easy:4.01 hard:5.96
+step:672/1200 | loss 4.550965 | train_time:4928.87s | step_avg:7323.73ms | score kept:4.88 easy:4.00 hard:5.96
+step:673/1200 | loss 4.599241 | train_time:4936.06s | step_avg:7323.53ms | score kept:4.88 easy:4.00 hard:5.96
+step:674/1200 | loss 4.540689 | train_time:4943.26s | step_avg:7323.35ms | score kept:4.89 easy:4.00 hard:5.95
+step:675/1200 | loss 4.681472 | train_time:4950.45s | step_avg:7323.15ms | score kept:4.89 easy:3.98 hard:5.96
+step:676/1200 | loss 4.483593 | train_time:4957.65s | step_avg:7322.97ms | score kept:4.89 easy:3.98 hard:5.96
+step:677/1200 | loss 4.554669 | train_time:4964.84s | step_avg:7322.77ms | score kept:4.89 easy:3.99 hard:5.97
+step:678/1200 | loss 4.632075 | train_time:4972.05s | step_avg:7322.60ms | score kept:4.90 easy:4.00 hard:5.96
+step:679/1200 | loss 4.520116 | train_time:4979.23s | step_avg:7322.40ms | score kept:4.90 easy:4.00 hard:5.95
+step:680/1200 | loss 4.501718 | train_time:4986.42s | step_avg:7322.21ms | score kept:4.89 easy:3.99 hard:5.94
+step:681/1200 | loss 4.420176 | train_time:4993.60s | step_avg:7321.99ms | score kept:4.88 easy:3.96 hard:5.93
+step:682/1200 | loss 4.444445 | train_time:5000.79s | step_avg:7321.81ms | score kept:4.86 easy:3.95 hard:5.92
+step:683/1200 | loss 4.680129 | train_time:5007.99s | step_avg:7321.63ms | score kept:4.88 easy:3.96 hard:5.92
+step:684/1200 | loss 4.500978 | train_time:5015.19s | step_avg:7321.45ms | score kept:4.87 easy:3.96 hard:5.90
+step:685/1200 | loss 4.553797 | train_time:5022.37s | step_avg:7321.23ms | score kept:4.87 easy:3.96 hard:5.91
+step:686/1200 | loss 4.808140 | train_time:5029.57s | step_avg:7321.06ms | score kept:4.89 easy:3.96 hard:5.95
+step:687/1200 | loss 4.437528 | train_time:5036.75s | step_avg:7320.86ms | score kept:4.88 easy:3.96 hard:5.94
+step:688/1200 | loss 4.665312 | train_time:5043.94s | step_avg:7320.67ms | score kept:4.89 easy:3.97 hard:5.96
+step:689/1200 | loss 4.611940 | train_time:5051.13s | step_avg:7320.48ms | score kept:4.90 easy:3.97 hard:5.97
+step:690/1200 | loss 4.454556 | train_time:5058.34s | step_avg:7320.31ms | score kept:4.89 easy:3.97 hard:5.96
+step:691/1200 | loss 4.506351 | train_time:5065.53s | step_avg:7320.12ms | score kept:4.88 easy:3.97 hard:5.97
+step:692/1200 | loss 4.493398 | train_time:5072.71s | step_avg:7319.93ms | score kept:4.88 easy:3.97 hard:5.97
+step:693/1200 | loss 4.577003 | train_time:5079.90s | step_avg:7319.73ms | score kept:4.89 easy:3.98 hard:5.97
+step:694/1200 | loss 4.524105 | train_time:5087.08s | step_avg:7319.53ms | score kept:4.89 easy:3.97 hard:5.97
+step:695/1200 | loss 4.445981 | train_time:5094.25s | step_avg:7319.33ms | score kept:4.88 easy:3.97 hard:5.96
+step:696/1200 | loss 4.523982 | train_time:5101.45s | step_avg:7319.15ms | score kept:4.87 easy:3.97 hard:5.96
+step:697/1200 | loss 4.395471 | train_time:5108.63s | step_avg:7318.96ms | score kept:4.87 easy:3.96 hard:5.94
+step:698/1200 | loss 4.439786 | train_time:5115.83s | step_avg:7318.78ms | score kept:4.86 easy:3.96 hard:5.92
+step:699/1200 | loss 4.520329 | train_time:5123.02s | step_avg:7318.60ms | score kept:4.86 easy:3.96 hard:5.94
+step:700/1200 | val loss 4.520094 | train_time:5123.0s | tokens_read:129.2M
+step:700/1200 | loss 4.485680 | train_time:5130.24s | step_avg:7318.46ms | score kept:4.86 easy:3.96 hard:5.93
+step:701/1200 | loss 4.398268 | train_time:5137.44s | step_avg:7318.29ms | score kept:4.85 easy:3.96 hard:5.91
+step:702/1200 | loss 4.475411 | train_time:5144.62s | step_avg:7318.09ms | score kept:4.84 easy:3.96 hard:5.89
+step:703/1200 | loss 4.532361 | train_time:5151.79s | step_avg:7317.88ms | score kept:4.85 easy:3.97 hard:5.89
+step:704/1200 | loss 4.476982 | train_time:5158.94s | step_avg:7317.65ms | score kept:4.84 easy:3.96 hard:5.88
+step:705/1200 | loss 4.420074 | train_time:5166.09s | step_avg:7317.41ms | score kept:4.84 easy:3.96 hard:5.88
+step:706/1200 | loss 4.423729 | train_time:5173.22s | step_avg:7317.14ms | score kept:4.83 easy:3.96 hard:5.89
+step:707/1200 | loss 4.512834 | train_time:5180.34s | step_avg:7316.87ms | score kept:4.84 easy:3.96 hard:5.88
+step:708/1200 | loss 4.527412 | train_time:5187.47s | step_avg:7316.60ms | score kept:4.84 easy:3.96 hard:5.88
+step:709/1200 | loss 4.432018 | train_time:5194.58s | step_avg:7316.31ms | score kept:4.83 easy:3.96 hard:5.87
+step:710/1200 | loss 4.373580 | train_time:5201.72s | step_avg:7316.06ms | score kept:4.82 easy:3.94 hard:5.86
+step:711/1200 | loss 4.487684 | train_time:5208.88s | step_avg:7315.85ms | score kept:4.82 easy:3.94 hard:5.86
+step:712/1200 | loss 4.507009 | train_time:5216.04s | step_avg:7315.63ms | score kept:4.82 easy:3.95 hard:5.85
+step:713/1200 | loss 4.602508 | train_time:5223.22s | step_avg:7315.44ms | score kept:4.83 easy:3.95 hard:5.87
+step:714/1200 | loss 4.509969 | train_time:5230.40s | step_avg:7315.25ms | score kept:4.83 easy:3.95 hard:5.89
+step:715/1200 | loss 4.496851 | train_time:5237.59s | step_avg:7315.08ms | score kept:4.83 easy:3.95 hard:5.89
+step:716/1200 | loss 4.489517 | train_time:5244.80s | step_avg:7314.93ms | score kept:4.84 easy:3.96 hard:5.88
+step:717/1200 | loss 4.529402 | train_time:5252.00s | step_avg:7314.76ms | score kept:4.84 easy:3.97 hard:5.87
+step:718/1200 | loss 4.544725 | train_time:5259.23s | step_avg:7314.64ms | score kept:4.84 easy:3.97 hard:5.88
+step:719/1200 | loss 4.491572 | train_time:5266.46s | step_avg:7314.53ms | score kept:4.83 easy:3.96 hard:5.88
+step:720/1200 | loss 4.454137 | train_time:5273.68s | step_avg:7314.39ms | score kept:4.83 easy:3.96 hard:5.88
+step:721/1200 | loss 4.450454 | train_time:5280.90s | step_avg:7314.26ms | score kept:4.83 easy:3.96 hard:5.88
+step:722/1200 | loss 4.551023 | train_time:5288.13s | step_avg:7314.15ms | score kept:4.84 easy:3.95 hard:5.89
+step:723/1200 | loss 4.474738 | train_time:5295.35s | step_avg:7314.02ms | score kept:4.83 easy:3.95 hard:5.89
+step:724/1200 | loss 4.503291 | train_time:5302.57s | step_avg:7313.89ms | score kept:4.84 easy:3.95 hard:5.90
+step:725/1200 | loss 4.496432 | train_time:5309.78s | step_avg:7313.75ms | score kept:4.84 easy:3.95 hard:5.89
+step:726/1200 | loss 4.443178 | train_time:5316.99s | step_avg:7313.60ms | score kept:4.84 easy:3.95 hard:5.89
+step:727/1200 | loss 4.412984 | train_time:5324.22s | step_avg:7313.49ms | score kept:4.83 easy:3.93 hard:5.89
+step:728/1200 | loss 4.522871 | train_time:5331.46s | step_avg:7313.38ms | score kept:4.84 easy:3.93 hard:5.89
+step:729/1200 | loss 4.399198 | train_time:5338.68s | step_avg:7313.25ms | score kept:4.84 easy:3.93 hard:5.89
+step:730/1200 | loss 4.639524 | train_time:5345.90s | step_avg:7313.13ms | score kept:4.85 easy:3.95 hard:5.90
+step:731/1200 | loss 4.489357 | train_time:5353.11s | step_avg:7313.00ms | score kept:4.85 easy:3.96 hard:5.90
+step:732/1200 | loss 4.500018 | train_time:5360.33s | step_avg:7312.87ms | score kept:4.84 easy:3.95 hard:5.88
+step:733/1200 | loss 4.451838 | train_time:5367.56s | step_avg:7312.75ms | score kept:4.83 easy:3.93 hard:5.87
+step:734/1200 | loss 4.383591 | train_time:5374.76s | step_avg:7312.60ms | score kept:4.83 easy:3.94 hard:5.86
+step:735/1200 | loss 4.492028 | train_time:5381.97s | step_avg:7312.46ms | score kept:4.83 easy:3.95 hard:5.87
+step:736/1200 | loss 4.435256 | train_time:5389.19s | step_avg:7312.33ms | score kept:4.83 easy:3.94 hard:5.85
+step:737/1200 | loss 4.424366 | train_time:5396.41s | step_avg:7312.20ms | score kept:4.81 easy:3.94 hard:5.87
+step:738/1200 | loss 4.411244 | train_time:5403.63s | step_avg:7312.08ms | score kept:4.81 easy:3.93 hard:5.87
+step:739/1200 | loss 4.392437 | train_time:5410.85s | step_avg:7311.96ms | score kept:4.80 easy:3.92 hard:5.84
+step:740/1200 | loss 4.398001 | train_time:5418.07s | step_avg:7311.83ms | score kept:4.80 easy:3.93 hard:5.82
+step:741/1200 | loss 4.552009 | train_time:5425.27s | step_avg:7311.68ms | score kept:4.81 easy:3.94 hard:5.82
+step:742/1200 | loss 4.482223 | train_time:5432.49s | step_avg:7311.57ms | score kept:4.81 easy:3.93 hard:5.82
+step:743/1200 | loss 4.481649 | train_time:5439.71s | step_avg:7311.43ms | score kept:4.81 easy:3.92 hard:5.82
+step:744/1200 | loss 4.430912 | train_time:5446.90s | step_avg:7311.27ms | score kept:4.81 easy:3.92 hard:5.82
+step:745/1200 | loss 4.492311 | train_time:5454.11s | step_avg:7311.14ms | score kept:4.81 easy:3.92 hard:5.81
+step:746/1200 | loss 4.490986 | train_time:5461.34s | step_avg:7311.03ms | score kept:4.81 easy:3.93 hard:5.81
+step:747/1200 | loss 4.568494 | train_time:5468.53s | step_avg:7310.87ms | score kept:4.82 easy:3.94 hard:5.84
+step:748/1200 | loss 4.369274 | train_time:5475.73s | step_avg:7310.73ms | score kept:4.81 easy:3.93 hard:5.83
+step:749/1200 | loss 4.332959 | train_time:5482.93s | step_avg:7310.58ms | score kept:4.80 easy:3.92 hard:5.82
+step:750/1200 | loss 4.441248 | train_time:5490.15s | step_avg:7310.45ms | score kept:4.81 easy:3.92 hard:5.81
+step:751/1200 | loss 4.450788 | train_time:5497.34s | step_avg:7310.30ms | score kept:4.80 easy:3.92 hard:5.80
+step:752/1200 | loss 4.474288 | train_time:5504.55s | step_avg:7310.16ms | score kept:4.80 easy:3.92 hard:5.82
+step:753/1200 | loss 4.408341 | train_time:5511.74s | step_avg:7310.00ms | score kept:4.80 easy:3.92 hard:5.83
+step:754/1200 | loss 4.402704 | train_time:5518.94s | step_avg:7309.85ms | score kept:4.79 easy:3.91 hard:5.82
+step:755/1200 | loss 4.459676 | train_time:5526.14s | step_avg:7309.71ms | score kept:4.80 easy:3.92 hard:5.82
+step:756/1200 | loss 4.425575 | train_time:5533.34s | step_avg:7309.57ms | score kept:4.80 easy:3.93 hard:5.81
+step:757/1200 | loss 4.405240 | train_time:5540.54s | step_avg:7309.42ms | score kept:4.79 easy:3.93 hard:5.79
+step:758/1200 | loss 4.378059 | train_time:5547.73s | step_avg:7309.26ms | score kept:4.79 easy:3.93 hard:5.79
+step:759/1200 | loss 4.426870 | train_time:5554.93s | step_avg:7309.12ms | score kept:4.79 easy:3.93 hard:5.79
+step:760/1200 | loss 4.425375 | train_time:5562.14s | step_avg:7308.99ms | score kept:4.79 easy:3.93 hard:5.78
+step:761/1200 | loss 4.505294 | train_time:5569.35s | step_avg:7308.86ms | score kept:4.79 easy:3.94 hard:5.79
+step:762/1200 | loss 4.402252 | train_time:5576.54s | step_avg:7308.70ms | score kept:4.79 easy:3.92 hard:5.79
+step:763/1200 | loss 4.504232 | train_time:5583.74s | step_avg:7308.56ms | score kept:4.79 easy:3.92 hard:5.80
+step:764/1200 | loss 4.430679 | train_time:5590.94s | step_avg:7308.42ms | score kept:4.79 easy:3.92 hard:5.79
+step:765/1200 | loss 4.487862 | train_time:5598.13s | step_avg:7308.26ms | score kept:4.80 easy:3.91 hard:5.83
+step:766/1200 | loss 4.448569 | train_time:5605.33s | step_avg:7308.12ms | score kept:4.80 easy:3.91 hard:5.84
+step:767/1200 | loss 4.488662 | train_time:5612.52s | step_avg:7307.96ms | score kept:4.80 easy:3.91 hard:5.83
+step:768/1200 | loss 4.346013 | train_time:5619.71s | step_avg:7307.82ms | score kept:4.79 easy:3.91 hard:5.82
+step:769/1200 | loss 4.429811 | train_time:5626.90s | step_avg:7307.66ms | score kept:4.79 easy:3.91 hard:5.82
+step:770/1200 | loss 4.433053 | train_time:5634.09s | step_avg:7307.51ms | score kept:4.79 easy:3.90 hard:5.83
+step:771/1200 | loss 4.459820 | train_time:5641.29s | step_avg:7307.36ms | score kept:4.80 easy:3.91 hard:5.83
+step:772/1200 | loss 4.432627 | train_time:5648.49s | step_avg:7307.23ms | score kept:4.79 easy:3.90 hard:5.83
+step:773/1200 | loss 4.469616 | train_time:5655.67s | step_avg:7307.07ms | score kept:4.79 easy:3.91 hard:5.82
+step:774/1200 | loss 4.317639 | train_time:5662.86s | step_avg:7306.92ms | score kept:4.78 easy:3.91 hard:5.80
+step:775/1200 | loss 4.463669 | train_time:5670.06s | step_avg:7306.78ms | score kept:4.78 easy:3.92 hard:5.80
+step:776/1200 | loss 4.390773 | train_time:5677.26s | step_avg:7306.64ms | score kept:4.78 easy:3.90 hard:5.80
+step:777/1200 | loss 4.378962 | train_time:5684.45s | step_avg:7306.49ms | score kept:4.78 easy:3.90 hard:5.81
+step:778/1200 | loss 4.540924 | train_time:5691.64s | step_avg:7306.34ms | score kept:4.79 easy:3.91 hard:5.82
+step:779/1200 | loss 4.459801 | train_time:5698.83s | step_avg:7306.19ms | score kept:4.80 easy:3.91 hard:5.84
+step:780/1200 | loss 4.425689 | train_time:5706.00s | step_avg:7306.02ms | score kept:4.79 easy:3.90 hard:5.85
+step:781/1200 | loss 4.406708 | train_time:5713.19s | step_avg:7305.87ms | score kept:4.79 easy:3.91 hard:5.85
+step:782/1200 | loss 4.349096 | train_time:5720.39s | step_avg:7305.73ms | score kept:4.79 easy:3.91 hard:5.84
+step:783/1200 | loss 4.474103 | train_time:5727.58s | step_avg:7305.58ms | score kept:4.79 easy:3.90 hard:5.82
+step:784/1200 | loss 4.453287 | train_time:5734.77s | step_avg:7305.44ms | score kept:4.78 easy:3.91 hard:5.82
+step:785/1200 | loss 4.372717 | train_time:5741.97s | step_avg:7305.30ms | score kept:4.78 easy:3.90 hard:5.81
+step:786/1200 | loss 4.330962 | train_time:5749.16s | step_avg:7305.15ms | score kept:4.77 easy:3.89 hard:5.80
+step:787/1200 | loss 4.405100 | train_time:5756.35s | step_avg:7305.01ms | score kept:4.77 easy:3.89 hard:5.79
+step:788/1200 | loss 4.454817 | train_time:5763.55s | step_avg:7304.88ms | score kept:4.77 easy:3.89 hard:5.78
+step:789/1200 | loss 4.504482 | train_time:5770.74s | step_avg:7304.73ms | score kept:4.78 easy:3.89 hard:5.80
+step:790/1200 | loss 4.420330 | train_time:5777.91s | step_avg:7304.56ms | score kept:4.78 easy:3.89 hard:5.80
+step:791/1200 | loss 4.484519 | train_time:5785.11s | step_avg:7304.43ms | score kept:4.78 easy:3.90 hard:5.80
+step:792/1200 | loss 4.422771 | train_time:5792.30s | step_avg:7304.29ms | score kept:4.78 easy:3.90 hard:5.79
+step:793/1200 | loss 4.529073 | train_time:5799.49s | step_avg:7304.15ms | score kept:4.79 easy:3.92 hard:5.81
+step:794/1200 | loss 4.547617 | train_time:5806.68s | step_avg:7304.00ms | score kept:4.80 easy:3.92 hard:5.81
+step:795/1200 | loss 4.449272 | train_time:5813.85s | step_avg:7303.84ms | score kept:4.80 easy:3.92 hard:5.81
+step:796/1200 | loss 4.328091 | train_time:5821.03s | step_avg:7303.68ms | score kept:4.80 easy:3.91 hard:5.79
+step:797/1200 | loss 4.432017 | train_time:5828.22s | step_avg:7303.54ms | score kept:4.79 easy:3.90 hard:5.78
+step:798/1200 | loss 4.474291 | train_time:5835.42s | step_avg:7303.40ms | score kept:4.79 easy:3.91 hard:5.79
+step:799/1200 | loss 4.428185 | train_time:5842.60s | step_avg:7303.25ms | score kept:4.79 easy:3.91 hard:5.79
+step:800/1200 | val loss 4.478591 | train_time:5842.6s | tokens_read:148.9M
+step:800/1200 | loss 4.332150 | train_time:5849.82s | step_avg:7303.15ms | score kept:4.78 easy:3.90 hard:5.77
+step:801/1200 | loss 4.414292 | train_time:5857.01s | step_avg:7303.01ms | score kept:4.79 easy:3.90 hard:5.78
+step:802/1200 | loss 4.492402 | train_time:5864.21s | step_avg:7302.88ms | score kept:4.79 easy:3.91 hard:5.78
+step:803/1200 | loss 4.475088 | train_time:5871.40s | step_avg:7302.73ms | score kept:4.79 easy:3.91 hard:5.79
+step:804/1200 | loss 4.462859 | train_time:5878.59s | step_avg:7302.60ms | score kept:4.80 easy:3.92 hard:5.81
+step:805/1200 | loss 4.424558 | train_time:5885.80s | step_avg:7302.48ms | score kept:4.79 easy:3.92 hard:5.80
+step:806/1200 | loss 4.398597 | train_time:5892.98s | step_avg:7302.34ms | score kept:4.77 easy:3.90 hard:5.77
+step:807/1200 | loss 4.449036 | train_time:5900.19s | step_avg:7302.21ms | score kept:4.77 easy:3.90 hard:5.78
+step:808/1200 | loss 4.425880 | train_time:5907.39s | step_avg:7302.09ms | score kept:4.77 easy:3.91 hard:5.77
+step:809/1200 | loss 4.393697 | train_time:5914.56s | step_avg:7301.93ms | score kept:4.78 easy:3.91 hard:5.78
+step:810/1200 | loss 4.428986 | train_time:5921.75s | step_avg:7301.78ms | score kept:4.78 easy:3.91 hard:5.78
+step:811/1200 | loss 4.424306 | train_time:5928.95s | step_avg:7301.66ms | score kept:4.78 easy:3.91 hard:5.76
+step:812/1200 | loss 4.424737 | train_time:5936.13s | step_avg:7301.51ms | score kept:4.77 easy:3.90 hard:5.75
+step:813/1200 | loss 4.373844 | train_time:5943.31s | step_avg:7301.37ms | score kept:4.78 easy:3.91 hard:5.78
+step:814/1200 | loss 4.409128 | train_time:5950.49s | step_avg:7301.22ms | score kept:4.77 easy:3.90 hard:5.77
+step:815/1200 | loss 4.311398 | train_time:5957.68s | step_avg:7301.08ms | score kept:4.77 easy:3.90 hard:5.77
+step:816/1200 | loss 4.480498 | train_time:5964.86s | step_avg:7300.93ms | score kept:4.77 easy:3.90 hard:5.78
+step:817/1200 | loss 4.431430 | train_time:5972.04s | step_avg:7300.78ms | score kept:4.77 easy:3.91 hard:5.77
+step:818/1200 | loss 4.405180 | train_time:5979.22s | step_avg:7300.64ms | score kept:4.77 easy:3.91 hard:5.77
+step:819/1200 | loss 4.310780 | train_time:5986.40s | step_avg:7300.48ms | score kept:4.76 easy:3.91 hard:5.77
+step:820/1200 | loss 4.365352 | train_time:5993.57s | step_avg:7300.33ms | score kept:4.76 easy:3.90 hard:5.77
+step:821/1200 | loss 4.443306 | train_time:6000.75s | step_avg:7300.18ms | score kept:4.76 easy:3.90 hard:5.77
+step:822/1200 | loss 4.410870 | train_time:6007.92s | step_avg:7300.03ms | score kept:4.76 easy:3.90 hard:5.79
+step:823/1200 | loss 4.377437 | train_time:6015.10s | step_avg:7299.88ms | score kept:4.76 easy:3.89 hard:5.80
+step:824/1200 | loss 4.303824 | train_time:6022.27s | step_avg:7299.73ms | score kept:4.75 easy:3.88 hard:5.79
+step:825/1200 | loss 4.400826 | train_time:6029.46s | step_avg:7299.59ms | score kept:4.75 easy:3.88 hard:5.78
+step:826/1200 | loss 4.523616 | train_time:6036.65s | step_avg:7299.46ms | score kept:4.76 easy:3.88 hard:5.81
+step:827/1200 | loss 4.472166 | train_time:6043.84s | step_avg:7299.32ms | score kept:4.77 easy:3.89 hard:5.82
+step:828/1200 | loss 4.398795 | train_time:6051.00s | step_avg:7299.16ms | score kept:4.77 easy:3.88 hard:5.85
+step:829/1200 | loss 4.215410 | train_time:6058.18s | step_avg:7299.01ms | score kept:4.75 easy:3.87 hard:5.82
+step:830/1200 | loss 4.506148 | train_time:6065.35s | step_avg:7298.86ms | score kept:4.76 easy:3.87 hard:5.85
+step:831/1200 | loss 4.401588 | train_time:6072.53s | step_avg:7298.72ms | score kept:4.76 easy:3.88 hard:5.84
+step:832/1200 | loss 4.352398 | train_time:6079.72s | step_avg:7298.58ms | score kept:4.77 easy:3.88 hard:5.83
+step:833/1200 | loss 4.368780 | train_time:6086.91s | step_avg:7298.45ms | score kept:4.76 easy:3.88 hard:5.84
+step:834/1200 | loss 4.382660 | train_time:6094.09s | step_avg:7298.32ms | score kept:4.77 easy:3.88 hard:5.84
+step:835/1200 | loss 4.431915 | train_time:6101.28s | step_avg:7298.18ms | score kept:4.77 easy:3.88 hard:5.84
+step:836/1200 | loss 4.423508 | train_time:6108.47s | step_avg:7298.05ms | score kept:4.77 easy:3.88 hard:5.84
+step:837/1200 | loss 4.389965 | train_time:6115.66s | step_avg:7297.92ms | score kept:4.76 easy:3.86 hard:5.85
+step:838/1200 | loss 4.278829 | train_time:6122.84s | step_avg:7297.78ms | score kept:4.75 easy:3.85 hard:5.83
+step:839/1200 | loss 4.358870 | train_time:6130.00s | step_avg:7297.61ms | score kept:4.75 easy:3.85 hard:5.82
+step:840/1200 | loss 4.469140 | train_time:6137.18s | step_avg:7297.48ms | score kept:4.76 easy:3.88 hard:5.82
+step:841/1200 | loss 4.360476 | train_time:6144.35s | step_avg:7297.33ms | score kept:4.76 easy:3.88 hard:5.81
+step:842/1200 | loss 4.388390 | train_time:6151.54s | step_avg:7297.20ms | score kept:4.75 easy:3.88 hard:5.79
+step:843/1200 | loss 4.304027 | train_time:6158.72s | step_avg:7297.06ms | score kept:4.74 easy:3.88 hard:5.79
+step:844/1200 | loss 4.417037 | train_time:6165.90s | step_avg:7296.92ms | score kept:4.75 easy:3.88 hard:5.78
+step:845/1200 | loss 4.385510 | train_time:6173.06s | step_avg:7296.76ms | score kept:4.75 easy:3.88 hard:5.78
+step:846/1200 | loss 4.386658 | train_time:6180.23s | step_avg:7296.61ms | score kept:4.75 easy:3.88 hard:5.81
+step:847/1200 | loss 4.329372 | train_time:6187.41s | step_avg:7296.47ms | score kept:4.75 easy:3.87 hard:5.80
+step:848/1200 | loss 4.318118 | train_time:6194.57s | step_avg:7296.31ms | score kept:4.74 easy:3.87 hard:5.80
+step:849/1200 | loss 4.355085 | train_time:6201.74s | step_avg:7296.16ms | score kept:4.73 easy:3.87 hard:5.80
+step:850/1200 | loss 4.388562 | train_time:6208.90s | step_avg:7296.00ms | score kept:4.74 easy:3.88 hard:5.80
+step:851/1200 | loss 4.452566 | train_time:6216.07s | step_avg:7295.86ms | score kept:4.74 easy:3.87 hard:5.80
+step:852/1200 | loss 4.317062 | train_time:6223.23s | step_avg:7295.70ms | score kept:4.73 easy:3.86 hard:5.79
+step:853/1200 | loss 4.376076 | train_time:6230.39s | step_avg:7295.54ms | score kept:4.73 easy:3.87 hard:5.79
+step:854/1200 | loss 4.340295 | train_time:6237.57s | step_avg:7295.40ms | score kept:4.72 easy:3.87 hard:5.78
+step:855/1200 | loss 4.528144 | train_time:6244.74s | step_avg:7295.25ms | score kept:4.74 easy:3.87 hard:5.81
+step:856/1200 | loss 4.376503 | train_time:6251.91s | step_avg:7295.11ms | score kept:4.74 easy:3.87 hard:5.81
+step:857/1200 | loss 4.295279 | train_time:6259.08s | step_avg:7294.97ms | score kept:4.73 easy:3.86 hard:5.81
+step:858/1200 | loss 4.367060 | train_time:6266.26s | step_avg:7294.83ms | score kept:4.73 easy:3.86 hard:5.80
+step:859/1200 | loss 4.334785 | train_time:6273.43s | step_avg:7294.69ms | score kept:4.73 easy:3.85 hard:5.80
+step:860/1200 | loss 4.320764 | train_time:6280.60s | step_avg:7294.55ms | score kept:4.72 easy:3.85 hard:5.78
+step:861/1200 | loss 4.418682 | train_time:6287.78s | step_avg:7294.40ms | score kept:4.72 easy:3.84 hard:5.78
+step:862/1200 | loss 4.344996 | train_time:6294.96s | step_avg:7294.28ms | score kept:4.73 easy:3.85 hard:5.77
+step:863/1200 | loss 4.458053 | train_time:6302.13s | step_avg:7294.13ms | score kept:4.73 easy:3.85 hard:5.79
+step:864/1200 | loss 4.403212 | train_time:6309.32s | step_avg:7294.01ms | score kept:4.73 easy:3.85 hard:5.79
+step:865/1200 | loss 4.220000 | train_time:6316.50s | step_avg:7293.87ms | score kept:4.73 easy:3.85 hard:5.78
+step:866/1200 | loss 4.294414 | train_time:6323.67s | step_avg:7293.74ms | score kept:4.72 easy:3.83 hard:5.78
+step:867/1200 | loss 4.412711 | train_time:6330.85s | step_avg:7293.60ms | score kept:4.72 easy:3.82 hard:5.77
+step:868/1200 | loss 4.477543 | train_time:6338.03s | step_avg:7293.47ms | score kept:4.72 easy:3.82 hard:5.79
+step:869/1200 | loss 4.346705 | train_time:6345.20s | step_avg:7293.34ms | score kept:4.72 easy:3.83 hard:5.81
+step:870/1200 | loss 4.401616 | train_time:6352.38s | step_avg:7293.20ms | score kept:4.73 easy:3.82 hard:5.83
+step:871/1200 | loss 4.332298 | train_time:6359.56s | step_avg:7293.07ms | score kept:4.73 easy:3.83 hard:5.81
+step:872/1200 | loss 4.429721 | train_time:6366.74s | step_avg:7292.94ms | score kept:4.73 easy:3.83 hard:5.81
+step:873/1200 | loss 4.374603 | train_time:6373.90s | step_avg:7292.79ms | score kept:4.73 easy:3.84 hard:5.81
+step:874/1200 | loss 4.364078 | train_time:6381.09s | step_avg:7292.67ms | score kept:4.73 easy:3.84 hard:5.80
+step:875/1200 | loss 4.363579 | train_time:6388.26s | step_avg:7292.53ms | score kept:4.73 easy:3.84 hard:5.79
+step:876/1200 | loss 4.340893 | train_time:6395.43s | step_avg:7292.39ms | score kept:4.73 easy:3.84 hard:5.78
+step:877/1200 | loss 4.378916 | train_time:6402.60s | step_avg:7292.26ms | score kept:4.73 easy:3.84 hard:5.76
+step:878/1200 | loss 4.361860 | train_time:6409.78s | step_avg:7292.12ms | score kept:4.72 easy:3.84 hard:5.78
+step:879/1200 | loss 4.384684 | train_time:6416.95s | step_avg:7291.99ms | score kept:4.73 easy:3.85 hard:5.79
+step:880/1200 | loss 4.320956 | train_time:6424.14s | step_avg:7291.87ms | score kept:4.73 easy:3.85 hard:5.77
+step:881/1200 | loss 4.330608 | train_time:6431.32s | step_avg:7291.74ms | score kept:4.73 easy:3.85 hard:5.79
+step:882/1200 | loss 4.373426 | train_time:6438.49s | step_avg:7291.61ms | score kept:4.73 easy:3.85 hard:5.78
+step:883/1200 | loss 4.279190 | train_time:6445.66s | step_avg:7291.47ms | score kept:4.72 easy:3.85 hard:5.76
+step:884/1200 | loss 4.313577 | train_time:6452.82s | step_avg:7291.33ms | score kept:4.72 easy:3.85 hard:5.76
+step:885/1200 | loss 4.358519 | train_time:6460.00s | step_avg:7291.20ms | score kept:4.72 easy:3.86 hard:5.76
+step:886/1200 | loss 4.362881 | train_time:6467.18s | step_avg:7291.07ms | score kept:4.72 easy:3.84 hard:5.75
+step:887/1200 | loss 4.341760 | train_time:6474.36s | step_avg:7290.94ms | score kept:4.71 easy:3.85 hard:5.74
+step:888/1200 | loss 4.287791 | train_time:6481.52s | step_avg:7290.80ms | score kept:4.70 easy:3.83 hard:5.74
+step:889/1200 | loss 4.296710 | train_time:6488.70s | step_avg:7290.68ms | score kept:4.70 easy:3.83 hard:5.73
+step:890/1200 | loss 4.289669 | train_time:6495.89s | step_avg:7290.56ms | score kept:4.69 easy:3.83 hard:5.71
+step:891/1200 | loss 4.311490 | train_time:6503.08s | step_avg:7290.44ms | score kept:4.69 easy:3.84 hard:5.70
+step:892/1200 | loss 4.354941 | train_time:6510.26s | step_avg:7290.32ms | score kept:4.68 easy:3.83 hard:5.71
+step:893/1200 | loss 4.312124 | train_time:6517.43s | step_avg:7290.19ms | score kept:4.68 easy:3.82 hard:5.72
+step:894/1200 | loss 4.311950 | train_time:6524.62s | step_avg:7290.08ms | score kept:4.69 easy:3.83 hard:5.73
+step:895/1200 | loss 4.528437 | train_time:6531.82s | step_avg:7289.98ms | score kept:4.70 easy:3.85 hard:5.74
+step:896/1200 | loss 4.290723 | train_time:6539.01s | step_avg:7289.86ms | score kept:4.69 easy:3.84 hard:5.73
+step:897/1200 | loss 4.347502 | train_time:6546.19s | step_avg:7289.74ms | score kept:4.70 easy:3.83 hard:5.74
+step:898/1200 | loss 4.308018 | train_time:6553.37s | step_avg:7289.62ms | score kept:4.69 easy:3.82 hard:5.73
+step:899/1200 | loss 4.407364 | train_time:6560.56s | step_avg:7289.51ms | score kept:4.70 easy:3.83 hard:5.73
+step:900/1200 | val loss 4.361360 | train_time:6560.6s | tokens_read:168.6M
+step:900/1200 | loss 4.387007 | train_time:6567.78s | step_avg:7289.44ms | score kept:4.70 easy:3.82 hard:5.73
+step:901/1200 | loss 4.300804 | train_time:6574.99s | step_avg:7289.34ms | score kept:4.70 easy:3.81 hard:5.72
+step:902/1200 | loss 4.283854 | train_time:6582.19s | step_avg:7289.24ms | score kept:4.69 easy:3.81 hard:5.73
+step:903/1200 | loss 4.414263 | train_time:6589.38s | step_avg:7289.14ms | score kept:4.71 easy:3.81 hard:5.73
+step:904/1200 | loss 4.372257 | train_time:6596.57s | step_avg:7289.03ms | score kept:4.71 easy:3.82 hard:5.72
+step:905/1200 | loss 4.375199 | train_time:6603.76s | step_avg:7288.92ms | score kept:4.72 easy:3.83 hard:5.74
+step:906/1200 | loss 4.418609 | train_time:6610.95s | step_avg:7288.81ms | score kept:4.72 easy:3.84 hard:5.74
+step:907/1200 | loss 4.310448 | train_time:6618.15s | step_avg:7288.72ms | score kept:4.71 easy:3.83 hard:5.73
+step:908/1200 | loss 4.377162 | train_time:6625.34s | step_avg:7288.61ms | score kept:4.72 easy:3.85 hard:5.73
+step:909/1200 | loss 4.458517 | train_time:6632.53s | step_avg:7288.49ms | score kept:4.72 easy:3.84 hard:5.74
+step:910/1200 | loss 4.399659 | train_time:6639.72s | step_avg:7288.38ms | score kept:4.72 easy:3.85 hard:5.73
+step:911/1200 | loss 4.351487 | train_time:6646.91s | step_avg:7288.28ms | score kept:4.72 easy:3.86 hard:5.73
+step:912/1200 | loss 4.318620 | train_time:6654.11s | step_avg:7288.18ms | score kept:4.72 easy:3.86 hard:5.72
+step:913/1200 | loss 4.405918 | train_time:6661.33s | step_avg:7288.10ms | score kept:4.73 easy:3.85 hard:5.74
+step:914/1200 | loss 4.522152 | train_time:6668.54s | step_avg:7288.02ms | score kept:4.73 easy:3.85 hard:5.76
+step:915/1200 | loss 4.519089 | train_time:6675.74s | step_avg:7287.93ms | score kept:4.73 easy:3.86 hard:5.77
+step:916/1200 | loss 4.341423 | train_time:6682.93s | step_avg:7287.82ms | score kept:4.73 easy:3.86 hard:5.79
+step:917/1200 | loss 4.356985 | train_time:6690.15s | step_avg:7287.74ms | score kept:4.74 easy:3.86 hard:5.80
+step:918/1200 | loss 4.420541 | train_time:6697.34s | step_avg:7287.64ms | score kept:4.74 easy:3.88 hard:5.78
+step:919/1200 | loss 4.350396 | train_time:6704.53s | step_avg:7287.53ms | score kept:4.74 easy:3.87 hard:5.77
+step:920/1200 | loss 4.409620 | train_time:6711.72s | step_avg:7287.43ms | score kept:4.74 easy:3.86 hard:5.77
+step:921/1200 | loss 4.384408 | train_time:6718.91s | step_avg:7287.33ms | score kept:4.74 easy:3.85 hard:5.76
+step:922/1200 | loss 4.299803 | train_time:6726.11s | step_avg:7287.22ms | score kept:4.73 easy:3.86 hard:5.76
+step:923/1200 | loss 4.299913 | train_time:6733.30s | step_avg:7287.12ms | score kept:4.73 easy:3.86 hard:5.76
+step:924/1200 | loss 4.314939 | train_time:6740.50s | step_avg:7287.02ms | score kept:4.73 easy:3.86 hard:5.76
+step:925/1200 | loss 4.327141 | train_time:6747.67s | step_avg:7286.90ms | score kept:4.73 easy:3.85 hard:5.78
+step:926/1200 | loss 4.503001 | train_time:6754.87s | step_avg:7286.81ms | score kept:4.73 easy:3.84 hard:5.79
+step:927/1200 | loss 4.228673 | train_time:6762.07s | step_avg:7286.72ms | score kept:4.71 easy:3.84 hard:5.78
+step:928/1200 | loss 4.298641 | train_time:6769.26s | step_avg:7286.61ms | score kept:4.71 easy:3.84 hard:5.77
+step:929/1200 | loss 4.298349 | train_time:6776.44s | step_avg:7286.49ms | score kept:4.71 easy:3.85 hard:5.76
+step:930/1200 | loss 4.302320 | train_time:6783.63s | step_avg:7286.39ms | score kept:4.71 easy:3.84 hard:5.76
+step:931/1200 | loss 4.273295 | train_time:6790.83s | step_avg:7286.30ms | score kept:4.70 easy:3.82 hard:5.75
+step:932/1200 | loss 4.246983 | train_time:6798.02s | step_avg:7286.19ms | score kept:4.70 easy:3.82 hard:5.74
+step:933/1200 | loss 4.292709 | train_time:6805.21s | step_avg:7286.09ms | score kept:4.69 easy:3.81 hard:5.73
+step:934/1200 | loss 4.356831 | train_time:6812.40s | step_avg:7285.99ms | score kept:4.70 easy:3.83 hard:5.72
+step:935/1200 | loss 4.331087 | train_time:6819.61s | step_avg:7285.91ms | score kept:4.69 easy:3.83 hard:5.74
+step:936/1200 | loss 4.346296 | train_time:6826.81s | step_avg:7285.82ms | score kept:4.70 easy:3.83 hard:5.75
+step:937/1200 | loss 4.521747 | train_time:6834.02s | step_avg:7285.74ms | score kept:4.71 easy:3.83 hard:5.77
+step:938/1200 | loss 4.312792 | train_time:6841.23s | step_avg:7285.66ms | score kept:4.70 easy:3.83 hard:5.75
+step:939/1200 | loss 4.370747 | train_time:6848.43s | step_avg:7285.56ms | score kept:4.70 easy:3.83 hard:5.78
+step:940/1200 | loss 4.374290 | train_time:6855.62s | step_avg:7285.46ms | score kept:4.71 easy:3.83 hard:5.80
+step:941/1200 | loss 4.937629 | train_time:6862.82s | step_avg:7285.37ms | score kept:4.77 easy:3.86 hard:5.86
+step:942/1200 | loss 4.336305 | train_time:6870.04s | step_avg:7285.30ms | score kept:4.77 easy:3.85 hard:5.84
+step:943/1200 | loss 4.398623 | train_time:6877.25s | step_avg:7285.22ms | score kept:4.77 easy:3.84 hard:5.83
+step:944/1200 | loss 4.285282 | train_time:6884.46s | step_avg:7285.14ms | score kept:4.76 easy:3.84 hard:5.82
+step:945/1200 | loss 4.289353 | train_time:6891.66s | step_avg:7285.05ms | score kept:4.75 easy:3.84 hard:5.81
+step:946/1200 | loss 4.314155 | train_time:6898.85s | step_avg:7284.95ms | score kept:4.75 easy:3.83 hard:5.80
+step:947/1200 | loss 4.257863 | train_time:6906.05s | step_avg:7284.86ms | score kept:4.75 easy:3.83 hard:5.79
+step:948/1200 | loss 4.336016 | train_time:6913.24s | step_avg:7284.77ms | score kept:4.74 easy:3.83 hard:5.78
+step:949/1200 | loss 4.291285 | train_time:6920.45s | step_avg:7284.68ms | score kept:4.73 easy:3.83 hard:5.77
+step:950/1200 | loss 4.248675 | train_time:6927.68s | step_avg:7284.62ms | score kept:4.71 easy:3.82 hard:5.76
+step:951/1200 | loss 4.294371 | train_time:6934.88s | step_avg:7284.54ms | score kept:4.72 easy:3.82 hard:5.76
+step:952/1200 | loss 4.303123 | train_time:6942.11s | step_avg:7284.48ms | score kept:4.71 easy:3.81 hard:5.74
+step:953/1200 | loss 4.262412 | train_time:6949.34s | step_avg:7284.42ms | score kept:4.70 easy:3.81 hard:5.76
+step:954/1200 | loss 4.187541 | train_time:6956.55s | step_avg:7284.35ms | score kept:4.69 easy:3.80 hard:5.76
+step:955/1200 | loss 4.295949 | train_time:6963.76s | step_avg:7284.27ms | score kept:4.69 easy:3.80 hard:5.74
+step:956/1200 | loss 4.367290 | train_time:6970.99s | step_avg:7284.21ms | score kept:4.70 easy:3.81 hard:5.74
+step:957/1200 | loss 4.396007 | train_time:6978.21s | step_avg:7284.15ms | score kept:4.70 easy:3.80 hard:5.72
+step:958/1200 | loss 4.311347 | train_time:6985.43s | step_avg:7284.08ms | score kept:4.69 easy:3.80 hard:5.74
+step:959/1200 | loss 4.332469 | train_time:6992.65s | step_avg:7284.01ms | score kept:4.69 easy:3.79 hard:5.73
+step:960/1200 | loss 4.213978 | train_time:6999.88s | step_avg:7283.95ms | score kept:4.67 easy:3.78 hard:5.72
+step:961/1200 | loss 4.326226 | train_time:7007.10s | step_avg:7283.89ms | score kept:4.68 easy:3.78 hard:5.71
+step:962/1200 | loss 4.277395 | train_time:7014.33s | step_avg:7283.83ms | score kept:4.67 easy:3.78 hard:5.69
+step:963/1200 | loss 4.322839 | train_time:7021.55s | step_avg:7283.77ms | score kept:4.67 easy:3.78 hard:5.69
+step:964/1200 | loss 4.133224 | train_time:7028.77s | step_avg:7283.70ms | score kept:4.66 easy:3.77 hard:5.69
+step:965/1200 | loss 4.241941 | train_time:7036.01s | step_avg:7283.65ms | score kept:4.66 easy:3.77 hard:5.69
+step:966/1200 | loss 4.267584 | train_time:7043.24s | step_avg:7283.60ms | score kept:4.66 easy:3.77 hard:5.68
+step:967/1200 | loss 4.237602 | train_time:7050.47s | step_avg:7283.54ms | score kept:4.66 easy:3.77 hard:5.69
+step:968/1200 | loss 4.259269 | train_time:7057.71s | step_avg:7283.49ms | score kept:4.66 easy:3.77 hard:5.68
+step:969/1200 | loss 4.209766 | train_time:7064.93s | step_avg:7283.43ms | score kept:4.65 easy:3.75 hard:5.68
+step:970/1200 | loss 4.315415 | train_time:7072.17s | step_avg:7283.39ms | score kept:4.65 easy:3.77 hard:5.66
+step:971/1200 | loss 4.262995 | train_time:7079.37s | step_avg:7283.31ms | score kept:4.65 easy:3.76 hard:5.66
+step:972/1200 | loss 4.260306 | train_time:7086.59s | step_avg:7283.23ms | score kept:4.65 easy:3.76 hard:5.67
+step:973/1200 | loss 4.207665 | train_time:7093.81s | step_avg:7283.17ms | score kept:4.64 easy:3.76 hard:5.66
+step:974/1200 | loss 4.243994 | train_time:7101.01s | step_avg:7283.09ms | score kept:4.64 easy:3.76 hard:5.65
+step:975/1200 | loss 4.159871 | train_time:7108.24s | step_avg:7283.03ms | score kept:4.63 easy:3.75 hard:5.62
+step:976/1200 | loss 4.262278 | train_time:7115.46s | step_avg:7282.97ms | score kept:4.63 easy:3.75 hard:5.62
+step:977/1200 | loss 4.172651 | train_time:7122.68s | step_avg:7282.90ms | score kept:4.62 easy:3.75 hard:5.62
+step:978/1200 | loss 4.200960 | train_time:7129.90s | step_avg:7282.84ms | score kept:4.62 easy:3.76 hard:5.61
+step:979/1200 | loss 4.217830 | train_time:7137.12s | step_avg:7282.78ms | score kept:4.62 easy:3.75 hard:5.61
+step:980/1200 | loss 4.357457 | train_time:7144.35s | step_avg:7282.72ms | score kept:4.63 easy:3.76 hard:5.63
+step:981/1200 | loss 4.268919 | train_time:7151.58s | step_avg:7282.66ms | score kept:4.63 easy:3.76 hard:5.63
+step:982/1200 | loss 4.219957 | train_time:7158.79s | step_avg:7282.59ms | score kept:4.63 easy:3.77 hard:5.63
+step:983/1200 | loss 4.102190 | train_time:7166.01s | step_avg:7282.53ms | score kept:4.63 easy:3.77 hard:5.64
+step:984/1200 | loss 4.234081 | train_time:7173.24s | step_avg:7282.48ms | score kept:4.63 easy:3.77 hard:5.64
+step:985/1200 | loss 4.277488 | train_time:7180.46s | step_avg:7282.41ms | score kept:4.63 easy:3.77 hard:5.65
+step:986/1200 | loss 4.279092 | train_time:7187.69s | step_avg:7282.36ms | score kept:4.63 easy:3.77 hard:5.66
+step:987/1200 | loss 4.160094 | train_time:7194.89s | step_avg:7282.28ms | score kept:4.62 easy:3.76 hard:5.65
+step:988/1200 | loss 4.188009 | train_time:7202.12s | step_avg:7282.22ms | score kept:4.62 easy:3.76 hard:5.64
+step:989/1200 | loss 4.319855 | train_time:7209.34s | step_avg:7282.16ms | score kept:4.62 easy:3.75 hard:5.64
+step:990/1200 | loss 4.276057 | train_time:7216.56s | step_avg:7282.10ms | score kept:4.62 easy:3.76 hard:5.63
+step:991/1200 | loss 4.206638 | train_time:7223.78s | step_avg:7282.03ms | score kept:4.61 easy:3.75 hard:5.61
+step:992/1200 | loss 4.207239 | train_time:7231.00s | step_avg:7281.98ms | score kept:4.60 easy:3.74 hard:5.61
+step:993/1200 | loss 4.214076 | train_time:7238.22s | step_avg:7281.92ms | score kept:4.61 easy:3.74 hard:5.61
+step:994/1200 | loss 4.248081 | train_time:7245.46s | step_avg:7281.87ms | score kept:4.61 easy:3.74 hard:5.60
+step:995/1200 | loss 4.318169 | train_time:7252.68s | step_avg:7281.81ms | score kept:4.61 easy:3.74 hard:5.61
+step:996/1200 | loss 4.311313 | train_time:7259.90s | step_avg:7281.74ms | score kept:4.62 easy:3.74 hard:5.64
+step:997/1200 | loss 4.161156 | train_time:7267.11s | step_avg:7281.67ms | score kept:4.62 easy:3.74 hard:5.63
+step:998/1200 | loss 4.346723 | train_time:7274.33s | step_avg:7281.62ms | score kept:4.63 easy:3.74 hard:5.64
+step:999/1200 | loss 4.264162 | train_time:7281.55s | step_avg:7281.55ms | score kept:4.64 easy:3.74 hard:5.67
+step:1000/1200 | val loss 4.273037 | train_time:7281.6s | tokens_read:188.2M
+step:1000/1200 | loss 4.236103 | train_time:7288.80s | step_avg:7281.52ms | score kept:4.64 easy:3.74 hard:5.66
+step:1001/1200 | loss 4.095048 | train_time:7296.00s | step_avg:7281.44ms | score kept:4.64 easy:3.74 hard:5.66
+step:1002/1200 | loss 4.144046 | train_time:7303.20s | step_avg:7281.36ms | score kept:4.62 easy:3.72 hard:5.65
+step:1003/1200 | loss 4.233855 | train_time:7310.38s | step_avg:7281.26ms | score kept:4.63 easy:3.74 hard:5.66
+step:1004/1200 | loss 4.362158 | train_time:7317.58s | step_avg:7281.18ms | score kept:4.64 easy:3.75 hard:5.67
+step:1005/1200 | loss 4.336611 | train_time:7324.76s | step_avg:7281.07ms | score kept:4.64 easy:3.75 hard:5.70
+step:1006/1200 | loss 4.133781 | train_time:7331.93s | step_avg:7280.96ms | score kept:4.63 easy:3.74 hard:5.68
+step:1007/1200 | loss 4.310751 | train_time:7339.07s | step_avg:7280.82ms | score kept:4.63 easy:3.74 hard:5.67
+step:1008/1200 | loss 4.289675 | train_time:7346.19s | step_avg:7280.66ms | score kept:4.63 easy:3.75 hard:5.67
+step:1009/1200 | loss 4.234393 | train_time:7353.30s | step_avg:7280.50ms | score kept:4.63 easy:3.75 hard:5.66
+step:1010/1200 | loss 4.232443 | train_time:7360.44s | step_avg:7280.35ms | score kept:4.62 easy:3.75 hard:5.65
+step:1011/1200 | loss 4.182042 | train_time:7367.60s | step_avg:7280.23ms | score kept:4.61 easy:3.74 hard:5.65
+step:1012/1200 | loss 4.195682 | train_time:7374.78s | step_avg:7280.14ms | score kept:4.61 easy:3.74 hard:5.63
+step:1013/1200 | loss 4.266680 | train_time:7381.98s | step_avg:7280.06ms | score kept:4.62 easy:3.75 hard:5.65
+step:1014/1200 | loss 4.282729 | train_time:7389.18s | step_avg:7279.98ms | score kept:4.62 easy:3.75 hard:5.66
+step:1015/1200 | loss 4.289561 | train_time:7396.41s | step_avg:7279.93ms | score kept:4.63 easy:3.75 hard:5.65
+step:1016/1200 | loss 4.162714 | train_time:7403.65s | step_avg:7279.89ms | score kept:4.62 easy:3.74 hard:5.64
+step:1017/1200 | loss 4.380685 | train_time:7410.86s | step_avg:7279.82ms | score kept:4.63 easy:3.75 hard:5.65
+step:1018/1200 | loss 4.239084 | train_time:7418.07s | step_avg:7279.76ms | score kept:4.63 easy:3.75 hard:5.64
+step:1019/1200 | loss 4.220704 | train_time:7425.26s | step_avg:7279.67ms | score kept:4.63 easy:3.75 hard:5.65
+step:1020/1200 | loss 4.166723 | train_time:7432.44s | step_avg:7279.57ms | score kept:4.62 easy:3.75 hard:5.65
+step:1021/1200 | loss 4.259841 | train_time:7439.61s | step_avg:7279.46ms | score kept:4.62 easy:3.74 hard:5.65
+step:1022/1200 | loss 4.292003 | train_time:7446.78s | step_avg:7279.35ms | score kept:4.62 easy:3.75 hard:5.65
+step:1023/1200 | loss 4.184336 | train_time:7453.93s | step_avg:7279.23ms | score kept:4.62 easy:3.74 hard:5.64
+step:1024/1200 | loss 4.284927 | train_time:7461.07s | step_avg:7279.09ms | score kept:4.62 easy:3.74 hard:5.66
+step:1025/1200 | loss 4.158818 | train_time:7468.18s | step_avg:7278.93ms | score kept:4.62 easy:3.74 hard:5.65
+step:1026/1200 | loss 4.185420 | train_time:7475.31s | step_avg:7278.78ms | score kept:4.62 easy:3.74 hard:5.64
+step:1027/1200 | loss 4.358404 | train_time:7482.48s | step_avg:7278.67ms | score kept:4.62 easy:3.75 hard:5.65
+step:1028/1200 | loss 4.192081 | train_time:7489.67s | step_avg:7278.59ms | score kept:4.61 easy:3.75 hard:5.63
+step:1029/1200 | loss 4.119340 | train_time:7496.89s | step_avg:7278.54ms | score kept:4.60 easy:3.74 hard:5.63
+step:1030/1200 | loss 4.217905 | train_time:7504.10s | step_avg:7278.47ms | score kept:4.60 easy:3.74 hard:5.63
+step:1031/1200 | loss 4.235901 | train_time:7511.28s | step_avg:7278.37ms | score kept:4.61 easy:3.74 hard:5.63
+step:1032/1200 | loss 4.192799 | train_time:7518.45s | step_avg:7278.27ms | score kept:4.61 easy:3.73 hard:5.65
+step:1033/1200 | loss 4.199677 | train_time:7525.63s | step_avg:7278.17ms | score kept:4.60 easy:3.73 hard:5.65
+step:1034/1200 | loss 4.171618 | train_time:7532.79s | step_avg:7278.06ms | score kept:4.60 easy:3.72 hard:5.65
+step:1035/1200 | loss 4.240427 | train_time:7539.96s | step_avg:7277.96ms | score kept:4.60 easy:3.72 hard:5.65
+step:1036/1200 | loss 4.247470 | train_time:7547.12s | step_avg:7277.84ms | score kept:4.60 easy:3.72 hard:5.65
+step:1037/1200 | loss 4.224317 | train_time:7554.27s | step_avg:7277.72ms | score kept:4.60 easy:3.71 hard:5.66
+step:1038/1200 | loss 4.094332 | train_time:7561.42s | step_avg:7277.59ms | score kept:4.59 easy:3.70 hard:5.65
+step:1039/1200 | loss 4.243542 | train_time:7568.57s | step_avg:7277.47ms | score kept:4.59 easy:3.71 hard:5.64
+step:1040/1200 | loss 4.267485 | train_time:7575.70s | step_avg:7277.33ms | score kept:4.59 easy:3.72 hard:5.64
+step:1041/1200 | loss 4.202565 | train_time:7582.86s | step_avg:7277.22ms | score kept:4.59 easy:3.72 hard:5.64
+step:1042/1200 | loss 4.230399 | train_time:7590.02s | step_avg:7277.10ms | score kept:4.58 easy:3.71 hard:5.65
+step:1043/1200 | loss 4.195699 | train_time:7597.18s | step_avg:7276.99ms | score kept:4.58 easy:3.72 hard:5.64
+step:1044/1200 | loss 4.221097 | train_time:7604.36s | step_avg:7276.90ms | score kept:4.59 easy:3.73 hard:5.64
+step:1045/1200 | loss 4.247265 | train_time:7611.54s | step_avg:7276.80ms | score kept:4.59 easy:3.73 hard:5.64
+step:1046/1200 | loss 4.381376 | train_time:7618.71s | step_avg:7276.70ms | score kept:4.60 easy:3.74 hard:5.66
+step:1047/1200 | loss 4.151347 | train_time:7625.90s | step_avg:7276.63ms | score kept:4.59 easy:3.73 hard:5.64
+step:1048/1200 | loss 3.980767 | train_time:7633.08s | step_avg:7276.53ms | score kept:4.58 easy:3.72 hard:5.61
+step:1049/1200 | loss 4.190634 | train_time:7640.27s | step_avg:7276.45ms | score kept:4.58 easy:3.72 hard:5.62
+step:1050/1200 | loss 4.241572 | train_time:7647.46s | step_avg:7276.37ms | score kept:4.57 easy:3.71 hard:5.63
+step:1051/1200 | loss 4.120685 | train_time:7654.65s | step_avg:7276.29ms | score kept:4.56 easy:3.70 hard:5.63
+step:1052/1200 | loss 4.221340 | train_time:7661.87s | step_avg:7276.23ms | score kept:4.56 easy:3.70 hard:5.62
+step:1053/1200 | loss 4.175860 | train_time:7669.07s | step_avg:7276.15ms | score kept:4.57 easy:3.70 hard:5.62
+step:1054/1200 | loss 4.217783 | train_time:7676.27s | step_avg:7276.08ms | score kept:4.58 easy:3.71 hard:5.61
+step:1055/1200 | loss 4.257277 | train_time:7683.49s | step_avg:7276.03ms | score kept:4.58 easy:3.71 hard:5.62
+step:1056/1200 | loss 4.145496 | train_time:7690.71s | step_avg:7275.98ms | score kept:4.57 easy:3.70 hard:5.62
+step:1057/1200 | loss 4.166367 | train_time:7697.93s | step_avg:7275.93ms | score kept:4.57 easy:3.69 hard:5.62
+step:1058/1200 | loss 4.124271 | train_time:7705.15s | step_avg:7275.87ms | score kept:4.56 easy:3.69 hard:5.62
+step:1059/1200 | loss 4.204358 | train_time:7712.38s | step_avg:7275.83ms | score kept:4.56 easy:3.70 hard:5.61
+step:1060/1200 | loss 4.178956 | train_time:7719.58s | step_avg:7275.76ms | score kept:4.56 easy:3.69 hard:5.61
+step:1061/1200 | loss 4.354180 | train_time:7726.81s | step_avg:7275.72ms | score kept:4.58 easy:3.71 hard:5.61
+step:1062/1200 | loss 4.172947 | train_time:7734.02s | step_avg:7275.65ms | score kept:4.58 easy:3.72 hard:5.60
+step:1063/1200 | loss 4.159163 | train_time:7741.23s | step_avg:7275.59ms | score kept:4.57 easy:3.72 hard:5.59
+step:1064/1200 | loss 4.194683 | train_time:7748.45s | step_avg:7275.54ms | score kept:4.57 easy:3.71 hard:5.59
+step:1065/1200 | loss 4.160738 | train_time:7755.66s | step_avg:7275.48ms | score kept:4.57 easy:3.71 hard:5.58
+step:1066/1200 | loss 4.149823 | train_time:7762.87s | step_avg:7275.42ms | score kept:4.56 easy:3.70 hard:5.57
+step:1067/1200 | loss 4.204378 | train_time:7770.08s | step_avg:7275.35ms | score kept:4.57 easy:3.71 hard:5.56
+step:1068/1200 | loss 4.195138 | train_time:7777.29s | step_avg:7275.30ms | score kept:4.57 easy:3.71 hard:5.57
+step:1069/1200 | loss 4.135941 | train_time:7784.50s | step_avg:7275.24ms | score kept:4.56 easy:3.69 hard:5.56
+step:1070/1200 | loss 4.069995 | train_time:7791.70s | step_avg:7275.16ms | score kept:4.56 easy:3.68 hard:5.56
+step:1071/1200 | loss 4.161793 | train_time:7798.93s | step_avg:7275.12ms | score kept:4.55 easy:3.67 hard:5.56
+step:1072/1200 | loss 4.176514 | train_time:7806.17s | step_avg:7275.09ms | score kept:4.55 easy:3.67 hard:5.58
+step:1073/1200 | loss 4.201085 | train_time:7813.38s | step_avg:7275.02ms | score kept:4.54 easy:3.66 hard:5.59
+step:1074/1200 | loss 4.148728 | train_time:7820.59s | step_avg:7274.96ms | score kept:4.55 easy:3.66 hard:5.59
+step:1075/1200 | loss 4.208797 | train_time:7827.82s | step_avg:7274.92ms | score kept:4.55 easy:3.67 hard:5.60
+step:1076/1200 | loss 4.136625 | train_time:7835.05s | step_avg:7274.88ms | score kept:4.55 easy:3.67 hard:5.58
+step:1077/1200 | loss 4.247761 | train_time:7842.28s | step_avg:7274.84ms | score kept:4.55 easy:3.67 hard:5.58
+step:1078/1200 | loss 4.121284 | train_time:7849.50s | step_avg:7274.79ms | score kept:4.54 easy:3.67 hard:5.57
+step:1079/1200 | loss 4.102859 | train_time:7856.72s | step_avg:7274.74ms | score kept:4.54 easy:3.67 hard:5.56
+step:1080/1200 | loss 4.205355 | train_time:7863.95s | step_avg:7274.70ms | score kept:4.55 easy:3.67 hard:5.57
+step:1081/1200 | loss 4.149235 | train_time:7871.18s | step_avg:7274.66ms | score kept:4.54 easy:3.67 hard:5.56
+step:1082/1200 | loss 4.153871 | train_time:7878.39s | step_avg:7274.60ms | score kept:4.54 easy:3.67 hard:5.55
+step:1083/1200 | loss 4.114933 | train_time:7885.60s | step_avg:7274.54ms | score kept:4.53 easy:3.66 hard:5.57
+step:1084/1200 | loss 4.117981 | train_time:7892.81s | step_avg:7274.48ms | score kept:4.53 easy:3.66 hard:5.56
+step:1085/1200 | loss 4.129967 | train_time:7900.01s | step_avg:7274.41ms | score kept:4.53 easy:3.67 hard:5.55
+step:1086/1200 | loss 4.260305 | train_time:7907.24s | step_avg:7274.37ms | score kept:4.53 easy:3.67 hard:5.55
+step:1087/1200 | loss 4.097062 | train_time:7914.47s | step_avg:7274.33ms | score kept:4.53 easy:3.66 hard:5.56
+step:1088/1200 | loss 4.058329 | train_time:7921.70s | step_avg:7274.29ms | score kept:4.52 easy:3.65 hard:5.57
+step:1089/1200 | loss 4.174319 | train_time:7928.91s | step_avg:7274.23ms | score kept:4.53 easy:3.65 hard:5.57
+step:1090/1200 | loss 4.137054 | train_time:7936.14s | step_avg:7274.19ms | score kept:4.52 easy:3.65 hard:5.56
+step:1091/1200 | loss 4.121758 | train_time:7943.36s | step_avg:7274.14ms | score kept:4.51 easy:3.64 hard:5.55
+step:1092/1200 | loss 4.137608 | train_time:7950.60s | step_avg:7274.10ms | score kept:4.51 easy:3.65 hard:5.56
+step:1093/1200 | loss 4.228561 | train_time:7957.82s | step_avg:7274.06ms | score kept:4.52 easy:3.64 hard:5.55
+step:1094/1200 | loss 4.160860 | train_time:7965.05s | step_avg:7274.02ms | score kept:4.52 easy:3.65 hard:5.57
+step:1095/1200 | loss 4.219179 | train_time:7972.28s | step_avg:7273.98ms | score kept:4.52 easy:3.65 hard:5.58
+step:1096/1200 | loss 4.170143 | train_time:7979.52s | step_avg:7273.95ms | score kept:4.52 easy:3.65 hard:5.57
+step:1097/1200 | loss 4.003594 | train_time:7986.73s | step_avg:7273.89ms | score kept:4.51 easy:3.65 hard:5.56
+step:1098/1200 | loss 4.082059 | train_time:7993.95s | step_avg:7273.84ms | score kept:4.51 easy:3.65 hard:5.55
+step:1099/1200 | loss 4.136533 | train_time:8001.18s | step_avg:7273.80ms | score kept:4.50 easy:3.64 hard:5.56
+step:1100/1200 | val loss 4.164103 | train_time:8001.2s | tokens_read:207.9M
+step:1100/1200 | loss 4.056746 | train_time:8008.39s | step_avg:7273.75ms | score kept:4.50 easy:3.65 hard:5.54
+step:1101/1200 | loss 3.982996 | train_time:8015.60s | step_avg:7273.68ms | score kept:4.49 easy:3.64 hard:5.52
+step:1102/1200 | loss 4.082856 | train_time:8022.81s | step_avg:7273.63ms | score kept:4.48 easy:3.64 hard:5.50
+step:1103/1200 | loss 4.244165 | train_time:8030.00s | step_avg:7273.56ms | score kept:4.49 easy:3.64 hard:5.51
+step:1104/1200 | loss 4.154607 | train_time:8037.21s | step_avg:7273.49ms | score kept:4.50 easy:3.65 hard:5.54
+step:1105/1200 | loss 4.177714 | train_time:8044.40s | step_avg:7273.41ms | score kept:4.50 easy:3.64 hard:5.54
+step:1106/1200 | loss 4.110363 | train_time:8051.58s | step_avg:7273.33ms | score kept:4.50 easy:3.64 hard:5.54
+step:1107/1200 | loss 4.141543 | train_time:8058.75s | step_avg:7273.24ms | score kept:4.50 easy:3.64 hard:5.53
+step:1108/1200 | loss 4.130878 | train_time:8065.91s | step_avg:7273.14ms | score kept:4.50 easy:3.64 hard:5.52
+step:1109/1200 | loss 4.059814 | train_time:8073.08s | step_avg:7273.05ms | score kept:4.49 easy:3.62 hard:5.53
+step:1110/1200 | loss 4.083234 | train_time:8080.25s | step_avg:7272.95ms | score kept:4.48 easy:3.61 hard:5.52
+step:1111/1200 | loss 4.037117 | train_time:8087.42s | step_avg:7272.86ms | score kept:4.48 easy:3.61 hard:5.51
+step:1112/1200 | loss 4.347601 | train_time:8094.59s | step_avg:7272.77ms | score kept:4.50 easy:3.62 hard:5.53
+step:1113/1200 | loss 4.189633 | train_time:8101.76s | step_avg:7272.67ms | score kept:4.51 easy:3.63 hard:5.57
+step:1114/1200 | loss 4.079159 | train_time:8108.91s | step_avg:7272.57ms | score kept:4.50 easy:3.63 hard:5.57
+step:1115/1200 | loss 4.103694 | train_time:8116.09s | step_avg:7272.48ms | score kept:4.50 easy:3.62 hard:5.56
+step:1116/1200 | loss 4.090787 | train_time:8123.26s | step_avg:7272.39ms | score kept:4.50 easy:3.63 hard:5.55
+step:1117/1200 | loss 4.174236 | train_time:8130.42s | step_avg:7272.29ms | score kept:4.50 easy:3.63 hard:5.55
+step:1118/1200 | loss 4.117349 | train_time:8137.59s | step_avg:7272.20ms | score kept:4.50 easy:3.64 hard:5.54
+step:1119/1200 | loss 4.091966 | train_time:8144.75s | step_avg:7272.10ms | score kept:4.50 easy:3.64 hard:5.53
+step:1120/1200 | loss 4.174828 | train_time:8151.93s | step_avg:7272.02ms | score kept:4.51 easy:3.65 hard:5.53
+step:1121/1200 | loss 4.115670 | train_time:8159.11s | step_avg:7271.93ms | score kept:4.51 easy:3.64 hard:5.51
+step:1122/1200 | loss 4.162704 | train_time:8166.28s | step_avg:7271.84ms | score kept:4.51 easy:3.64 hard:5.51
+step:1123/1200 | loss 4.096893 | train_time:8173.46s | step_avg:7271.76ms | score kept:4.50 easy:3.63 hard:5.53
+step:1124/1200 | loss 4.091255 | train_time:8180.64s | step_avg:7271.68ms | score kept:4.50 easy:3.62 hard:5.52
+step:1125/1200 | loss 4.080923 | train_time:8187.83s | step_avg:7271.60ms | score kept:4.49 easy:3.62 hard:5.52
+step:1126/1200 | loss 4.391796 | train_time:8195.04s | step_avg:7271.55ms | score kept:4.50 easy:3.63 hard:5.57
+step:1127/1200 | loss 4.086050 | train_time:8202.25s | step_avg:7271.49ms | score kept:4.49 easy:3.62 hard:5.54
+step:1128/1200 | loss 4.058783 | train_time:8209.43s | step_avg:7271.42ms | score kept:4.49 easy:3.62 hard:5.55
+step:1129/1200 | loss 4.153375 | train_time:8216.64s | step_avg:7271.36ms | score kept:4.50 easy:3.62 hard:5.54
+step:1130/1200 | loss 4.185238 | train_time:8223.84s | step_avg:7271.30ms | score kept:4.51 easy:3.63 hard:5.57
+step:1131/1200 | loss 4.307345 | train_time:8231.06s | step_avg:7271.25ms | score kept:4.52 easy:3.63 hard:5.58
+step:1132/1200 | loss 4.199635 | train_time:8238.29s | step_avg:7271.22ms | score kept:4.52 easy:3.64 hard:5.57
+step:1133/1200 | loss 4.104572 | train_time:8245.53s | step_avg:7271.19ms | score kept:4.52 easy:3.65 hard:5.56
+step:1134/1200 | loss 4.167027 | train_time:8252.76s | step_avg:7271.15ms | score kept:4.52 easy:3.66 hard:5.56
+step:1135/1200 | loss 4.070785 | train_time:8259.99s | step_avg:7271.12ms | score kept:4.51 easy:3.66 hard:5.55
+step:1136/1200 | loss 4.139080 | train_time:8267.24s | step_avg:7271.10ms | score kept:4.51 easy:3.64 hard:5.55
+step:1137/1200 | loss 4.044922 | train_time:8274.47s | step_avg:7271.07ms | score kept:4.51 easy:3.64 hard:5.54
+step:1138/1200 | loss 4.136712 | train_time:8281.70s | step_avg:7271.03ms | score kept:4.50 easy:3.64 hard:5.52
+step:1139/1200 | loss 4.124944 | train_time:8288.93s | step_avg:7270.99ms | score kept:4.50 easy:3.63 hard:5.51
+step:1140/1200 | loss 4.039098 | train_time:8296.18s | step_avg:7270.97ms | score kept:4.50 easy:3.63 hard:5.51
+step:1141/1200 | loss 4.057229 | train_time:8303.42s | step_avg:7270.95ms | score kept:4.49 easy:3.63 hard:5.51
+step:1142/1200 | loss 4.289467 | train_time:8310.65s | step_avg:7270.91ms | score kept:4.51 easy:3.64 hard:5.51
+step:1143/1200 | loss 4.166224 | train_time:8317.87s | step_avg:7270.87ms | score kept:4.51 easy:3.64 hard:5.52
+step:1144/1200 | loss 4.095837 | train_time:8325.09s | step_avg:7270.82ms | score kept:4.50 easy:3.64 hard:5.53
+step:1145/1200 | loss 3.965283 | train_time:8332.27s | step_avg:7270.74ms | score kept:4.50 easy:3.63 hard:5.51
+step:1146/1200 | loss 4.133395 | train_time:8339.43s | step_avg:7270.64ms | score kept:4.50 easy:3.63 hard:5.51
+step:1147/1200 | loss 4.194818 | train_time:8346.57s | step_avg:7270.53ms | score kept:4.50 easy:3.64 hard:5.51
+step:1148/1200 | loss 4.187536 | train_time:8353.74s | step_avg:7270.44ms | score kept:4.51 easy:3.64 hard:5.52
+step:1149/1200 | loss 4.031789 | train_time:8360.90s | step_avg:7270.35ms | score kept:4.50 easy:3.64 hard:5.53
+step:1150/1200 | loss 4.128924 | train_time:8368.08s | step_avg:7270.27ms | score kept:4.51 easy:3.63 hard:5.53
+step:1151/1200 | loss 4.129758 | train_time:8375.25s | step_avg:7270.19ms | score kept:4.51 easy:3.63 hard:5.52
+step:1152/1200 | loss 4.183862 | train_time:8382.45s | step_avg:7270.12ms | score kept:4.51 easy:3.63 hard:5.54
+step:1153/1200 | loss 4.067825 | train_time:8389.69s | step_avg:7270.09ms | score kept:4.51 easy:3.62 hard:5.54
+step:1154/1200 | loss 4.077334 | train_time:8396.92s | step_avg:7270.06ms | score kept:4.51 easy:3.63 hard:5.54
+step:1155/1200 | loss 4.156382 | train_time:8404.14s | step_avg:7270.02ms | score kept:4.51 easy:3.63 hard:5.55
+step:1156/1200 | loss 4.148945 | train_time:8411.35s | step_avg:7269.96ms | score kept:4.51 easy:3.63 hard:5.55
+step:1157/1200 | loss 4.082635 | train_time:8418.56s | step_avg:7269.91ms | score kept:4.50 easy:3.63 hard:5.54
+step:1158/1200 | loss 4.022468 | train_time:8425.75s | step_avg:7269.85ms | score kept:4.49 easy:3.63 hard:5.53
+step:1159/1200 | loss 4.130843 | train_time:8432.91s | step_avg:7269.75ms | score kept:4.50 easy:3.63 hard:5.53
+step:1160/1200 | loss 4.030954 | train_time:8440.03s | step_avg:7269.62ms | score kept:4.50 easy:3.64 hard:5.52
+step:1161/1200 | loss 4.139661 | train_time:8447.17s | step_avg:7269.51ms | score kept:4.49 easy:3.64 hard:5.52
+step:1162/1200 | loss 4.124502 | train_time:8454.31s | step_avg:7269.40ms | score kept:4.49 easy:3.64 hard:5.50
+step:1163/1200 | loss 4.000787 | train_time:8461.46s | step_avg:7269.30ms | score kept:4.48 easy:3.64 hard:5.48
+step:1164/1200 | loss 4.074895 | train_time:8468.64s | step_avg:7269.22ms | score kept:4.47 easy:3.62 hard:5.47
+step:1165/1200 | loss 4.085781 | train_time:8475.80s | step_avg:7269.13ms | score kept:4.47 easy:3.62 hard:5.46
+step:1166/1200 | loss 4.055792 | train_time:8483.00s | step_avg:7269.06ms | score kept:4.47 easy:3.62 hard:5.46
+step:1167/1200 | loss 4.039135 | train_time:8490.18s | step_avg:7268.99ms | score kept:4.47 easy:3.61 hard:5.46
+step:1168/1200 | loss 4.111206 | train_time:8497.38s | step_avg:7268.93ms | score kept:4.47 easy:3.62 hard:5.46
+step:1169/1200 | loss 4.074973 | train_time:8504.59s | step_avg:7268.88ms | score kept:4.47 easy:3.62 hard:5.46
+step:1170/1200 | loss 4.006574 | train_time:8511.80s | step_avg:7268.83ms | score kept:4.46 easy:3.62 hard:5.46
+step:1171/1200 | loss 4.051681 | train_time:8518.99s | step_avg:7268.76ms | score kept:4.47 easy:3.62 hard:5.48
+step:1172/1200 | loss 4.148611 | train_time:8526.20s | step_avg:7268.71ms | score kept:4.47 easy:3.62 hard:5.47
+step:1173/1200 | loss 4.056568 | train_time:8533.40s | step_avg:7268.66ms | score kept:4.47 easy:3.62 hard:5.45
+step:1174/1200 | loss 4.026057 | train_time:8540.57s | step_avg:7268.57ms | score kept:4.46 easy:3.61 hard:5.44
+step:1175/1200 | loss 4.069954 | train_time:8547.74s | step_avg:7268.48ms | score kept:4.45 easy:3.60 hard:5.44
+step:1176/1200 | loss 4.154323 | train_time:8554.87s | step_avg:7268.37ms | score kept:4.46 easy:3.60 hard:5.45
+step:1177/1200 | loss 4.160298 | train_time:8561.98s | step_avg:7268.23ms | score kept:4.46 easy:3.61 hard:5.46
+step:1178/1200 | loss 4.172414 | train_time:8569.11s | step_avg:7268.12ms | score kept:4.47 easy:3.61 hard:5.48
+step:1179/1200 | loss 4.084167 | train_time:8576.27s | step_avg:7268.02ms | score kept:4.47 easy:3.60 hard:5.48
+step:1180/1200 | loss 4.046415 | train_time:8583.46s | step_avg:7267.96ms | score kept:4.47 easy:3.60 hard:5.48
+step:1181/1200 | loss 4.081841 | train_time:8590.67s | step_avg:7267.91ms | score kept:4.47 easy:3.60 hard:5.47
+step:1182/1200 | loss 4.103109 | train_time:8597.90s | step_avg:7267.88ms | score kept:4.47 easy:3.60 hard:5.47
+step:1183/1200 | loss 4.021683 | train_time:8605.11s | step_avg:7267.83ms | score kept:4.46 easy:3.58 hard:5.47
+step:1184/1200 | loss 4.121978 | train_time:8612.31s | step_avg:7267.78ms | score kept:4.46 easy:3.59 hard:5.47
+step:1185/1200 | loss 4.026879 | train_time:8619.49s | step_avg:7267.70ms | score kept:4.46 easy:3.59 hard:5.48
+step:1186/1200 | loss 4.067781 | train_time:8626.69s | step_avg:7267.64ms | score kept:4.46 easy:3.59 hard:5.47
+step:1187/1200 | loss 3.983785 | train_time:8633.88s | step_avg:7267.57ms | score kept:4.45 easy:3.58 hard:5.45
+step:1188/1200 | loss 4.031123 | train_time:8641.05s | step_avg:7267.49ms | score kept:4.45 easy:3.58 hard:5.46
+step:1189/1200 | loss 4.001731 | train_time:8648.23s | step_avg:7267.42ms | score kept:4.45 easy:3.59 hard:5.45
+step:1190/1200 | loss 4.030191 | train_time:8655.40s | step_avg:7267.34ms | score kept:4.44 easy:3.58 hard:5.44
+step:1191/1200 | loss 4.145182 | train_time:8662.57s | step_avg:7267.25ms | score kept:4.44 easy:3.57 hard:5.45
+step:1192/1200 | loss 4.006099 | train_time:8669.74s | step_avg:7267.18ms | score kept:4.43 easy:3.57 hard:5.44
+step:1193/1200 | loss 3.981657 | train_time:8676.91s | step_avg:7267.09ms | score kept:4.44 easy:3.57 hard:5.44
+step:1194/1200 | loss 4.252414 | train_time:8684.07s | step_avg:7267.00ms | score kept:4.45 easy:3.58 hard:5.44
+step:1195/1200 | loss 4.145921 | train_time:8691.24s | step_avg:7266.92ms | score kept:4.46 easy:3.59 hard:5.44
+step:1196/1200 | loss 4.088681 | train_time:8698.40s | step_avg:7266.83ms | score kept:4.45 easy:3.59 hard:5.45
+step:1197/1200 | loss 4.098573 | train_time:8705.56s | step_avg:7266.75ms | score kept:4.45 easy:3.59 hard:5.46
+step:1198/1200 | loss 4.025617 | train_time:8712.74s | step_avg:7266.67ms | score kept:4.45 easy:3.59 hard:5.45
+step:1199/1200 | loss 4.130924 | train_time:8719.92s | step_avg:7266.60ms | score kept:4.45 easy:3.59 hard:5.46
+step:1200/1200 | val loss 4.100504 | train_time:8719.9s | tokens_read:227.5M
+peak memory consumption: 9674 MiB
+checkpoint -> /tmp/ckpt/smartfilter_p15/248cb2f1-1e57-48ac-bda0-6e30685b8e71/final.pt (step 1200, train_time 8719.9s)

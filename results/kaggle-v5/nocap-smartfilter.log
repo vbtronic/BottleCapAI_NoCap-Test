@@ -1,0 +1,62 @@
+[{"stream_name":"stdout","time":1.4448616140000001,"data":"+ nvidia-smi --query-gpu=index,name,memory.total --format=csv\n"}
+,{"stream_name":"stdout","time":1.484979326,"data":"index, name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":1.485005291,"data":"0, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.485013365,"data":"1, Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":1.508341272,"data":"+ git clone -q -b main https://github.com/vbtronic/BottleCapAI_NoCap-Test.git /tmp/nocap\n"}
+,{"stream_name":"stdout","time":2.880163095,"data":"+ git log --oneline -1\n"}
+,{"stream_name":"stdout","time":2.888649491,"data":"02df079 Guide: a long QUEUED/Starting means Kaggle's GPUs are full, try again tomorrow\n"}
+,{"stream_name":"stdout","time":2.890252156,"data":"+ /usr/bin/python3 -m pip install -q huggingface_hub\n"}
+,{"stream_name":"stdout","time":8.204378998,"data":"+ /usr/bin/python3 data/cached_fineweb10B.py 4\n"}
+,{"stream_name":"stderr","time":11.175124561,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":19.953374125,"data":"[smartfilter_p15] GPU 0: /usr/bin/python3 train_gpt2.py --model d12 --batch_size 16 --grad_accumulation_steps 8 --sequence_length 1024 --val_batch_size 16 --num_iterations 1200 --learning_rate 0.0018 --weight_decay 0.1 --warmup_iters 100 --warmdown_iters 300 --val_loss_every 100 --target_val_loss 3.3821 --output_dir /kaggle/working/quick/smartfilter_p15 --ckpt_dir /tmp/ckpt/smartfilter_p15 --smart_filter --filter_pool 1.5 --filter_hard_frac 0.5 --filter_score_len 64 --filter_warmup 128\n"}
+,{"stream_name":"stdout","time":19.954026989,"data":"[baseline] GPU 1: /usr/bin/python3 train_gpt2.py --model d12 --batch_size 16 --grad_accumulation_steps 8 --sequence_length 1024 --val_batch_size 16 --num_iterations 1200 --learning_rate 0.0018 --weight_decay 0.1 --warmup_iters 100 --warmdown_iters 300 --val_loss_every 100 --target_val_loss 3.3821 --output_dir /kaggle/working/quick/baseline --ckpt_dir /tmp/ckpt/baseline\n"}
+,{"stream_name":"stdout","time":619.955122063,"data":"[smartfilter_p15] step:52/1200 | loss 6.831532 | train_time:449.01s | step_avg:8471.83ms\n"}
+,{"stream_name":"stdout","time":619.955214582,"data":"[baseline] step:48/1200 | loss 6.892772 | train_time:444.41s | step_avg:9069.63ms\n"}
+,{"stream_name":"stdout","time":1219.955949805,"data":"[smartfilter_p15] step:126/1200 | loss 6.098268 | train_time:966.18s | step_avg:7607.69ms\n"}
+,{"stream_name":"stdout","time":1219.956129284,"data":"[baseline] step:119/1200 | loss 6.259014 | train_time:959.99s | step_avg:7999.91ms\n"}
+,{"stream_name":"stdout","time":1819.95700116,"data":"[smartfilter_p15] step:199/1200 | loss 5.584620 | train_time:1516.03s | step_avg:7580.16ms | score kept:5.80 easy:4.85 hard:6.83\n"}
+,{"stream_name":"stdout","time":1819.957035437,"data":"[baseline] step:199/1200 | loss 5.672823 | train_time:1542.12s | step_avg:7710.59ms\n"}
+,{"stream_name":"stdout","time":2419.958036874,"data":"[smartfilter_p15] step:277/1200 | loss 5.501437 | train_time:2080.07s | step_avg:7482.25ms | score kept:5.53 easy:4.59 hard:6.61\n"}
+,{"stream_name":"stdout","time":2419.958083929,"data":"[baseline] step:272/1200 | loss 5.404106 | train_time:2070.98s | step_avg:7586.01ms\n"}
+,{"stream_name":"stdout","time":3019.95871977,"data":"[smartfilter_p15] step:348/1200 | loss 5.073687 | train_time:2594.15s | step_avg:7433.09ms | score kept:5.33 easy:4.41 hard:6.43\n"}
+,{"stream_name":"stdout","time":3019.959041529,"data":"[baseline] step:343/1200 | loss 5.222359 | train_time:2584.31s | step_avg:7512.53ms\n"}
+,{"stream_name":"stdout","time":3619.959940986,"data":"[smartfilter_p15] step:419/1200 | loss 5.032759 | train_time:3106.81s | step_avg:7397.17ms | score kept:5.17 easy:4.27 hard:6.24\n"}
+,{"stream_name":"stdout","time":3619.960022675,"data":"[baseline] step:413/1200 | loss 5.570994 | train_time:3090.59s | step_avg:7465.20ms\n"}
+,{"stream_name":"stdout","time":4219.960504206,"data":"[smartfilter_p15] step:499/1200 | loss 4.865873 | train_time:3684.43s | step_avg:7368.87ms | score kept:5.04 easy:4.16 hard:6.10\n"}
+,{"stream_name":"stdout","time":4219.960774224,"data":"[baseline] step:496/1200 | loss 4.926379 | train_time:3691.20s | step_avg:7426.96ms\n"}
+,{"stream_name":"stdout","time":4819.961587965,"data":"[smartfilter_p15] step:574/1200 | loss 4.674766 | train_time:4224.12s | step_avg:7346.30ms | score kept:4.98 easy:4.08 hard:6.03\n"}
+,{"stream_name":"stdout","time":4819.961977942,"data":"[baseline] step:567/1200 | loss 4.790557 | train_time:4203.06s | step_avg:7399.75ms\n"}
+,{"stream_name":"stdout","time":5419.962866009,"data":"[smartfilter_p15] step:645/1200 | loss 4.553691 | train_time:4734.54s | step_avg:7329.01ms | score kept:4.88 easy:4.00 hard:5.92\n"}
+,{"stream_name":"stdout","time":5419.96330405,"data":"[baseline] step:638/1200 | loss 4.626945 | train_time:4714.44s | step_avg:7377.85ms\n"}
+,{"stream_name":"stdout","time":6019.963960308,"data":"[smartfilter_p15] step:717/1200 | loss 4.529402 | train_time:5252.00s | step_avg:7314.76ms | score kept:4.84 easy:3.97 hard:5.87\n"}
+,{"stream_name":"stdout","time":6019.964294686,"data":"[baseline] step:709/1200 | loss 4.477447 | train_time:5225.63s | step_avg:7360.04ms\n"}
+,{"stream_name":"stdout","time":6619.96558312,"data":"[smartfilter_p15] step:799/1200 | loss 4.428185 | train_time:5842.60s | step_avg:7303.25ms | score kept:4.79 easy:3.91 hard:5.79\n"}
+,{"stream_name":"stdout","time":6619.966148514,"data":"[baseline] step:793/1200 | loss 4.529667 | train_time:5829.92s | step_avg:7342.47ms\n"}
+,{"stream_name":"stdout","time":7219.96717219,"data":"[smartfilter_p15] step:872/1200 | loss 4.429721 | train_time:6366.74s | step_avg:7292.94ms | score kept:4.73 easy:3.83 hard:5.81\n"}
+,{"stream_name":"stdout","time":7219.967775361,"data":"[baseline] step:864/1200 | loss 4.451707 | train_time:6338.74s | step_avg:7328.02ms\n"}
+,{"stream_name":"stdout","time":7819.969084046,"data":"[smartfilter_p15] step:943/1200 | loss 4.398623 | train_time:6877.25s | step_avg:7285.22ms | score kept:4.77 easy:3.84 hard:5.83\n"}
+,{"stream_name":"stdout","time":7819.969117643,"data":"[baseline] step:935/1200 | loss 4.348677 | train_time:6847.69s | step_avg:7315.91ms\n"}
+,{"stream_name":"stdout","time":8419.969997675,"data":"[smartfilter_p15] step:1015/1200 | loss 4.289561 | train_time:7396.41s | step_avg:7279.93ms | score kept:4.63 easy:3.75 hard:5.65\n"}
+,{"stream_name":"stdout","time":8419.970679698,"data":"[baseline] step:1006/1200 | loss 4.412600 | train_time:7359.71s | step_avg:7308.55ms\n"}
+,{"stream_name":"stdout","time":9019.971858454,"data":"[smartfilter_p15] step:1098/1200 | loss 4.082059 | train_time:7993.95s | step_avg:7273.84ms | score kept:4.51 easy:3.65 hard:5.55\n"}
+,{"stream_name":"stdout","time":9019.972690442,"data":"[baseline] step:1090/1200 | loss 4.244525 | train_time:7965.04s | step_avg:7300.68ms\n"}
+,{"stream_name":"stdout","time":9619.973675292,"data":"[smartfilter_p15] step:1169/1200 | loss 4.074973 | train_time:8504.59s | step_avg:7268.88ms | score kept:4.47 easy:3.62 hard:5.46\n"}
+,{"stream_name":"stdout","time":9619.974269494,"data":"[baseline] step:1161/1200 | loss 4.096081 | train_time:8476.67s | step_avg:7294.90ms\n"}
+,{"stream_name":"stdout","time":10219.975319632,"data":"[smartfilter_p15] checkpoint -\u003e /tmp/ckpt/smartfilter_p15/248cb2f1-1e57-48ac-bda0-6e30685b8e71/final.pt (step 1200, train_time 8719.9s)\n"}
+,{"stream_name":"stdout","time":10219.975930513,"data":"[baseline] checkpoint -\u003e /tmp/ckpt/baseline/d4db8354-2759-4157-a9b8-b850b176817d/final.pt (step 1200, train_time 8750.2s)\n"}
+,{"stream_name":"stdout","time":10219.982791539,"data":"target val loss: 4.1420 (baseline's final val)\n"}
+,{"stream_name":"stdout","time":10219.982806333,"data":"\n"}
+,{"stream_name":"stdout","time":10219.982810464,"data":"| run | GPU | final step | final val | steps to target | steps ratio | step cost | time ratio |\n"}
+,{"stream_name":"stdout","time":10219.982814657,"data":"|---|---|---|---|---|---|---|---|\n"}
+,{"stream_name":"stdout","time":10219.982817857,"data":"| smartfilter_p15 | (Tesla T4) | 1200 | 4.1005 | 1135 | 0.946 | +4.0% | **0.984** |\n"}
+,{"stream_name":"stdout","time":10219.982820938,"data":"| baseline | (Tesla T4) | 1200 | 4.1420 | 1200 | 1.000 | +0.0% | **1.000** |\n"}
+,{"stream_name":"stdout","time":10219.98282441,"data":"\n"}
+,{"stream_name":"stdout","time":10219.98282777,"data":"time ratio \u003c 1.0 = Smart Filtering reaches the target faster than the baseline (steps ratio x step cost; wall-clock across different GPUs is not compared).\n"}
+,{"stream_name":"stdout","time":10221.381127729,"data":"plot -\u003e /kaggle/working/compare.png\n"}
+,{"stream_name":"stderr","time":10224.014005951,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":10224.014038097,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":10224.416549961,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":10224.416573484,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":10225.458533707,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":10226.820289708,"data":"[NbConvertApp] Writing 289372 bytes to __results__.html\n"}
+]

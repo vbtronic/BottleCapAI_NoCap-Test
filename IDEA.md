@@ -73,6 +73,8 @@ Full log with tables: [EXPERIMENTS.md](EXPERIMENTS.md). Short version (`quick` p
 |---|---|---|---|---|
 | Kaggle v2 | pool 1.25, 256-token scoring | 0.979 | +10.0% | 1.077 — loses |
 | Kaggle v3 | pool 1.25, 64-token scoring | 0.973 | +2.8…4.3% | 1.00–1.015 — tie |
+| Kaggle v5 | pool 1.5, 64-token scoring | 0.946 | +3.3…4.0% | 0.984 — small win |
 
-The selection works (≈2–3% fewer steps to the same val loss, reproduced twice), but scoring still costs
-about as much as it saves. Next: a wider pool (1.5) and the full 4768-step benchmark.
+The selection works in every run. With pool 1.25 scoring cost about as much as it saved; pool 1.5 needs
+5.4% fewer steps for the same cost, a first small net win (time ratio 0.984, one seed). Next: the full
+4768-step benchmark with pool 1.5.

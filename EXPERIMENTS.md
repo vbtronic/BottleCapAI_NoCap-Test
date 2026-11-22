@@ -20,11 +20,12 @@ one Kaggle session can differ by 22%. So the comparison is
 | Kaggle v2, 2026-11-20 | pool 1.25, score 256 tok | 4.1326 | **4.1163** | 0.979 | +10.0% | 1.077 ✗ |
 | Kaggle v3, 2026-11-21 | pool 1.25, score 64 tok | 4.1401 | **4.1186** | 0.973 | +4.3% (+2.8% raw) | 1.015 ≈ tie |
 | Kaggle v4, 2026-11-21 | pool 1.5, score 64 tok, GPUs swapped | cancelled — stuck in Kaggle's "Starting" | | | | |
-| Kaggle v5 | same as v4 (re-submitted) | cancelled on 11-21 after ~2 h in the queue; to be run from a friend's account | | | | |
-| Kaggle full (v6) | full preset, filter only, pool from v5 | prepared; a second friend's account runs it after v5 | | | | |
+| Kaggle v5, 2026-11-22 | pool 1.5, score 64 tok, GPUs swapped | 4.1420 | **4.1005** | 0.946 | +4.0% (+3.3% raw) | **0.984 ✓** |
+| Kaggle full (v6) | full preset, filter only, pool 1.5 | prepared; a friend's account runs it | | | | |
 
-The filter is better per step in both attempts (−0.016 and −0.022 val loss at step 1200, ~2–3% fewer
-steps), but so far scoring costs about as much as it saves.
+The filter is better per step in every attempt (−0.016, −0.022 and −0.041 val loss at step 1200). With
+pool 1.25 scoring cost about as much as it saved; with pool 1.5 (v5) the filter needs 5.4% fewer steps for
+the same ~+4% step cost, a first small net win (−1.6% time). One seed, one quick run: v6 has to confirm it.
 
 ---
 
@@ -92,9 +93,10 @@ Lessons:
 
 **v4 was cancelled because of a Kaggle-side problem:** it sat in "Starting…" for ~2.5 h without ever getting a
 GPU (quota was fine: 3 h 41 min of 30 h used). Re-submitted unchanged as **v5**, which then waited in the queue
-for ~2 h and was cancelled too. v5 and v6 will be run from friends' Kaggle accounts ([kaggle/GUIDE.md](kaggle/GUIDE.md)).
+for ~2 h and was cancelled too. On 2026-11-22 v5 was pushed again from the same account and started at once
+(version 6 of the notebook, ~2 h 50 min, COMPLETE). Logs: [`results/kaggle-v5/`](results/kaggle-v5/).
 
-Plan:
+Setup:
 
 - Smart Filtering on **GPU 0**, baseline on **GPU 1** (swapped against v2/v3), so a per-step gain can't
   come from one particular card.
@@ -102,10 +104,26 @@ Plan:
   wider selection costs only ~1% more per step.
 - No diagnostics phase; the evaluation is GPU-independent now.
 
+Result:
+
+| run | GPU | final val @1200 | steps to 4.1420 | steps ratio | step cost | time ratio |
+|---|---|---|---|---|---|---|
+| smartfilter_p15 | T4 (GPU 0) | **4.1005** | 1135 | 0.946 | +4.0% (+3.3% raw) | **0.984** |
+| baseline | T4 (GPU 1) | 4.1420 | 1200 | 1.000 | – | 1.000 |
+
+Val loss, filter vs. baseline: step 400 5.080 vs. 5.172, 600 4.663 vs. 4.743, 800 4.479 vs. 4.486,
+1000 4.273 vs. 4.306, 1200 4.101 vs. 4.142.
+
+- The wider pool roughly doubles the per-step gain of v3 (5.4% vs. 2.7% fewer steps) while the step cost
+  stays the same (~+4%), so the time ratio drops from 1.015 to **0.984**.
+- The gain is on GPU 0 this time (the filter was on GPU 1 in v2/v3), so it does not come from one card.
+- One seed only; the difference to v3 (~3%) is larger than the step-time noise (~3.5%) only in steps, not
+  necessarily in time. **Decision: pool 1.5 for the full run (v6).**
+
 ## Next
 
 - **Kaggle full run** (`kaggle/full/`): Smart Filtering only, full preset (4768 steps, stop at 3.3821), with
-  the better pool from v5. Both T4s train one run together (~22 h), spread over 2–3 sessions of 12 h that
+  pool 1.5 (from v5). Both T4s train one run together (~22 h), spread over 2–3 sessions of 12 h that
   hand over a checkpoint. The baseline is not re-run: the official baseline reaches 3.3821 at step 4768 by
   definition, so steps ratio = filter steps / 4768; step cost comes from session 1. Less precise than a
   same-hardware baseline (fp16 on T4 vs. bf16 on a 4090), but fits the free quota.

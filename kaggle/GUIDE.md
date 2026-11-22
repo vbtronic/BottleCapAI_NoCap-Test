@@ -9,8 +9,8 @@ downloads the results.
 | **v5** | short comparison: Smart Filtering (pool 1.5×) vs. the baseline, 1200 steps | ~3.5 h |
 | **v6** | full benchmark, Smart Filtering only, until val loss 3.3821 (at most 4768 steps) | ~25–27 h in 3 sessions |
 
-**Who runs what:** one person runs **v5**, another one runs **v6** after v5 is done (v5 decides the pool
-for v6). Do the setup (section 1), then only your section — 2 for v5, 3 for v6.
+**Who runs what:** v5 is **done** (2026-11-22, pool 1.5 won). You only run **v6**: do the setup (section 1),
+then section 3. Section 2 is kept for reference.
 
 **Quota:** Kaggle gives 30 GPU hours per week (resets on Saturday). v5 needs ~3.5 h. v6 needs ~25–27 h, so
 whoever runs v6 should start with a clean quota (no other GPU use that week). Remaining quota:
@@ -57,8 +57,7 @@ kaggle kernels status YOUR_USERNAME/nocap-smartfilter      # QUEUED → RUNNING 
 
 ## 3. v6 — full benchmark (3 sessions, ~25–27 h)
 
-1. **Pool:** `kaggle/full/full_run.py` contains the line `POOL = 1.25`. Viktor will tell you whether to change
-   it to `1.5` based on v5. Change it only before the first session, never in the middle of a run.
+1. **Pool:** already set to `POOL = 1.5` in `kaggle/full/full_run.py` (decided by v5). Don't change it.
 2. **First session:**
    ```bash
    kaggle kernels push -p kaggle/full --accelerator NvidiaTeslaT4

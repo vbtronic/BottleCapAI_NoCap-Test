@@ -24,8 +24,10 @@ pool of 20 sequences ──► score (live model, no_grad, first 64 tokens) ─�
 |---|---|---|---|---|
 | v2: score 256 tokens | 4.1163 vs. 4.1326 | 0.979 | +10% | 1.077 — loses |
 | v3: score 64 tokens | 4.1186 vs. 4.1401 | 0.973 | +3–4% | 1.00–1.015 — tie |
+| v5: score 64 tokens, pool 1.5 | 4.1005 vs. 4.1420 | 0.946 | +3–4% | **0.984 — small win** |
 
-Better per step, not yet faster in time. Full log: [EXPERIMENTS.md](EXPERIMENTS.md).
+Pool 1.5 is the first net win in time (−1.6%, one seed); the full 4768-step run (v6) uses it.
+Full log: [EXPERIMENTS.md](EXPERIMENTS.md).
 
 ## Running
 
@@ -51,7 +53,7 @@ python experiments.py eval results/kaggle-v3/2
 ```
 
 How to run it through an AI agent / API: [AGENTS.md](AGENTS.md).
-Step-by-step guide for running v5 and the full run (v6) from another Kaggle account: [kaggle/GUIDE.md](kaggle/GUIDE.md).
+Step-by-step guide for running the full run (v6) from another Kaggle account: [kaggle/GUIDE.md](kaggle/GUIDE.md).
 
 ### Local CUDA GPU
 
